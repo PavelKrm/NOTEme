@@ -94,7 +94,7 @@ final class LoginVC: UIViewController {
         }
         
         loginButton.snp.makeConstraints { make in
-            make.size.height.equalTo(45.0)
+            make.height.equalTo(45.0)
             make.horizontalEdges.equalToSuperview().inset(20.0)
             make.bottom.equalTo(signUpButton.snp.top).inset(-8.0)
         }
@@ -112,7 +112,7 @@ final class LoginVC: UIViewController {
         }
         
         signInView.snp.makeConstraints { make in
-            make.size.height.equalTo(165.0)
+            make.height.equalTo(165.0)
             make.horizontalEdges.equalToSuperview().inset(16.0)
             make.centerY.equalToSuperview()
         }
