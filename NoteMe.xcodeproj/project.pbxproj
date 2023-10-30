@@ -9,21 +9,26 @@
 /* Begin PBXBuildFile section */
 		E90ADAC02AE824CA00F8989A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADABF2AE824CA00F8989A /* AppDelegate.swift */; };
 		E90ADAC22AE824CA00F8989A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADAC12AE824CA00F8989A /* SceneDelegate.swift */; };
-		E90ADAC42AE824CA00F8989A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADAC32AE824CA00F8989A /* ViewController.swift */; };
-		E90ADAC72AE824CA00F8989A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90ADAC52AE824CA00F8989A /* Main.storyboard */; };
 		E90ADAC92AE824CB00F8989A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90ADAC82AE824CB00F8989A /* Assets.xcassets */; };
 		E90ADACC2AE824CB00F8989A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90ADACA2AE824CB00F8989A /* LaunchScreen.storyboard */; };
+		E90ADAD72AE82E7000F8989A /* UIColor+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADAD62AE82E7000F8989A /* UIColor+Consts.swift */; };
+		E90ADAD92AE834DF00F8989A /* UIFont+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADAD82AE834DF00F8989A /* UIFont+Consts.swift */; };
+		E90ADADB2AE8382800F8989A /* UIImage+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADADA2AE8382800F8989A /* UIImage+Consts.swift */; };
+		E90ADADE2AE83B1A00F8989A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E90ADADD2AE83B1A00F8989A /* SnapKit */; };
+		E90ADAE32AE83DE000F8989A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADAE22AE83DE000F8989A /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E90ADABC2AE824CA00F8989A /* NoteMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90ADABF2AE824CA00F8989A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E90ADAC12AE824CA00F8989A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E90ADAC32AE824CA00F8989A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E90ADAC62AE824CA00F8989A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E90ADAC82AE824CB00F8989A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E90ADACB2AE824CB00F8989A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90ADACD2AE824CB00F8989A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E90ADAD62AE82E7000F8989A /* UIColor+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Consts.swift"; sourceTree = "<group>"; };
+		E90ADAD82AE834DF00F8989A /* UIFont+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Consts.swift"; sourceTree = "<group>"; };
+		E90ADADA2AE8382800F8989A /* UIImage+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Consts.swift"; sourceTree = "<group>"; };
+		E90ADAE22AE83DE000F8989A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E90ADADE2AE83B1A00F8989A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +62,65 @@
 		E90ADABE2AE824CA00F8989A /* NoteMe */ = {
 			isa = PBXGroup;
 			children = (
-				E90ADABF2AE824CA00F8989A /* AppDelegate.swift */,
-				E90ADAC12AE824CA00F8989A /* SceneDelegate.swift */,
-				E90ADAC32AE824CA00F8989A /* ViewController.swift */,
-				E90ADAC52AE824CA00F8989A /* Main.storyboard */,
-				E90ADAC82AE824CB00F8989A /* Assets.xcassets */,
-				E90ADACA2AE824CB00F8989A /* LaunchScreen.storyboard */,
-				E90ADACD2AE824CB00F8989A /* Info.plist */,
+				E90ADADF2AE83D7900F8989A /* Modules */,
+				E90ADAD32AE82D0700F8989A /* App */,
+				E90ADAD42AE82DB100F8989A /* Resource */,
 			);
 			path = NoteMe;
+			sourceTree = "<group>";
+		};
+		E90ADAD32AE82D0700F8989A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E90ADABF2AE824CA00F8989A /* AppDelegate.swift */,
+				E90ADAC12AE824CA00F8989A /* SceneDelegate.swift */,
+				E90ADACD2AE824CB00F8989A /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E90ADAD42AE82DB100F8989A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E90ADAD52AE82E3900F8989A /* Consts */,
+				E90ADAC82AE824CB00F8989A /* Assets.xcassets */,
+				E90ADACA2AE824CB00F8989A /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E90ADAD52AE82E3900F8989A /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+				E90ADAD62AE82E7000F8989A /* UIColor+Consts.swift */,
+				E90ADAD82AE834DF00F8989A /* UIFont+Consts.swift */,
+				E90ADADA2AE8382800F8989A /* UIImage+Consts.swift */,
+			);
+			path = Consts;
+			sourceTree = "<group>";
+		};
+		E90ADADF2AE83D7900F8989A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E90ADAE02AE83DC700F8989A /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E90ADAE02AE83DC700F8989A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E90ADAE12AE83DD300F8989A /* Login */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E90ADAE12AE83DD300F8989A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E90ADAE22AE83DE000F8989A /* LoginVC.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +139,9 @@
 			dependencies = (
 			);
 			name = NoteMe;
+			packageProductDependencies = (
+				E90ADADD2AE83B1A00F8989A /* SnapKit */,
+			);
 			productName = NoteMe;
 			productReference = E90ADABC2AE824CA00F8989A /* NoteMe.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +170,9 @@
 				Base,
 			);
 			mainGroup = E90ADAB32AE824CA00F8989A;
+			packageReferences = (
+				E90ADADC2AE83B1A00F8989A /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E90ADABD2AE824CA00F8989A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +189,6 @@
 			files = (
 				E90ADACC2AE824CB00F8989A /* LaunchScreen.storyboard in Resources */,
 				E90ADAC92AE824CB00F8989A /* Assets.xcassets in Resources */,
-				E90ADAC72AE824CA00F8989A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +199,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E90ADAC42AE824CA00F8989A /* ViewController.swift in Sources */,
+				E90ADADB2AE8382800F8989A /* UIImage+Consts.swift in Sources */,
+				E90ADAD92AE834DF00F8989A /* UIFont+Consts.swift in Sources */,
+				E90ADAE32AE83DE000F8989A /* LoginVC.swift in Sources */,
 				E90ADAC02AE824CA00F8989A /* AppDelegate.swift in Sources */,
+				E90ADAD72AE82E7000F8989A /* UIColor+Consts.swift in Sources */,
 				E90ADAC22AE824CA00F8989A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +211,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E90ADAC52AE824CA00F8989A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E90ADAC62AE824CA00F8989A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E90ADACA2AE824CB00F8989A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,12 +350,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FBLPLXDN3A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NoteMe/Info.plist;
+				INFOPLIST_FILE = NoteMe/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NOTEme;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,12 +381,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FBLPLXDN3A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NoteMe/Info.plist;
+				INFOPLIST_FILE = NoteMe/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NOTEme;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +425,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E90ADADC2AE83B1A00F8989A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E90ADADD2AE83B1A00F8989A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E90ADADC2AE83B1A00F8989A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E90ADAB42AE824CA00F8989A /* Project object */;
 }
