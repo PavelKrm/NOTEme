@@ -19,27 +19,9 @@ final class LoginVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var loginButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .appYellow
-        let title = "Login"
-        let attr = [NSAttributedString.Key.font: UIFont.appBoldFont,
-                    NSAttributedString.Key.foregroundColor: UIColor.black]
-        let attrTitle = NSAttributedString(string: title, attributes: attr)
-        button.setAttributedTitle(attrTitle, for: .normal)
-        button.layer.cornerRadius = 5.0
-        return button
-    }()
-    
-    private lazy var signUpButton: UIButton = {
-        let button = UIButton()
-        let title = "New Account"
-        let attr = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
-                    NSAttributedString.Key.foregroundColor: UIColor.appYellow]
-        let attrTitle = NSAttributedString(string: title, attributes: attr)
-        button.setAttributedTitle(attrTitle, for: .normal)
-        return button
-    }()
+    private lazy var loginButton: UIButton = .yellowRoundedButton("Login")
+    private lazy var signUpButton: UIButton = .underlineYellowButton("New Account")
+    private lazy var forgotPasButton: UIButton = .underlineGrayButton("Forgot Password")
     
     private lazy var label: UILabel = {
         let label = UILabel()
@@ -50,19 +32,17 @@ final class LoginVC: UIViewController {
     
     private lazy var signInView: UIView = {
         let view = UIView()
+        view.cornerRadius = 5.0
         view.backgroundColor = .white
         return view
     }()
     
-    private lazy var forgotPasButton: UIButton = {
-        let button = UIButton()
-        let title = "Forgot Password"
-        let attr = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
-                    NSAttributedString.Key.foregroundColor: UIColor.lightGray,
-                    NSAttributedString.Key.font: UIFont.appFont.withSize(15.0)]
-        let attrTitle = NSAttributedString(string: title, attributes: attr)
-        button.setAttributedTitle(attrTitle, for: .normal)
-        return button
+    private lazy var emailTextField: LineTextField = {
+        let textField = LineTextField()
+        textField.title = "E-mail"
+        textField.placeholder = "Enter E-mail"
+        
+        return textField
     }()
 
     override func viewDidLoad() {
@@ -82,13 +62,13 @@ final class LoginVC: UIViewController {
         contenView.addSubview(signInView)
         contenView.addSubview(label)
         signInView.addSubview(forgotPasButton)
-        
+        signInView.addSubview(emailTextField)
     }
     
     private func setupConstraints() {
         
         signUpButton.snp.makeConstraints { make in
-            make.size.equalTo(CGSize(width: 108.0, height: 20.0))
+            make.height.equalTo(20.0)
             make.centerX.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(-8.0)
         }
@@ -112,7 +92,6 @@ final class LoginVC: UIViewController {
         }
         
         signInView.snp.makeConstraints { make in
-            make.height.equalTo(165.0)
             make.horizontalEdges.equalToSuperview().inset(16.0)
             make.centerY.equalToSuperview()
         }
@@ -123,8 +102,13 @@ final class LoginVC: UIViewController {
         }
         
         forgotPasButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(16.0)
-            make.bottom.equalToSuperview().inset(16.0)
+            make.bottom.left.equalToSuperview().inset(16.0)
+            make.height.equalTo(17.0)
+        }
+        
+        emailTextField.snp.makeConstraints { make in
+            make.horizontalEdges.top.equalToSuperview().inset(16.0)
+            make.bottom.equalTo(forgotPasButton.snp.top).inset(-20.0)
         }
         
     }

@@ -16,6 +16,9 @@
 		E90ADADB2AE8382800F8989A /* UIImage+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADADA2AE8382800F8989A /* UIImage+Consts.swift */; };
 		E90ADADE2AE83B1A00F8989A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E90ADADD2AE83B1A00F8989A /* SnapKit */; };
 		E90ADAE32AE83DE000F8989A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADAE22AE83DE000F8989A /* LoginVC.swift */; };
+		E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */; };
+		E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */; };
+		E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C1302AF16EC9005C5852 /* LineTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		E90ADAD82AE834DF00F8989A /* UIFont+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Consts.swift"; sourceTree = "<group>"; };
 		E90ADADA2AE8382800F8989A /* UIImage+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Consts.swift"; sourceTree = "<group>"; };
 		E90ADAE22AE83DE000F8989A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
+		E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
+		E9B1C1302AF16EC9005C5852 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +68,12 @@
 		E90ADABE2AE824CA00F8989A /* NoteMe */ = {
 			isa = PBXGroup;
 			children = (
-				E90ADADF2AE83D7900F8989A /* Modules */,
 				E90ADAD32AE82D0700F8989A /* App */,
+				E9B1C12F2AF16E9B005C5852 /* Custom */,
+				E90ADADF2AE83D7900F8989A /* Modules */,
 				E90ADAD42AE82DB100F8989A /* Resource */,
+				E9B1C12C2AF16001005C5852 /* Styles */,
+				E9B1C1292AF15EC9005C5852 /* Utils */,
 			);
 			path = NoteMe;
 			sourceTree = "<group>";
@@ -121,6 +130,30 @@
 				E90ADAE22AE83DE000F8989A /* LoginVC.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E9B1C1292AF15EC9005C5852 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E9B1C12C2AF16001005C5852 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		E9B1C12F2AF16E9B005C5852 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				E9B1C1302AF16EC9005C5852 /* LineTextField.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90ADADB2AE8382800F8989A /* UIImage+Consts.swift in Sources */,
+				E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */,
+				E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */,
+				E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */,
 				E90ADAD92AE834DF00F8989A /* UIFont+Consts.swift in Sources */,
 				E90ADAE32AE83DE000F8989A /* LoginVC.swift in Sources */,
 				E90ADAC02AE824CA00F8989A /* AppDelegate.swift in Sources */,
