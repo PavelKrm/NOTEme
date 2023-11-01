@@ -19,10 +19,10 @@ final class RegisterVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var registerButton: UIButton = .yellowRoundedButton("Register")
-    private lazy var haveAnAccountButton: UIButton = .underlineYellowButton("I have an Account")
+    private lazy var registerButton: UIButton = .yellowRoundedButton("register_btn".localized)
+    private lazy var haveAnAccountButton: UIButton = .underlineYellowButton("have_an_acc_btn".localized)
     
-    private lazy var label: UILabel = .titleLabel("Nuce to meet you!")
+    private lazy var label: UILabel = .titleLabel("nice_to_meet_title_lbl".localized)
     
     private lazy var signInView: UIView = {
         let view = UIView()
@@ -33,24 +33,24 @@ final class RegisterVC: UIViewController {
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "E-mail"
-        textField.placeholder = "Enter E-mail"
+        textField.title = "email_title_textField".localized
+        textField.placeholder = "email_placeholder_textField".localized
         
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
         let textFIeld = LineTextField()
-        textFIeld.title = "Password"
-        textFIeld.placeholder = "Enter Password"
+        textFIeld.title = "password_title_textField".localized
+        textFIeld.placeholder = "password_placeholder_textField".localized
         
         return textFIeld
     }()
     
     private lazy var repeatPassTextField: LineTextField = {
         let textFIeld = LineTextField()
-        textFIeld.title = "Repeat Password"
-        textFIeld.placeholder = "Enter Password"
+        textFIeld.title = "repeat_password_title_textField".localized
+        textFIeld.placeholder = "repeat_password_placeholder_textField".localized
         
         return textFIeld
     }()

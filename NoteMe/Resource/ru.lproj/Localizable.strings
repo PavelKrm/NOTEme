@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  NoteMe
+
+  Created by PavelKrm on 1.11.23.
+  
+*/
+
+// buttons
+"login_btn" = "Войти";
+"signup_btn" = "Создать Аккаунт";
+"forgot_pass_btn" = "Забыл пароль";
+"reset_btn" = "Сбросить";
+"cancel_btn"= "Отмена";
+"register_btn"= "Зарегистрировать";
+"have_an_acc_btn"= "У меня есть аккаунт";
+
+// title label
+"welcome_title_lbl" = "С возвращением!";
+"nice_to_meet_title_lbl" = "Давай знакомиться!";
+"reset_title_lbl" = "Сброс пароля";
+
+// LineTextField title label
+"email_title_textField" = "E-mail";
+"password_title_textField" = "Пароль";
+"repeat_password_title_textField" = "Повторите пароль";
+"reset_password_title_textField" = "Введите адрес электронной почты, что бы мы отправили Вам ссылку для зброса пароля";
+
+//placeholder textField
+"email_placeholder_textField" = "Введите E-mail";
+"password_placeholder_textField" = "Введите пароль";
+"repeat_password_placeholder_textField" = "Введите пароль";
+"reset_password_placeholder_textField" = "Введите E-mail";

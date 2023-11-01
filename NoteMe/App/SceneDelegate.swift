@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = UIWindow(windowScene: windowScene)
         
-        window?.rootViewController = ResetPasswordVC()
+        window?.rootViewController = LoginVC()
         window?.makeKeyAndVisible()
     }
 

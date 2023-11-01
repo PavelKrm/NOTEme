@@ -19,31 +19,26 @@ final class LoginVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var loginButton: UIButton = .yellowRoundedButton("Login")
-    private lazy var signUpButton: UIButton = .underlineYellowButton("New Account")
-    private lazy var forgotPasButton: UIButton = .underlineGrayButton("Forgot Password")
+    private lazy var loginButton: UIButton = .yellowRoundedButton("login_btn".localized)
+    private lazy var signUpButton: UIButton = .underlineYellowButton("signup_btn".localized)
+    private lazy var forgotPasButton: UIButton = .underlineGrayButton("forgot_pass_btn".localized)
     
-    private lazy var label: UILabel = .titleLabel("Welcome Back!")
+    private lazy var label: UILabel = .titleLabel("welcome_title_lbl".localized)
     
-    private lazy var signInView: UIView = {
-        let view = UIView()
-        view.cornerRadius = 5.0
-        view.backgroundColor = .white
-        return view
-    }()
+    private lazy var signInView: UIView = .signView()
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "E-mail"
-        textField.placeholder = "Enter E-mail"
+        textField.title = "email_title_textField".localized
+        textField.placeholder = "email_placeholder_textField".localized
         
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
         let textFIeld = LineTextField()
-        textFIeld.title = "Password"
-        textFIeld.placeholder = "Enter Password"
+        textFIeld.title = "password_title_textField".localized
+        textFIeld.placeholder = "password_placeholder_textField".localized
         
         return textFIeld
     }()
