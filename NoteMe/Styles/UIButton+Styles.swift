@@ -51,11 +51,10 @@ extension UIButton {
                                font: .appBoldFont)
     }
     
-    static func underlineButton(
-            _ title: String,
-            color: UIColor,
-            font: UIFont
-        ) -> UIButton {
+    static func underlineButton(_ title: String,
+                                color: UIColor,
+                                font: UIFont
+                                ) -> UIButton {
             
             let button = UIButton()
             

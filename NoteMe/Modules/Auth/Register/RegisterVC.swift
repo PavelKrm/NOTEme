@@ -1,14 +1,14 @@
 //
-//  LoginVC.swift
+//  RegisterVC.swift
 //  NoteMe
 //
-//  Created by PavelKrm on 24.10.23.
+//  Created by PavelKrm on 1.11.23.
 //
 
 import UIKit
 import SnapKit
 
-final class LoginVC: UIViewController {
+final class RegisterVC: UIViewController {
     
     private lazy var contenView: UIView = {
         let view = UIView()
@@ -19,11 +19,10 @@ final class LoginVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var loginButton: UIButton = .yellowRoundedButton("Login")
-    private lazy var signUpButton: UIButton = .underlineYellowButton("New Account")
-    private lazy var forgotPasButton: UIButton = .underlineGrayButton("Forgot Password")
+    private lazy var registerButton: UIButton = .yellowRoundedButton("Register")
+    private lazy var haveAnAccountButton: UIButton = .underlineYellowButton("I have an Account")
     
-    private lazy var label: UILabel = .titleLabel("Welcome Back!")
+    private lazy var label: UILabel = .titleLabel("Nuce to meet you!")
     
     private lazy var signInView: UIView = {
         let view = UIView()
@@ -47,6 +46,14 @@ final class LoginVC: UIViewController {
         
         return textFIeld
     }()
+    
+    private lazy var repeatPassTextField: LineTextField = {
+        let textFIeld = LineTextField()
+        textFIeld.title = "Repeat Password"
+        textFIeld.placeholder = "Enter Password"
+        
+        return textFIeld
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,40 +68,46 @@ final class LoginVC: UIViewController {
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
 //            self.passwordTextField.errorText = "Error text after 6 sec"
 //        }
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 9.0) {
+//            self.repeatPassTextField.errorText = "Error text after 9 sec"
+//        }
+        
     }
     
     private func setupUI() {
         
         view.backgroundColor = .appBlack
         view.addSubview(contenView)
-        view.addSubview(loginButton)
-        view.addSubview(signUpButton)
+        view.addSubview(registerButton)
+        view.addSubview(haveAnAccountButton)
         contenView.addSubview(logoImageView)
         contenView.addSubview(signInView)
         contenView.addSubview(label)
-        signInView.addSubview(forgotPasButton)
         signInView.addSubview(emailTextField)
         signInView.addSubview(passwordTextField)
+        signInView.addSubview(repeatPassTextField)
+        
     }
     
     private func setupConstraints() {
         
-        signUpButton.snp.makeConstraints { make in
+        haveAnAccountButton.snp.makeConstraints { make in
             make.height.equalTo(20.0)
             make.centerX.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(-8.0)
         }
         
-        loginButton.snp.makeConstraints { make in
+        registerButton.snp.makeConstraints { make in
             make.height.equalTo(45.0)
             make.horizontalEdges.equalToSuperview().inset(20.0)
-            make.bottom.equalTo(signUpButton.snp.top).inset(-8.0)
+            make.bottom.equalTo(haveAnAccountButton.snp.top).inset(-8.0)
         }
         
         contenView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.bottom.equalTo(loginButton.snp.centerY)
+            make.bottom.equalTo(registerButton.snp.centerY)
         }
         
         logoImageView.snp.makeConstraints { make in
@@ -113,9 +126,9 @@ final class LoginVC: UIViewController {
             make.bottom.equalTo(signInView.snp.top).inset(-8.0)
         }
         
-        forgotPasButton.snp.makeConstraints { make in
-            make.bottom.left.equalToSuperview().inset(16.0)
-            make.height.equalTo(17.0)
+        repeatPassTextField.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(20.0)
+            make.horizontalEdges.equalToSuperview().inset(16.0)
         }
         
         emailTextField.snp.makeConstraints { make in
@@ -125,7 +138,7 @@ final class LoginVC: UIViewController {
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).inset(-16.0)
             make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.bottom.equalTo(forgotPasButton.snp.top).inset(-20.0)
+            make.bottom.equalTo(repeatPassTextField.snp.top).inset(-16.0)
         }
         
     }

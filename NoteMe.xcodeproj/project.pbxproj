@@ -16,6 +16,9 @@
 		E90ADADB2AE8382800F8989A /* UIImage+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADADA2AE8382800F8989A /* UIImage+Consts.swift */; };
 		E90ADADE2AE83B1A00F8989A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E90ADADD2AE83B1A00F8989A /* SnapKit */; };
 		E90ADAE32AE83DE000F8989A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADAE22AE83DE000F8989A /* LoginVC.swift */; };
+		E92ED4062AF2744500FEAC39 /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED4052AF2744500FEAC39 /* UILabel+Styles.swift */; };
+		E92ED4092AF27CAE00FEAC39 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED4082AF27CAE00FEAC39 /* RegisterVC.swift */; };
+		E92ED40E2AF2835100FEAC39 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED40D2AF2835100FEAC39 /* ResetPasswordVC.swift */; };
 		E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */; };
 		E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */; };
 		E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C1302AF16EC9005C5852 /* LineTextField.swift */; };
@@ -32,6 +35,9 @@
 		E90ADAD82AE834DF00F8989A /* UIFont+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Consts.swift"; sourceTree = "<group>"; };
 		E90ADADA2AE8382800F8989A /* UIImage+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Consts.swift"; sourceTree = "<group>"; };
 		E90ADAE22AE83DE000F8989A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E92ED4052AF2744500FEAC39 /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
+		E92ED4082AF27CAE00FEAC39 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		E92ED40D2AF2835100FEAC39 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
 		E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
 		E9B1C1302AF16EC9005C5852 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
@@ -119,6 +125,8 @@
 		E90ADAE02AE83DC700F8989A /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				E92ED40C2AF2833000FEAC39 /* ResetPassword */,
+				E92ED4072AF27C9B00FEAC39 /* Register */,
 				E90ADAE12AE83DD300F8989A /* Login */,
 			);
 			path = Auth;
@@ -130,6 +138,22 @@
 				E90ADAE22AE83DE000F8989A /* LoginVC.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E92ED4072AF27C9B00FEAC39 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				E92ED4082AF27CAE00FEAC39 /* RegisterVC.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		E92ED40C2AF2833000FEAC39 /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				E92ED40D2AF2835100FEAC39 /* ResetPasswordVC.swift */,
+			);
+			path = ResetPassword;
 			sourceTree = "<group>";
 		};
 		E9B1C1292AF15EC9005C5852 /* Utils */ = {
@@ -144,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */,
+				E92ED4052AF2744500FEAC39 /* UILabel+Styles.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -236,11 +261,14 @@
 				E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */,
 				E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */,
 				E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */,
+				E92ED4092AF27CAE00FEAC39 /* RegisterVC.swift in Sources */,
 				E90ADAD92AE834DF00F8989A /* UIFont+Consts.swift in Sources */,
 				E90ADAE32AE83DE000F8989A /* LoginVC.swift in Sources */,
+				E92ED4062AF2744500FEAC39 /* UILabel+Styles.swift in Sources */,
 				E90ADAC02AE824CA00F8989A /* AppDelegate.swift in Sources */,
 				E90ADAD72AE82E7000F8989A /* UIColor+Consts.swift in Sources */,
 				E90ADAC22AE824CA00F8989A /* SceneDelegate.swift in Sources */,
+				E92ED40E2AF2835100FEAC39 /* ResetPasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

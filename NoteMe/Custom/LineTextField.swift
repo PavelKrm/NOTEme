@@ -15,6 +15,7 @@ final class LineTextField: UIView {
         label.font = .appBoldFont.withSize(13.0)
         label.textColor = .appText
         label.textAlignment = .left
+        label.numberOfLines = 2
         return label
     }()
     
@@ -46,7 +47,7 @@ final class LineTextField: UIView {
         set { titleLabel.text = newValue }
     }
     
-    var erroText: String? {
+    var errorText: String? {
         get { errorLabel.text}
         set { errorLabel.text = newValue }
     }
