@@ -23,11 +23,19 @@ final class ResetPasswordVC: UIViewController {
         .yellowRoundedButton("reset_btn".localized)
     
     private lazy var cancelButton: UIButton = .appCancelButton()
-    private lazy var label: UILabel = .titleLabel("reset_title_lbl".localized)
+    private lazy var titleLabel: UILabel = .titleLabel("reset_title_lbl".localized)
     private lazy var resetPasView: UIView = .signView()
+    private lazy var resetInfoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "reset_password_title_textField".localized
+        label.font = .appFont.withSize(13.0)
+        label.numberOfLines = 2
+        
+        return label
+    }()
+    
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "reset_password_title_textField".localized
         textField.placeholder = "reset_password_placeholder_textField".localized
         
         return textField
@@ -38,10 +46,6 @@ final class ResetPasswordVC: UIViewController {
         
         setupUI()
         setupConstraints()
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-//            self.emailTextField.errorText = "Error text after 3 sec"
-//        }
     }
     
     private func setupUI() {
@@ -52,8 +56,9 @@ final class ResetPasswordVC: UIViewController {
         view.addSubview(cancelButton)
         contenView.addSubview(logoImageView)
         contenView.addSubview(resetPasView)
-        contenView.addSubview(label)
+        contenView.addSubview(titleLabel)
         resetPasView.addSubview(emailTextField)
+        resetPasView.addSubview(resetInfoLabel)
   
     }
     
@@ -88,14 +93,19 @@ final class ResetPasswordVC: UIViewController {
             make.centerY.equalToSuperview()
         }
         
-        label.snp.makeConstraints { make in
+        titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(resetPasView.snp.top).inset(-8.0)
         }
         
         emailTextField.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(20.0)
-            make.horizontalEdges.top.equalToSuperview().inset(16.0)
+            make.horizontalEdges.equalToSuperview().inset(16.0)
+            make.top.equalTo(resetInfoLabel.snp.bottom).inset(-8)
+        }
+        
+        resetInfoLabel.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalToSuperview().inset(16.0)
         }
         
     }

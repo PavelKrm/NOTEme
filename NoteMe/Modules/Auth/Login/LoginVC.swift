@@ -57,10 +57,6 @@ final class LoginVC: UIViewController {
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
 //            self.emailTextField.errorText = "Error text after 3 sec"
 //        }
-//        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
-//            self.passwordTextField.errorText = "Error text after 6 sec"
-//        }
     }
     
     private func setupUI() {
