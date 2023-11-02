@@ -19,9 +19,14 @@ final class LoginVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var loginButton: UIButton = .yellowRoundedButton("login_btn".localized)
-    private lazy var signUpButton: UIButton = .underlineYellowButton("signup_btn".localized)
-    private lazy var forgotPasButton: UIButton = .underlineGrayButton("forgot_pass_btn".localized)
+    private lazy var loginButton: UIButton =
+        .yellowRoundedButton("login_btn".localized)
+    
+    private lazy var signUpButton: UIButton = 
+        .underlineYellowButton("signup_btn".localized)
+    
+    private lazy var forgotPasButton: UIButton = 
+        .underlineGrayButton("forgot_pass_btn".localized)
     
     private lazy var label: UILabel = .titleLabel("welcome_title_lbl".localized)
     

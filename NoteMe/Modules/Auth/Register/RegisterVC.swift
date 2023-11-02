@@ -19,17 +19,16 @@ final class RegisterVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var registerButton: UIButton = .yellowRoundedButton("register_btn".localized)
-    private lazy var haveAnAccountButton: UIButton = .underlineYellowButton("have_an_acc_btn".localized)
+    private lazy var registerButton: UIButton =
+        .yellowRoundedButton("register_btn".localized)
     
-    private lazy var label: UILabel = .titleLabel("nice_to_meet_title_lbl".localized)
+    private lazy var haveAnAccountButton: UIButton =
+        .underlineYellowButton("have_an_acc_btn".localized)
     
-    private lazy var signInView: UIView = {
-        let view = UIView()
-        view.cornerRadius = 5.0
-        view.backgroundColor = .white
-        return view
-    }()
+    private lazy var label: UILabel = 
+        .titleLabel("nice_to_meet_title_lbl".localized)
+    
+    private lazy var signInView: UIView = .signView()
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()

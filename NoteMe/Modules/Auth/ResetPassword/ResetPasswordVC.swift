@@ -19,18 +19,12 @@ final class ResetPasswordVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var resetButton: UIButton = .yellowRoundedButton("reset_btn".localized)
+    private lazy var resetButton: UIButton =
+        .yellowRoundedButton("reset_btn".localized)
+    
     private lazy var cancelButton: UIButton = .appCancelButton()
-    
     private lazy var label: UILabel = .titleLabel("reset_title_lbl".localized)
-    
-    private lazy var resetPasView: UIView = {
-        let view = UIView()
-        view.cornerRadius = 5.0
-        view.backgroundColor = .white
-        return view
-    }()
-    
+    private lazy var resetPasView: UIView = .signView()
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
         textField.title = "reset_password_title_textField".localized
