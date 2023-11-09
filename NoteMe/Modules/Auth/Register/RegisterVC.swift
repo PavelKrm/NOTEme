@@ -10,11 +10,7 @@ import SnapKit
 
 final class RegisterVC: UIViewController {
     
-    private lazy var contenView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .appGray
-        return view
-    }()
+    private lazy var contenView: UIView = .contentView()
     
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
@@ -25,7 +21,7 @@ final class RegisterVC: UIViewController {
     private lazy var haveAnAccountButton: UIButton =
         .underlineYellowButton("have_an_acc_btn".localized)
     
-    private lazy var label: UILabel = 
+    private lazy var titleLabel: UILabel =
         .titleLabel("nice_to_meet_title_lbl".localized)
     
     private lazy var signInView: UIView = .signView()
@@ -69,11 +65,10 @@ final class RegisterVC: UIViewController {
         view.addSubview(haveAnAccountButton)
         contenView.addSubview(logoImageView)
         contenView.addSubview(signInView)
-        contenView.addSubview(label)
+        contenView.addSubview(titleLabel)
         signInView.addSubview(emailTextField)
         signInView.addSubview(passwordTextField)
         signInView.addSubview(repeatPassTextField)
-        
     }
     
     private func setupConstraints() {
@@ -107,7 +102,7 @@ final class RegisterVC: UIViewController {
             make.centerY.equalToSuperview()
         }
         
-        label.snp.makeConstraints { make in
+        titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(signInView.snp.top).inset(-8.0)
         }
@@ -126,6 +121,5 @@ final class RegisterVC: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(16.0)
             make.bottom.equalTo(repeatPassTextField.snp.top).inset(-16.0)
         }
-        
     }
 }

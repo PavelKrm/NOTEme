@@ -46,6 +46,7 @@ extension UIButton {
     }
     
     static func underlineGrayButton(_ title: String) -> UIButton {
+        
         return underlineButton(title,
                                color: .appGrayText,
                                font: .appBoldFont)
@@ -56,32 +57,32 @@ extension UIButton {
                                 font: UIFont
                                 ) -> UIButton {
             
-            let button = UIButton()
+        let button = UIButton()
             
-            button.backgroundColor = .clear
+        button.backgroundColor = .clear
             
-            let normalAttr: [NSAttributedString.Key: Any] = [
-                .font: font,
-                .foregroundColor: color,
-                .underlineStyle: NSUnderlineStyle.single.rawValue,
-                .underlineColor: color
+        let normalAttr: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: color,
+            .underlineStyle: NSUnderlineStyle.single.rawValue,
+            .underlineColor: color
             ]
-            button.setAttributedTitle(
-                .init(string: title, attributes: normalAttr),
-                for: .normal
+        button.setAttributedTitle(
+            .init(string: title, attributes: normalAttr), for: .normal
             )
             
-            let highlightedAttr: [NSAttributedString.Key: Any] = [
-                .font: font,
-                .foregroundColor: color.withAlphaComponent(0.75),
-                .underlineStyle: NSUnderlineStyle.single.rawValue,
-                .underlineColor: color.withAlphaComponent(0.75)
+        let highlightedAttr: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: color.withAlphaComponent(0.75),
+            .underlineStyle: NSUnderlineStyle.single.rawValue,
+            .underlineColor: color.withAlphaComponent(0.75)
             ]
-            button.setAttributedTitle(
-                .init(string: title, attributes: highlightedAttr),
-                for: .highlighted
+        
+        button.setAttributedTitle(
+            .init(string: title, attributes: highlightedAttr),
+            for: .highlighted
             )
             
-            return button
-        }
+        return button
+    }
 }

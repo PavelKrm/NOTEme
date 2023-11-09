@@ -28,6 +28,4 @@ extension UILabel {
             
         return label
     }
-    
-    
 }

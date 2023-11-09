@@ -9,6 +9,14 @@ import UIKit
 
 extension UIView {
     
+    static func contentView() -> UIView {
+        
+        let view = UIView()
+        view.backgroundColor = .appGray
+        
+        return view
+    }
+    
     static func signView() -> UIView {
         
         let view = UIView()

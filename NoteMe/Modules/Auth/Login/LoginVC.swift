@@ -10,11 +10,7 @@ import SnapKit
 
 final class LoginVC: UIViewController {
     
-    private lazy var contenView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .appGray
-        return view
-    }()
+    private lazy var contenView: UIView = .contentView()
     
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
@@ -28,7 +24,7 @@ final class LoginVC: UIViewController {
     private lazy var forgotPasButton: UIButton = 
         .underlineGrayButton("forgot_pass_btn".localized)
     
-    private lazy var label: UILabel = .titleLabel("welcome_title_lbl".localized)
+    private lazy var titleLabel: UILabel = .titleLabel("welcome_title_lbl".localized)
     
     private lazy var signInView: UIView = .signView()
     
@@ -67,7 +63,7 @@ final class LoginVC: UIViewController {
         view.addSubview(signUpButton)
         contenView.addSubview(logoImageView)
         contenView.addSubview(signInView)
-        contenView.addSubview(label)
+        contenView.addSubview(titleLabel)
         signInView.addSubview(forgotPasButton)
         signInView.addSubview(emailTextField)
         signInView.addSubview(passwordTextField)
@@ -104,7 +100,7 @@ final class LoginVC: UIViewController {
             make.centerY.equalToSuperview()
         }
         
-        label.snp.makeConstraints { make in
+        titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(signInView.snp.top).inset(-8.0)
         }
@@ -123,6 +119,5 @@ final class LoginVC: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(16.0)
             make.bottom.equalTo(forgotPasButton.snp.top).inset(-20.0)
         }
-        
     }
 }

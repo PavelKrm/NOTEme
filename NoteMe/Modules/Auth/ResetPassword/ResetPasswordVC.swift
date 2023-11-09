@@ -10,11 +10,7 @@ import SnapKit
 
 final class ResetPasswordVC: UIViewController {
     
-    private lazy var contenView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .appGray
-        return view
-    }()
+    private lazy var contenView: UIView = .contentView()
     
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
@@ -59,7 +55,6 @@ final class ResetPasswordVC: UIViewController {
         contenView.addSubview(titleLabel)
         resetPasView.addSubview(emailTextField)
         resetPasView.addSubview(resetInfoLabel)
-  
     }
     
     private func setupConstraints() {
@@ -107,6 +102,5 @@ final class ResetPasswordVC: UIViewController {
         resetInfoLabel.snp.makeConstraints { make in
             make.top.horizontalEdges.equalToSuperview().inset(16.0)
         }
-        
     }
 }
