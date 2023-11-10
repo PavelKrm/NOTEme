@@ -8,6 +8,16 @@
 import UIKit
 import SnapKit
 
+protocol LoginViewModelProtocol {
+    
+    var catchEmailError: ((String?) -> Void)? { get set }
+    var catchPassError: ((String?) -> Void)? { get set }
+    
+    func loginDidTap(email: String?, pass: String?)
+    func newAccountDidTap()
+    func forgotPassDidTap(email: String?)
+}
+
 final class LoginVC: UIViewController {
     
     private lazy var contenView: UIView = .contentView()
@@ -17,14 +27,18 @@ final class LoginVC: UIViewController {
     
     private lazy var loginButton: UIButton =
         .yellowRoundedButton("login_btn".localized)
+        .withAction(self, #selector(loginDidTap))
     
     private lazy var signUpButton: UIButton = 
         .underlineYellowButton("signup_btn".localized)
+        .withAction(self, #selector(newAccountDidTap))
     
     private lazy var forgotPasButton: UIButton = 
         .underlineGrayButton("forgot_pass_btn".localized)
+        .withAction(self, #selector(forgotPassDidTap))
     
-    private lazy var titleLabel: UILabel = .titleLabel("welcome_title_lbl".localized)
+    private lazy var titleLabel: UILabel =
+        .titleLabel("welcome_title_lbl".localized)
     
     private lazy var signInView: UIView = .signView()
     
@@ -43,16 +57,24 @@ final class LoginVC: UIViewController {
         
         return textFIeld
     }()
-
+    
+    private var viewModel: LoginViewModelProtocol
+    
+    init(viewModel: LoginViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        bind()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         setupConstraints()
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-//            self.emailTextField.errorText = "Error text after 3 sec"
-//        }
     }
     
     private func setupUI() {
@@ -69,12 +91,22 @@ final class LoginVC: UIViewController {
         signInView.addSubview(passwordTextField)
     }
     
+    private func bind() {
+        viewModel.catchEmailError = { errorText in
+            self.emailTextField.errorText = errorText
+        }
+        
+        viewModel.catchPassError = {
+            self.passwordTextField.errorText = $0
+        }
+    }
+    
     private func setupConstraints() {
         
         signUpButton.snp.makeConstraints { make in
             make.height.equalTo(20.0)
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(-8.0)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(8.0)
         }
         
         loginButton.snp.makeConstraints { make in
@@ -119,5 +151,18 @@ final class LoginVC: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(16.0)
             make.bottom.equalTo(forgotPasButton.snp.top).inset(-20.0)
         }
+    }
+    
+    @objc private func loginDidTap() {
+        viewModel.loginDidTap(email: emailTextField.text,
+                              pass: passwordTextField.text)
+    }
+    
+    @objc private func newAccountDidTap() {
+        viewModel.newAccountDidTap()
+    }
+    
+    @objc private func forgotPassDidTap() {
+        viewModel.forgotPassDidTap(email: emailTextField.text)
     }
 }
