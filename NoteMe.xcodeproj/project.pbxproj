@@ -22,6 +22,9 @@
 		E92ED4112AF2CF3200FEAC39 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E92ED4132AF2CF3200FEAC39 /* Localizable.strings */; };
 		E92ED4172AF2D5A800FEAC39 /* String+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED4162AF2D5A800FEAC39 /* String+Locale.swift */; };
 		E92ED4192AF2DB4F00FEAC39 /* UIView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED4182AF2DB4F00FEAC39 /* UIView+Styles.swift */; };
+		E93AD9442B03DB8600187CCC /* RegisterPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AD9432B03DB8600187CCC /* RegisterPresentor.swift */; };
+		E93AD9462B03E11900187CCC /* RegisterAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AD9452B03E11900187CCC /* RegisterAssembler.swift */; };
+		E93AD9492B03E53A00187CCC /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AD9482B03E53A00187CCC /* KeyboardHelper.swift */; };
 		E93AF3392AFE942D003F9ACE /* UIButton+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AF3382AFE942D003F9ACE /* UIButton+Actions.swift */; };
 		E93AF33B2AFE977F003F9ACE /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AF33A2AFE977F003F9ACE /* LoginVM.swift */; };
 		E93AF33D2AFE97F9003F9ACE /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AF33C2AFE97F9003F9ACE /* LoginAssembler.swift */; };
@@ -51,6 +54,9 @@
 		E92ED4152AF2CF4500FEAC39 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E92ED4162AF2D5A800FEAC39 /* String+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Locale.swift"; sourceTree = "<group>"; };
 		E92ED4182AF2DB4F00FEAC39 /* UIView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Styles.swift"; sourceTree = "<group>"; };
+		E93AD9432B03DB8600187CCC /* RegisterPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresentor.swift; sourceTree = "<group>"; };
+		E93AD9452B03E11900187CCC /* RegisterAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembler.swift; sourceTree = "<group>"; };
+		E93AD9482B03E53A00187CCC /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardHelper.swift; path = NoteMe/Modules/Auth/Register/KeyboardHelper.swift; sourceTree = SOURCE_ROOT; };
 		E93AF3382AFE942D003F9ACE /* UIButton+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Actions.swift"; sourceTree = "<group>"; };
 		E93AF33A2AFE977F003F9ACE /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		E93AF33C2AFE97F9003F9ACE /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
@@ -167,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				E92ED4082AF27CAE00FEAC39 /* RegisterVC.swift */,
+				E93AD9432B03DB8600187CCC /* RegisterPresentor.swift */,
+				E93AD9452B03E11900187CCC /* RegisterAssembler.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -179,9 +187,18 @@
 			path = ResetPassword;
 			sourceTree = "<group>";
 		};
+		E93AD9472B03E50B00187CCC /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E93AD9482B03E53A00187CCC /* KeyboardHelper.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		E93AF33E2AFEA14A003F9ACE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E93AD9472B03E50B00187CCC /* New Group */,
 				E93AF33F2AFEA162003F9ACE /* InputValidator */,
 			);
 			path = Services;
@@ -315,6 +332,7 @@
 				E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */,
 				E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */,
 				E93AF33B2AFE977F003F9ACE /* LoginVM.swift in Sources */,
+				E93AD9462B03E11900187CCC /* RegisterAssembler.swift in Sources */,
 				E92ED4172AF2D5A800FEAC39 /* String+Locale.swift in Sources */,
 				E93AF33D2AFE97F9003F9ACE /* LoginAssembler.swift in Sources */,
 				E92ED4092AF27CAE00FEAC39 /* RegisterVC.swift in Sources */,
@@ -324,6 +342,8 @@
 				E92ED4062AF2744500FEAC39 /* UILabel+Styles.swift in Sources */,
 				E90ADAC02AE824CA00F8989A /* AppDelegate.swift in Sources */,
 				E93AF3412AFEA1B9003F9ACE /* InputValidator.swift in Sources */,
+				E93AD9492B03E53A00187CCC /* KeyboardHelper.swift in Sources */,
+				E93AD9442B03DB8600187CCC /* RegisterPresentor.swift in Sources */,
 				E92ED4192AF2DB4F00FEAC39 /* UIView+Styles.swift in Sources */,
 				E90ADAD72AE82E7000F8989A /* UIColor+Consts.swift in Sources */,
 				E90ADAC22AE824CA00F8989A /* SceneDelegate.swift in Sources */,

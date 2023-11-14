@@ -8,19 +8,21 @@
 import UIKit
 import SnapKit
 
-protocol LoginViewModelProtocol {
+@objc protocol LoginViewModelProtocol: AnyObject {
     
     var catchEmailError: ((String?) -> Void)? { get set }
     var catchPassError: ((String?) -> Void)? { get set }
     
     func loginDidTap(email: String?, pass: String?)
-    func newAccountDidTap()
+    @objc func newAccountDidTap()
     func forgotPassDidTap(email: String?)
 }
 
 final class LoginVC: UIViewController {
     
     private lazy var contenView: UIView = .contentView()
+    
+    private lazy var logoContainer: UIView = UIView()
     
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
@@ -31,7 +33,8 @@ final class LoginVC: UIViewController {
     
     private lazy var signUpButton: UIButton = 
         .underlineYellowButton("signup_btn".localized)
-        .withAction(self, #selector(newAccountDidTap))
+        .withAction(viewModel,
+                    #selector(LoginViewModelProtocol.newAccountDidTap))
     
     private lazy var forgotPasButton: UIButton = 
         .underlineGrayButton("forgot_pass_btn".localized)
@@ -77,18 +80,9 @@ final class LoginVC: UIViewController {
         setupConstraints()
     }
     
-    private func setupUI() {
-        
-        view.backgroundColor = .appBlack
-        view.addSubview(contenView)
-        view.addSubview(loginButton)
-        view.addSubview(signUpButton)
-        contenView.addSubview(logoImageView)
-        contenView.addSubview(signInView)
-        contenView.addSubview(titleLabel)
-        signInView.addSubview(forgotPasButton)
-        signInView.addSubview(emailTextField)
-        signInView.addSubview(passwordTextField)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     private func bind() {
@@ -99,6 +93,23 @@ final class LoginVC: UIViewController {
         viewModel.catchPassError = {
             self.passwordTextField.errorText = $0
         }
+    }
+    
+    private func setupUI() {
+        
+        view.backgroundColor = .appBlack
+        view.addSubview(contenView)
+        view.addSubview(loginButton)
+        view.addSubview(signUpButton)
+        
+        contenView.addSubview(logoContainer)
+        contenView.addSubview(signInView)
+        contenView.addSubview(titleLabel)
+        
+        logoContainer.addSubview(logoImageView)
+        signInView.addSubview(forgotPasButton)
+        signInView.addSubview(emailTextField)
+        signInView.addSubview(passwordTextField)
     }
     
     private func setupConstraints() {
@@ -121,9 +132,13 @@ final class LoginVC: UIViewController {
             make.bottom.equalTo(loginButton.snp.centerY)
         }
         
+        logoContainer.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(signInView.snp.top)
+        }
+        
         logoImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(72.0)
-            make.centerX.equalToSuperview()
+            make.center.equalToSuperview()
             make.size.equalTo(96.0)
         }
         
@@ -156,10 +171,6 @@ final class LoginVC: UIViewController {
     @objc private func loginDidTap() {
         viewModel.loginDidTap(email: emailTextField.text,
                               pass: passwordTextField.text)
-    }
-    
-    @objc private func newAccountDidTap() {
-        viewModel.newAccountDidTap()
     }
     
     @objc private func forgotPassDidTap() {

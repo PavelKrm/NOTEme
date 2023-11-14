@@ -90,7 +90,7 @@ final class ResetPasswordVC: UIViewController {
         
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(resetPasView.snp.top).inset(-8.0)
+            make.bottom.equalTo(resetPasView.snp.top).inset(8.0)
         }
         
         emailTextField.snp.makeConstraints { make in
