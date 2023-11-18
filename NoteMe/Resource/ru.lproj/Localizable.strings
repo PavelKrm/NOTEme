@@ -7,27 +7,44 @@
 */
 
 // buttons
-"login_btn" = "Войти";
-"signup_btn" = "Создать Аккаунт";
-"forgot_pass_btn" = "Забыл пароль";
-"reset_btn" = "Сбросить";
-"cancel_btn"= "Отмена";
-"register_btn"= "Зарегистрировать";
-"have_an_acc_btn"= "У меня есть аккаунт";
+    //LoginVC
+"LoginVC_login_btn" = "Войти";
+"LoginVC_signup_btn" = "Создать Аккаунт";
+"LoginVC_forgot_btn" = "Забыл пароль";
+    //RegisterVC
+"RegisterVC_register_btn"= "Зарегистрировать";
+"RegisterVC_have_an_acc_btn"= "У меня есть аккаунт";
+    //ResetPasswordVC
+"ResetPassVC_reset_btn" = "Сбросить";
+"ResetPassVC_cancel_btn"= "Отмена";
 
 // title label
-"welcome_title_lbl" = "С возвращением!";
-"nice_to_meet_title_lbl" = "Давай знакомиться!";
-"reset_title_lbl" = "Сброс пароля";
+    //LoginVC
+"LoginVC_welcome_title_lbl" = "С возвращением!";
+    //RegisterVC
+"RegisterVC_nice_to_meet_title_lbl" = "Давай знакомиться!";
+    //ResetPasswordVC
+"ResetPassVC_reset_title_lbl" = "Сброс пароля";
 
 // LineTextField title label
-"email_title_textField" = "E-mail";
-"password_title_textField" = "Пароль";
-"repeat_password_title_textField" = "Повторите пароль";
-"reset_password_title_textField" = "Введите адрес электронной почты, что бы мы отправили Вам ссылку для зброса пароля";
+    //LoginVC
+"LoginVC_email_title_textField" = "E-mail";
+"LoginVC_password_title_textField" = "Пароль";
+    //RegisterVC
+"RegisterVC_email_title_textField" = "E-mail";
+"RegisterVC_password_title_textField" = "Пароль";
+"RegisterVC_repeat_password_title_textField" = "Повторите пароль";
+    //ResetPasswordVC
+"ResetPassVC_reset_password_title_textField" = "Введите адрес электронной почты, что бы мы отправили Вам ссылку для зброса пароля";
 
 //placeholder textField
-"email_placeholder_textField" = "Введите E-mail";
-"password_placeholder_textField" = "Введите пароль";
-"repeat_password_placeholder_textField" = "Введите пароль";
-"reset_password_placeholder_textField" = "Введите E-mail";
+    //LoginVC
+"LoginVC_email_placeholder_textField" = "Введите E-mail";
+"LoginVC_password_placeholder_textField" = "Enter Password";
+    //RegisterVC
+"RegisterVC_email_placeholder_textField" = "Введите E-mail";
+"RegisterVC_password_placeholder_textField" = "Введите пароль";
+"RegisterVC_repeat_password_placeholder_textField" = "Введите пароль";
+    //ResetPasswordVC
+"ResetPassVC_reset_password_placeholder_textField" = "Введите E-mail";
+

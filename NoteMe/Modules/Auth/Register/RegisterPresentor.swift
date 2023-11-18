@@ -1,5 +1,5 @@
 //
-//  RegisterPresentor.swift
+//  RegisterPresenter.swift
 //  NoteMe
 //
 //  Created by PavelKrm on 14.11.23.
@@ -7,7 +7,15 @@
 
 import UIKit
 
-protocol RegisterPresentorDelegate: AnyObject {
+protocol SignupAuthServiceUseCase {
+    
+    func signup(email: String,
+                pass: String,
+                repeat: String,
+                completion: @escaping(Bool) -> Void)
+}
+
+protocol RegisterPresenterDelegate: AnyObject {
     
     func setEmailError(error: String?)
     func setPasswordError(error: String?)
@@ -16,14 +24,16 @@ protocol RegisterPresentorDelegate: AnyObject {
     func keyboardFrameChanged(_ frame: CGRect)
 }
 
-final class RegisterPresentor: RegisterPresentorProtocol {
+final class RegisterPresenter: RegisterPresenterProtocol {
     
-    weak var delegate: RegisterPresentorDelegate?
-    
+    weak var delegate: RegisterPresenterDelegate?
+    private let authService: SignupAuthServiceUseCase
     private let keyboardHelper: KeyboardHelper
     
-    init(keyboardHelper: KeyboardHelper) {
+    init(keyboardHelper: KeyboardHelper,
+         authService: SignupAuthServiceUseCase) {
         self.keyboardHelper = keyboardHelper
+        self.authService = authService
         
         bind()
     }
@@ -39,6 +49,15 @@ final class RegisterPresentor: RegisterPresentorProtocol {
     }
     
     func registerDidTap(email: String?, pass: String?, repeat: String?) {
+        
+        guard let email,
+              let pass,
+              let `repeat` else { return }
+        
+        authService.signup(email: email,
+                           pass: pass,
+                           repeat: `repeat`,
+                           completion: { print("sigup \($0)")})
     }
     
     func haveAnAccountDidTap() {

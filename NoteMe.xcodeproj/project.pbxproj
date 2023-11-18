@@ -33,6 +33,10 @@
 		E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */; };
 		E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */; };
 		E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C1302AF16EC9005C5852 /* LineTextField.swift */; };
+		E9CDED272B096AB30059B11F /* ResetPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CDED262B096AB30059B11F /* ResetPasswordVM.swift */; };
+		E9CDED2A2B096E540059B11F /* KeyboardHelper+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CDED292B096E540059B11F /* KeyboardHelper+Login.swift */; };
+		E9CDED2C2B096E7D0059B11F /* InputValidator+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CDED2B2B096E7D0059B11F /* InputValidator+ResetPassword.swift */; };
+		E9CDED2E2B096EB10059B11F /* ResetPasswordAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CDED2D2B096EB10059B11F /* ResetPasswordAssembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +69,10 @@
 		E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
 		E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
 		E9B1C1302AF16EC9005C5852 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
+		E9CDED262B096AB30059B11F /* ResetPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVM.swift; sourceTree = "<group>"; };
+		E9CDED292B096E540059B11F /* KeyboardHelper+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Login.swift"; sourceTree = "<group>"; };
+		E9CDED2B2B096E7D0059B11F /* InputValidator+ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+ResetPassword.swift"; sourceTree = "<group>"; };
+		E9CDED2D2B096EB10059B11F /* ResetPasswordAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordAssembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,23 +190,26 @@
 		E92ED40C2AF2833000FEAC39 /* ResetPassword */ = {
 			isa = PBXGroup;
 			children = (
+				E9CDED282B096E2E0059B11F /* UseCases */,
 				E92ED40D2AF2835100FEAC39 /* ResetPasswordVC.swift */,
+				E9CDED262B096AB30059B11F /* ResetPasswordVM.swift */,
+				E9CDED2D2B096EB10059B11F /* ResetPasswordAssembler.swift */,
 			);
 			path = ResetPassword;
 			sourceTree = "<group>";
 		};
-		E93AD9472B03E50B00187CCC /* New Group */ = {
+		E93AD9472B03E50B00187CCC /* KeyboardHelper */ = {
 			isa = PBXGroup;
 			children = (
 				E93AD9482B03E53A00187CCC /* KeyboardHelper.swift */,
 			);
-			path = "New Group";
+			path = KeyboardHelper;
 			sourceTree = "<group>";
 		};
 		E93AF33E2AFEA14A003F9ACE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E93AD9472B03E50B00187CCC /* New Group */,
+				E93AD9472B03E50B00187CCC /* KeyboardHelper */,
 				E93AF33F2AFEA162003F9ACE /* InputValidator */,
 			);
 			path = Services;
@@ -216,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				E93AF3432AFEA818003F9ACE /* InputValidator+Login.swift */,
+				E9CDED292B096E540059B11F /* KeyboardHelper+Login.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -246,6 +258,14 @@
 				E9B1C1302AF16EC9005C5852 /* LineTextField.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		E9CDED282B096E2E0059B11F /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E9CDED2B2B096E7D0059B11F /* InputValidator+ResetPassword.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +349,7 @@
 				E90ADADB2AE8382800F8989A /* UIImage+Consts.swift in Sources */,
 				E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */,
 				E93AF3442AFEA818003F9ACE /* InputValidator+Login.swift in Sources */,
+				E9CDED2E2B096EB10059B11F /* ResetPasswordAssembler.swift in Sources */,
 				E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */,
 				E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */,
 				E93AF33B2AFE977F003F9ACE /* LoginVM.swift in Sources */,
@@ -344,10 +365,13 @@
 				E93AF3412AFEA1B9003F9ACE /* InputValidator.swift in Sources */,
 				E93AD9492B03E53A00187CCC /* KeyboardHelper.swift in Sources */,
 				E93AD9442B03DB8600187CCC /* RegisterPresentor.swift in Sources */,
+				E9CDED2A2B096E540059B11F /* KeyboardHelper+Login.swift in Sources */,
 				E92ED4192AF2DB4F00FEAC39 /* UIView+Styles.swift in Sources */,
+				E9CDED272B096AB30059B11F /* ResetPasswordVM.swift in Sources */,
 				E90ADAD72AE82E7000F8989A /* UIColor+Consts.swift in Sources */,
 				E90ADAC22AE824CA00F8989A /* SceneDelegate.swift in Sources */,
 				E92ED40E2AF2835100FEAC39 /* ResetPasswordVC.swift in Sources */,
+				E9CDED2C2B096E7D0059B11F /* InputValidator+ResetPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

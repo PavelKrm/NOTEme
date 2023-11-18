@@ -16,6 +16,7 @@ import SnapKit
     func loginDidTap(email: String?, pass: String?)
     @objc func newAccountDidTap()
     func forgotPassDidTap(email: String?)
+    func keyboardFrameChanged(completion: @escaping (CGRect) -> Void)
 }
 
 final class LoginVC: UIViewController {
@@ -28,35 +29,35 @@ final class LoginVC: UIViewController {
     UIImageView(image: .General.logo)
     
     private lazy var loginButton: UIButton =
-        .yellowRoundedButton("login_btn".localized)
+        .yellowRoundedButton("LoginVC_login_btn".localized)
         .withAction(self, #selector(loginDidTap))
     
     private lazy var signUpButton: UIButton = 
-        .underlineYellowButton("signup_btn".localized)
+        .underlineYellowButton("LoginVC_signup_btn".localized)
         .withAction(viewModel,
                     #selector(LoginViewModelProtocol.newAccountDidTap))
     
     private lazy var forgotPasButton: UIButton = 
-        .underlineGrayButton("forgot_pass_btn".localized)
+        .underlineGrayButton("LoginVC_forgot_btn".localized)
         .withAction(self, #selector(forgotPassDidTap))
     
     private lazy var titleLabel: UILabel =
-        .titleLabel("welcome_title_lbl".localized)
+        .titleLabel("LoginVC_welcome_title_lbl".localized)
     
     private lazy var signInView: UIView = .signView()
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "email_title_textField".localized
-        textField.placeholder = "email_placeholder_textField".localized
+        textField.title = "LoginVC_email_title_textField".localized
+        textField.placeholder = "LoginVC_email_placeholder_textField".localized
         
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
         let textFIeld = LineTextField()
-        textFIeld.title = "password_title_textField".localized
-        textFIeld.placeholder = "password_placeholder_textField".localized
+        textFIeld.title = "LoginVC_password_title_textField".localized
+        textFIeld.placeholder = "LoginVC_password_placeholder_textField".localized
         
         return textFIeld
     }()
@@ -93,6 +94,30 @@ final class LoginVC: UIViewController {
         viewModel.catchPassError = {
             self.passwordTextField.errorText = $0
         }
+        
+        viewModel.keyboardFrameChanged { frame in
+            
+            let maxY = self.signInView.frame.maxY + 36.0
+            let keyboardY = frame.minY
+            if maxY > keyboardY {
+                
+                let diff = maxY - keyboardY
+                UIView.animate(withDuration: 0.25) {
+                    self.signInView.snp.updateConstraints { make in
+                        make.centerY.equalToSuperview().offset(-diff)
+                    }
+                    self.view.layoutIfNeeded()
+                }
+            } else if maxY < keyboardY {
+                
+                UIView.animate(withDuration: 0.25) {
+                    self.signInView.snp.updateConstraints { make in
+                        make.centerY.equalToSuperview()
+                    }
+                    self.view.layoutIfNeeded()
+                }
+            }
+        }
     }
     
     private func setupUI() {
@@ -107,6 +132,7 @@ final class LoginVC: UIViewController {
         contenView.addSubview(titleLabel)
         
         logoContainer.addSubview(logoImageView)
+        
         signInView.addSubview(forgotPasButton)
         signInView.addSubview(emailTextField)
         signInView.addSubview(passwordTextField)

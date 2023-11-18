@@ -14,7 +14,8 @@ final class LoginAssembler {
     static func make() -> UIViewController {
         
         let vm = LoginVM(authService: TESTAuthService(),
-                         inputValidator: InputValidator())
+                         inputValidator: InputValidator(),
+                         keyboardHelper: KeyboardHelper())
         return LoginVC(viewModel: vm)
     }
 }

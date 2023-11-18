@@ -7,28 +7,44 @@
 */
 
 // buttons
-"login_btn" = "Login";
-"signup_btn" = "New Account";
-"forgot_pass_btn" = "Forgot Password";
-"reset_btn" = "Reset";
-"cancel_btn"= "Cancel";
-"register_btn"= "Register";
-"have_an_acc_btn"= "I have an Account";
+    //LoginVC
+"LoginVC_login_btn" = "Login";
+"LoginVC_signup_btn" = "New Account";
+"LoginVC_forgot_btn" = "Forgot Password";
+    //RegisterVC
+"RegisterVC_register_btn"= "Register";
+"RegisterVC_have_an_acc_btn"= "I have an Account";
+    //ResetPasswordVC
+"ResetPassVC_reset_btn" = "Reset";
+"ResetPassVC_cancel_btn"= "Cancel";
 
 // title label
-"welcome_title_lbl" = "Welcome Back!";
-"nice_to_meet_title_lbl" = "Nice to meet you!";
-"reset_title_lbl" = "Reset Password";
+    //LoginVC
+"LoginVC_welcome_title_lbl" = "Welcome Back!";
+    //RegisterVC
+"RegisterVC_nice_to_meet_title_lbl" = "Nice to meet you!";
+    //ResetPasswordVC
+"ResetPassVC_reset_title_lbl" = "Reset Password";
 
 // LineTextField title label
-"email_title_textField" = "E-mail";
-"password_title_textField" = "Password";
-"repeat_password_title_textField" = "Repeat Password";
-"reset_password_title_textField" = "Enter your email address and will share a link to create a new password";
+    //LoginVC
+"LoginVC_email_title_textField" = "E-mail";
+"LoginVC_password_title_textField" = "Password";
+    //RegisterVC
+"RegisterVC_email_title_textField" = "E-mail";
+"RegisterVC_password_title_textField" = "Password";
+"RegisterVC_repeat_password_title_textField" = "Repeat Password";
+    //ResetPasswordVC
+"ResetPassVC_reset_password_title_textField" = "Enter your email address and will share a link to create a new password";
 
 //placeholder textField
-"email_placeholder_textField" = "Enter E-mail";
-"password_placeholder_textField" = "Enter Password";
-"repeat_password_placeholder_textField" = "Enter Password";
-"reset_password_placeholder_textField" = "Enter E-mail";
+    //LoginVC
+"LoginVC_email_placeholder_textField" = "Enter E-mail";
+"LoginVC_password_placeholder_textField" = "Enter Password";
+    //RegisterVC
+"RegisterVC_email_placeholder_textField" = "Enter E-mail";
+"RegisterVC_password_placeholder_textField" = "Enter Password";
+"RegisterVC_repeat_password_placeholder_textField" = "Enter Password";
+    //ResetPasswordVC
+"ResetPassVC_reset_password_placeholder_textField" = "Enter E-mail";
 

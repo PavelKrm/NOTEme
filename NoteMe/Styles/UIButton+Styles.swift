@@ -27,7 +27,7 @@ extension UIButton {
         
         let button = UIButton()
         button.backgroundColor = .clear
-        button.setTitle("cancel_btn".localized, for: .normal)
+        button.setTitle("ResetPassVC_cancel_btn".localized, for: .normal)
         button.setBorder(width: 1.0, color: .appYellow)
         button.cornerRadius = 5.0
         button.setTitleColor(.appYellow, for: .normal)

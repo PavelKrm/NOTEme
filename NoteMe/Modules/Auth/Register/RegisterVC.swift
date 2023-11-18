@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-@objc protocol RegisterPresentorProtocol: AnyObject {
+@objc protocol RegisterPresenterProtocol: AnyObject {
     
     func registerDidTap(email: String?, pass: String?, repeat: String?)
     @objc optional func haveAnAccountDidTap()
@@ -23,46 +23,46 @@ final class RegisterVC: UIViewController {
     UIImageView(image: .General.logo)
     
     private lazy var registerButton: UIButton =
-        .yellowRoundedButton("register_btn".localized)
+        .yellowRoundedButton("RegisterVC_register_btn".localized)
         .withAction(self, #selector(registerDidTap))
     
     private lazy var haveAnAccountButton: UIButton =
-        .underlineYellowButton("have_an_acc_btn".localized)
+        .underlineYellowButton("RegisterVC_have_an_acc_btn".localized)
         .withAction(presenter,
-                    #selector(RegisterPresentorProtocol.haveAnAccountDidTap))
+                    #selector(RegisterPresenterProtocol.haveAnAccountDidTap))
     
     private lazy var titleLabel: UILabel =
-        .titleLabel("nice_to_meet_title_lbl".localized)
+        .titleLabel("RegisterVC_nice_to_meet_title_lbl".localized)
     
     private lazy var signInView: UIView = .signView()
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "email_title_textField".localized
-        textField.placeholder = "email_placeholder_textField".localized
+        textField.title = "RegisterVC_email_title_textField".localized
+        textField.placeholder = "RegisterVC_email_placeholder_textField".localized
         
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
         let textFIeld = LineTextField()
-        textFIeld.title = "password_title_textField".localized
-        textFIeld.placeholder = "password_placeholder_textField".localized
+        textFIeld.title = "RegisterVC_password_title_textField".localized
+        textFIeld.placeholder = "RegisterVC_password_placeholder_textField".localized
         
         return textFIeld
     }()
     
     private lazy var repeatPassTextField: LineTextField = {
         let textFIeld = LineTextField()
-        textFIeld.title = "repeat_password_title_textField".localized
-        textFIeld.placeholder = "repeat_password_placeholder_textField".localized
+        textFIeld.title = "RegisterVC_repeat_password_title_textField".localized
+        textFIeld.placeholder = "RegisterVC_repeat_password_placeholder_textField".localized
         
         return textFIeld
     }()
     
-    private var presenter: RegisterPresentorProtocol
+    private var presenter: RegisterPresenterProtocol
     
-    init(presenter: RegisterPresentorProtocol) {
+    init(presenter: RegisterPresenterProtocol) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -95,6 +95,7 @@ final class RegisterVC: UIViewController {
         contenView.addSubview(titleLabel)
         
         logoContainer.addSubview(logoImageView)
+        
         signInView.addSubview(emailTextField)
         signInView.addSubview(passwordTextField)
         signInView.addSubview(repeatPassTextField)
@@ -163,12 +164,13 @@ final class RegisterVC: UIViewController {
     }
 }
 
-extension RegisterVC: RegisterPresentorDelegate {
+extension RegisterVC: RegisterPresenterDelegate {
     
     func keyboardFrameChanged(_ frame: CGRect) {
 
-        let maxY = signInView.frame.maxY + 16.0
+        let maxY = signInView.frame.maxY + 36
         let keyboardY = frame.minY
+        print("maxY \(maxY), keybMinY \(keyboardY), keybMaxY \(frame.maxY)")
         if maxY > keyboardY {
             
             let diff = maxY - keyboardY

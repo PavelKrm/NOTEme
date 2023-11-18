@@ -7,6 +7,16 @@
 
 import UIKit
 
+@objc protocol LoginKeyboardHelperUseCase {
+    
+    typealias KeyboardFrameHandler = (CGRect) -> Void
+    
+    func onWillShow(_ handler: @escaping KeyboardFrameHandler) -> Self
+    func onDidShow(_ handler: @escaping KeyboardFrameHandler) -> Self
+    @objc optional func onWillHide(_ handler: @escaping KeyboardFrameHandler) -> Self
+    @objc optional func onDidhide(_ handler: @escaping KeyboardFrameHandler) -> Self
+}
+
 protocol LoginInputValidatorUseCase {
     
     func validate(email: String?) -> Bool
@@ -27,11 +37,14 @@ final class LoginVM: LoginViewModelProtocol {
     
     private let authService: LoginAuthServiceUseCase
     private let inputValidator: LoginInputValidatorUseCase
+    private let keyboardHelper: LoginKeyboardHelperUseCase
     
     init(authService: LoginAuthServiceUseCase,
-         inputValidator: LoginInputValidatorUseCase) {
+         inputValidator: LoginInputValidatorUseCase,
+         keyboardHelper: KeyboardHelper) {
         self.authService = authService
         self.inputValidator = inputValidator
+        self.keyboardHelper = keyboardHelper
     }
     
     func loginDidTap(email: String?, pass: String?) {
@@ -58,5 +71,13 @@ final class LoginVM: LoginViewModelProtocol {
         catchPassError?(isPasswordValid ? nil : "Non-valid password")
         
         return isEmailValid && isPasswordValid
+    }
+    
+    func keyboardFrameChanged(completion: @escaping (CGRect) -> Void) {
+        keyboardHelper.onWillShow {
+            completion($0)
+        }.onWillHide? { // почему тут опционал? почему оно работает? я не понимаю
+            completion($0)
+        }
     }
 }
