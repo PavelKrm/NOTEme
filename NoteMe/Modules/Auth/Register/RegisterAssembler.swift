@@ -14,8 +14,10 @@ final class RegisterAssembler {
     static func make() -> UIViewController {
         
         let presenter = RegisterPresenter(keyboardHelper: .init(),
-                                          authService: TESTSignupAuthService())
-        let vc = RegisterVC(presenter: presenter)
+                                          authService: TESTSignupAuthService(),
+                                          inputValidator: InputValidator())
+        let vc = RegisterVC(presenter: presenter,
+                            animateConstsChange: AnimateConstraintsChange())
         
         presenter.delegate = vc
         
@@ -26,7 +28,6 @@ final class RegisterAssembler {
 private class TESTSignupAuthService: SignupAuthServiceUseCase {
     func signup(email: String,
                 pass: String,
-                repeat: String,
                 completion: @escaping (Bool) -> Void) {
         completion(true)
     }

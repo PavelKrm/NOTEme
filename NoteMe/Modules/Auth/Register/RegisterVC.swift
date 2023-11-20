@@ -61,9 +61,12 @@ final class RegisterVC: UIViewController {
     }()
     
     private var presenter: RegisterPresenterProtocol
+    private var animateConstsChange: AnimateConstraintsChange
     
-    init(presenter: RegisterPresenterProtocol) {
+    init(presenter: RegisterPresenterProtocol,
+         animateConstsChange: AnimateConstraintsChange) {
         self.presenter = presenter
+        self.animateConstsChange = animateConstsChange
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -167,28 +170,10 @@ final class RegisterVC: UIViewController {
 extension RegisterVC: RegisterPresenterDelegate {
     
     func keyboardFrameChanged(_ frame: CGRect) {
-
-        let maxY = signInView.frame.maxY + 36
-        let keyboardY = frame.minY
-        print("maxY \(maxY), keybMinY \(keyboardY), keybMaxY \(frame.maxY)")
-        if maxY > keyboardY {
-            
-            let diff = maxY - keyboardY
-            UIView.animate(withDuration: 0.25) {
-                self.signInView.snp.updateConstraints { make in
-                    make.centerY.equalToSuperview().offset(-diff)
-                }
-                self.view.layoutIfNeeded()
-            }
-        } else if maxY < keyboardY {
-            
-            UIView.animate(withDuration: 0.25) {
-                self.signInView.snp.updateConstraints { make in
-                    make.centerY.equalToSuperview()
-                }
-                self.view.layoutIfNeeded()
-            }
-        }
+        
+        animateConstsChange.keyboardEffect(for: self,
+                                           target: signInView,
+                                           keyboardFrame: frame)
     }
     
     func setEmailError(error: String?) {

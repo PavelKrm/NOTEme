@@ -12,8 +12,8 @@ import UIKit
     typealias KeyboardFrameHandler = (CGRect) -> Void
     
     func onWillShow(_ handler: @escaping KeyboardFrameHandler) -> Self
-    func onDidShow(_ handler: @escaping KeyboardFrameHandler) -> Self
-    @objc optional func onWillHide(_ handler: @escaping KeyboardFrameHandler) -> Self
+    func onWillHide(_ handler: @escaping KeyboardFrameHandler) -> Self
+    @objc optional func onDidShow(_ handler: @escaping KeyboardFrameHandler) -> Self
     @objc optional func onDidhide(_ handler: @escaping KeyboardFrameHandler) -> Self
 }
 
@@ -76,7 +76,7 @@ final class LoginVM: LoginViewModelProtocol {
     func keyboardFrameChanged(completion: @escaping (CGRect) -> Void) {
         keyboardHelper.onWillShow {
             completion($0)
-        }.onWillHide? { // почему тут опционал? почему оно работает? я не понимаю
+        }.onWillHide { 
             completion($0)
         }
     }

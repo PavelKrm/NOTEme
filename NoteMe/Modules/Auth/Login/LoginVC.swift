@@ -63,9 +63,12 @@ final class LoginVC: UIViewController {
     }()
     
     private var viewModel: LoginViewModelProtocol
+    private var animateConstsChange: AnimateConstraintsChange
     
-    init(viewModel: LoginViewModelProtocol) {
+    init(viewModel: LoginViewModelProtocol,
+         animateConstsChange: AnimateConstraintsChange) {
         self.viewModel = viewModel
+        self.animateConstsChange = animateConstsChange
         super.init(nibName: nil, bundle: nil)
         bind()
     }
@@ -97,26 +100,9 @@ final class LoginVC: UIViewController {
         
         viewModel.keyboardFrameChanged { frame in
             
-            let maxY = self.signInView.frame.maxY + 36.0
-            let keyboardY = frame.minY
-            if maxY > keyboardY {
-                
-                let diff = maxY - keyboardY
-                UIView.animate(withDuration: 0.25) {
-                    self.signInView.snp.updateConstraints { make in
-                        make.centerY.equalToSuperview().offset(-diff)
-                    }
-                    self.view.layoutIfNeeded()
-                }
-            } else if maxY < keyboardY {
-                
-                UIView.animate(withDuration: 0.25) {
-                    self.signInView.snp.updateConstraints { make in
-                        make.centerY.equalToSuperview()
-                    }
-                    self.view.layoutIfNeeded()
-                }
-            }
+            self.animateConstsChange.keyboardEffect(for: self,
+                                                    target: self.signInView,
+                                               keyboardFrame: frame)
         }
     }
     
