@@ -214,11 +214,18 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		E93729E12B0CD686006860AB /* AnimateConstraintsChange */ = {
+			isa = PBXGroup;
+			children = (
+				E93729DA2B0B8912006860AB /* AnimateConstraintsChange.swift */,
+			);
+			path = AnimateConstraintsChange;
+			sourceTree = "<group>";
+		};
 		E93AD9472B03E50B00187CCC /* KeyboardHelper */ = {
 			isa = PBXGroup;
 			children = (
 				E93AD9482B03E53A00187CCC /* KeyboardHelper.swift */,
-				E93729DA2B0B8912006860AB /* AnimateConstraintsChange.swift */,
 			);
 			path = KeyboardHelper;
 			sourceTree = "<group>";
@@ -226,6 +233,7 @@
 		E93AF33E2AFEA14A003F9ACE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E93729E12B0CD686006860AB /* AnimateConstraintsChange */,
 				E93AD9472B03E50B00187CCC /* KeyboardHelper */,
 				E93AF33F2AFEA162003F9ACE /* InputValidator */,
 			);
