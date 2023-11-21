@@ -23,6 +23,8 @@
 		E92ED4172AF2D5A800FEAC39 /* String+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED4162AF2D5A800FEAC39 /* String+Locale.swift */; };
 		E92ED4192AF2DB4F00FEAC39 /* UIView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED4182AF2DB4F00FEAC39 /* UIView+Styles.swift */; };
 		E93729DB2B0B8913006860AB /* AnimateConstraintsChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93729DA2B0B8912006860AB /* AnimateConstraintsChange.swift */; };
+		E93729DD2B0CD3F2006860AB /* KeyboardHelper+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93729DC2B0CD3F2006860AB /* KeyboardHelper+Register.swift */; };
+		E93729E02B0CD562006860AB /* InputValidator+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93729DF2B0CD562006860AB /* InputValidator+Register.swift */; };
 		E93AD9442B03DB8600187CCC /* RegisterPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AD9432B03DB8600187CCC /* RegisterPresentor.swift */; };
 		E93AD9462B03E11900187CCC /* RegisterAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AD9452B03E11900187CCC /* RegisterAssembler.swift */; };
 		E93AD9492B03E53A00187CCC /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AD9482B03E53A00187CCC /* KeyboardHelper.swift */; };
@@ -60,6 +62,8 @@
 		E92ED4162AF2D5A800FEAC39 /* String+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Locale.swift"; sourceTree = "<group>"; };
 		E92ED4182AF2DB4F00FEAC39 /* UIView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Styles.swift"; sourceTree = "<group>"; };
 		E93729DA2B0B8912006860AB /* AnimateConstraintsChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateConstraintsChange.swift; sourceTree = "<group>"; };
+		E93729DC2B0CD3F2006860AB /* KeyboardHelper+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Register.swift"; sourceTree = "<group>"; };
+		E93729DF2B0CD562006860AB /* InputValidator+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Register.swift"; sourceTree = "<group>"; };
 		E93AD9432B03DB8600187CCC /* RegisterPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresentor.swift; sourceTree = "<group>"; };
 		E93AD9452B03E11900187CCC /* RegisterAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembler.swift; sourceTree = "<group>"; };
 		E93AD9482B03E53A00187CCC /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardHelper.swift; path = NoteMe/Modules/Auth/Register/KeyboardHelper.swift; sourceTree = SOURCE_ROOT; };
@@ -182,6 +186,7 @@
 		E92ED4072AF27C9B00FEAC39 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				E93729DE2B0CD407006860AB /* UseCases */,
 				E92ED4082AF27CAE00FEAC39 /* RegisterVC.swift */,
 				E93AD9432B03DB8600187CCC /* RegisterPresentor.swift */,
 				E93AD9452B03E11900187CCC /* RegisterAssembler.swift */,
@@ -198,6 +203,15 @@
 				E9CDED2D2B096EB10059B11F /* ResetPasswordAssembler.swift */,
 			);
 			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		E93729DE2B0CD407006860AB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E93729DC2B0CD3F2006860AB /* KeyboardHelper+Register.swift */,
+				E93729DF2B0CD562006860AB /* InputValidator+Register.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		E93AD9472B03E50B00187CCC /* KeyboardHelper */ = {
@@ -361,7 +375,9 @@
 				E93AF33D2AFE97F9003F9ACE /* LoginAssembler.swift in Sources */,
 				E92ED4092AF27CAE00FEAC39 /* RegisterVC.swift in Sources */,
 				E90ADAD92AE834DF00F8989A /* UIFont+Consts.swift in Sources */,
+				E93729E02B0CD562006860AB /* InputValidator+Register.swift in Sources */,
 				E93AF3392AFE942D003F9ACE /* UIButton+Actions.swift in Sources */,
+				E93729DD2B0CD3F2006860AB /* KeyboardHelper+Register.swift in Sources */,
 				E90ADAE32AE83DE000F8989A /* LoginVC.swift in Sources */,
 				E93729DB2B0B8913006860AB /* AnimateConstraintsChange.swift in Sources */,
 				E92ED4062AF2744500FEAC39 /* UILabel+Styles.swift in Sources */,

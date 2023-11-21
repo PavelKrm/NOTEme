@@ -14,6 +14,26 @@ protocol SignupAuthServiceUseCase {
                 completion: @escaping(Bool) -> Void)
 }
 
+protocol RegisterInputValidatorUseCase {
+    
+    func validate(email: String?) -> Bool
+    func validate(pass:String?) -> Bool
+}
+
+@objc protocol RegisterKeyboardHelperUseCase {
+    
+    typealias KeyboardFrameHandler = (CGRect) -> Void
+    
+    @discardableResult
+    func onWillShow(_ handler: @escaping KeyboardFrameHandler) -> Self
+    @discardableResult
+    func onWillHide(_ handler: @escaping KeyboardFrameHandler) -> Self
+    @discardableResult
+    @objc optional func onDidShow(_ handler: @escaping KeyboardFrameHandler) -> Self
+    @discardableResult
+    @objc optional func onDidhide(_ handler: @escaping KeyboardFrameHandler) -> Self
+}
+
 protocol RegisterPresenterDelegate: AnyObject {
     
     func setEmailError(error: String?)
@@ -27,12 +47,12 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     
     weak var delegate: RegisterPresenterDelegate?
     private let authService: SignupAuthServiceUseCase
-    private let keyboardHelper: KeyboardHelper
-    private let inputValidator: InputValidator
+    private let keyboardHelper: RegisterKeyboardHelperUseCase
+    private let inputValidator: RegisterInputValidatorUseCase
     
-    init(keyboardHelper: KeyboardHelper,
+    init(keyboardHelper: RegisterKeyboardHelperUseCase,
          authService: SignupAuthServiceUseCase,
-         inputValidator: InputValidator) {
+         inputValidator: RegisterInputValidatorUseCase) {
         self.keyboardHelper = keyboardHelper
         self.authService = authService
         self.inputValidator = inputValidator
