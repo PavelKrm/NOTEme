@@ -25,6 +25,10 @@
 		E93729DB2B0B8913006860AB /* AnimateConstraintsChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93729DA2B0B8912006860AB /* AnimateConstraintsChange.swift */; };
 		E93729DD2B0CD3F2006860AB /* KeyboardHelper+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93729DC2B0CD3F2006860AB /* KeyboardHelper+Register.swift */; };
 		E93729E02B0CD562006860AB /* InputValidator+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93729DF2B0CD562006860AB /* InputValidator+Register.swift */; };
+		E93729E32B0D1245006860AB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93729E22B0D1245006860AB /* AppCoordinator.swift */; };
+		E93729E62B0D129D006860AB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93729E52B0D129D006860AB /* Coordinator.swift */; };
+		E93729E92B0D1B72006860AB /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93729E82B0D1B72006860AB /* LoginCoordinator.swift */; };
+		E93729EC2B0D24C0006860AB /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93729EB2B0D24C0006860AB /* RegisterCoordinator.swift */; };
 		E93AD9442B03DB8600187CCC /* RegisterPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AD9432B03DB8600187CCC /* RegisterPresentor.swift */; };
 		E93AD9462B03E11900187CCC /* RegisterAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AD9452B03E11900187CCC /* RegisterAssembler.swift */; };
 		E93AD9492B03E53A00187CCC /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AD9482B03E53A00187CCC /* KeyboardHelper.swift */; };
@@ -64,6 +68,10 @@
 		E93729DA2B0B8912006860AB /* AnimateConstraintsChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateConstraintsChange.swift; sourceTree = "<group>"; };
 		E93729DC2B0CD3F2006860AB /* KeyboardHelper+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Register.swift"; sourceTree = "<group>"; };
 		E93729DF2B0CD562006860AB /* InputValidator+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Register.swift"; sourceTree = "<group>"; };
+		E93729E22B0D1245006860AB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E93729E52B0D129D006860AB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E93729E82B0D1B72006860AB /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		E93729EB2B0D24C0006860AB /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		E93AD9432B03DB8600187CCC /* RegisterPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresentor.swift; sourceTree = "<group>"; };
 		E93AD9452B03E11900187CCC /* RegisterAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembler.swift; sourceTree = "<group>"; };
 		E93AD9482B03E53A00187CCC /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardHelper.swift; path = NoteMe/Modules/Auth/Register/KeyboardHelper.swift; sourceTree = SOURCE_ROOT; };
@@ -126,9 +134,10 @@
 		E90ADAD32AE82D0700F8989A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E93729E22B0D1245006860AB /* AppCoordinator.swift */,
 				E90ADABF2AE824CA00F8989A /* AppDelegate.swift */,
-				E90ADAC12AE824CA00F8989A /* SceneDelegate.swift */,
 				E90ADACD2AE824CB00F8989A /* Info.plist */,
+				E90ADAC12AE824CA00F8989A /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -175,10 +184,10 @@
 		E90ADAE12AE83DD300F8989A /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E93729E72B0D1B5B006860AB /* Coordinator */,
 				E93AF3422AFEA7BE003F9ACE /* UseCases */,
 				E90ADAE22AE83DE000F8989A /* LoginVC.swift */,
 				E93AF33A2AFE977F003F9ACE /* LoginVM.swift */,
-				E93AF33C2AFE97F9003F9ACE /* LoginAssembler.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -186,10 +195,10 @@
 		E92ED4072AF27C9B00FEAC39 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				E93729EA2B0D24AC006860AB /* Coordinator */,
 				E93729DE2B0CD407006860AB /* UseCases */,
 				E92ED4082AF27CAE00FEAC39 /* RegisterVC.swift */,
 				E93AD9432B03DB8600187CCC /* RegisterPresentor.swift */,
-				E93AD9452B03E11900187CCC /* RegisterAssembler.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -222,6 +231,32 @@
 			path = AnimateConstraintsChange;
 			sourceTree = "<group>";
 		};
+		E93729E42B0D128F006860AB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E93729E52B0D129D006860AB /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E93729E72B0D1B5B006860AB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E93AF33C2AFE97F9003F9ACE /* LoginAssembler.swift */,
+				E93729E82B0D1B72006860AB /* LoginCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E93729EA2B0D24AC006860AB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E93AD9452B03E11900187CCC /* RegisterAssembler.swift */,
+				E93729EB2B0D24C0006860AB /* RegisterCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		E93AD9472B03E50B00187CCC /* KeyboardHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +268,7 @@
 		E93AF33E2AFEA14A003F9ACE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E93729E42B0D128F006860AB /* Coordinator */,
 				E93729E12B0CD686006860AB /* AnimateConstraintsChange */,
 				E93AD9472B03E50B00187CCC /* KeyboardHelper */,
 				E93AF33F2AFEA162003F9ACE /* InputValidator */,
@@ -373,6 +409,7 @@
 			files = (
 				E90ADADB2AE8382800F8989A /* UIImage+Consts.swift in Sources */,
 				E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */,
+				E93729EC2B0D24C0006860AB /* RegisterCoordinator.swift in Sources */,
 				E93AF3442AFEA818003F9ACE /* InputValidator+Login.swift in Sources */,
 				E9CDED2E2B096EB10059B11F /* ResetPasswordAssembler.swift in Sources */,
 				E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */,
@@ -383,7 +420,9 @@
 				E93AF33D2AFE97F9003F9ACE /* LoginAssembler.swift in Sources */,
 				E92ED4092AF27CAE00FEAC39 /* RegisterVC.swift in Sources */,
 				E90ADAD92AE834DF00F8989A /* UIFont+Consts.swift in Sources */,
+				E93729E32B0D1245006860AB /* AppCoordinator.swift in Sources */,
 				E93729E02B0CD562006860AB /* InputValidator+Register.swift in Sources */,
+				E93729E92B0D1B72006860AB /* LoginCoordinator.swift in Sources */,
 				E93AF3392AFE942D003F9ACE /* UIButton+Actions.swift in Sources */,
 				E93729DD2B0CD3F2006860AB /* KeyboardHelper+Register.swift in Sources */,
 				E90ADAE32AE83DE000F8989A /* LoginVC.swift in Sources */,
@@ -394,6 +433,7 @@
 				E93AD9492B03E53A00187CCC /* KeyboardHelper.swift in Sources */,
 				E93AD9442B03DB8600187CCC /* RegisterPresentor.swift in Sources */,
 				E9CDED2A2B096E540059B11F /* KeyboardHelper+Login.swift in Sources */,
+				E93729E62B0D129D006860AB /* Coordinator.swift in Sources */,
 				E92ED4192AF2DB4F00FEAC39 /* UIView+Styles.swift in Sources */,
 				E9CDED272B096AB30059B11F /* ResetPasswordVM.swift in Sources */,
 				E90ADAD72AE82E7000F8989A /* UIColor+Consts.swift in Sources */,

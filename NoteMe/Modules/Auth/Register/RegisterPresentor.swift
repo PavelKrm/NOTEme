@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol RegisterCoordinatorProtocol: AnyObject {
+    
+    func finish()
+}
+
 protocol SignupAuthServiceUseCase {
     
     func signup(email: String,
@@ -46,16 +51,21 @@ protocol RegisterPresenterDelegate: AnyObject {
 final class RegisterPresenter: RegisterPresenterProtocol {
     
     weak var delegate: RegisterPresenterDelegate?
+    
+    private weak var coordinator: RegisterCoordinatorProtocol?
+    
     private let authService: SignupAuthServiceUseCase
     private let keyboardHelper: RegisterKeyboardHelperUseCase
     private let inputValidator: RegisterInputValidatorUseCase
     
-    init(keyboardHelper: RegisterKeyboardHelperUseCase,
+    init(coordinator: RegisterCoordinatorProtocol,
+         keyboardHelper: RegisterKeyboardHelperUseCase,
          authService: SignupAuthServiceUseCase,
          inputValidator: RegisterInputValidatorUseCase) {
         self.keyboardHelper = keyboardHelper
         self.authService = authService
         self.inputValidator = inputValidator
+        self.coordinator = coordinator
         
         bind()
     }
@@ -67,7 +77,6 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         }.onWillHide { [weak self] in
             self?.delegate?.keyboardFrameChanged($0)
         }
-        
     }
     
     func registerDidTap(email: String?, pass: String?, repeat: String?) {
@@ -76,12 +85,15 @@ final class RegisterPresenter: RegisterPresenterProtocol {
             checkValidation(email: email, pass: pass, repeat: `repeat`),
             let email, let pass else { return }
         
-        authService.signup(email: email,
-                           pass: pass,
-                           completion: { print("sigup \($0)")})
+        authService.signup(email: email, pass: pass) { [weak coordinator]
+            isSuccess in
+            print(isSuccess)
+            coordinator?.finish()
+        }
     }
     
     func haveAnAccountDidTap() {
+        coordinator?.finish()
     }
     
     private func checkValidation(email: String?,
