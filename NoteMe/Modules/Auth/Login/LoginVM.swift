@@ -11,9 +11,13 @@ import UIKit
     
     typealias KeyboardFrameHandler = (CGRect) -> Void
     
+    @discardableResult
     func onWillShow(_ handler: @escaping KeyboardFrameHandler) -> Self
+    @discardableResult
     func onWillHide(_ handler: @escaping KeyboardFrameHandler) -> Self
+    @discardableResult
     @objc optional func onDidShow(_ handler: @escaping KeyboardFrameHandler) -> Self
+    @discardableResult
     @objc optional func onDidhide(_ handler: @escaping KeyboardFrameHandler) -> Self
 }
 
