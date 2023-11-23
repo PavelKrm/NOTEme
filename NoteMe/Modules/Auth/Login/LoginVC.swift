@@ -12,11 +12,12 @@ import SnapKit
     
     var catchEmailError: ((String?) -> Void)? { get set }
     var catchPassError: ((String?) -> Void)? { get set }
+    var keyboardFrameChanged: ((CGRect) -> Void)? { get set }
     
     func loginDidTap(email: String?, pass: String?)
     @objc func newAccountDidTap()
     func forgotPassDidTap(email: String?)
-    func keyboardFrameChanged(completion: @escaping (CGRect) -> Void)
+//    func keyboardFrameChanged(completion: @escaping (CGRect) -> Void)
 }
 
 final class LoginVC: UIViewController {
@@ -98,8 +99,7 @@ final class LoginVC: UIViewController {
             self.passwordTextField.errorText = $0
         }
         
-        viewModel.keyboardFrameChanged { frame in
-            
+        viewModel.keyboardFrameChanged = { frame in
             self.animateConstsChange.keyboardEffect(for: self,
                                                     target: self.signInView,
                                                keyboardFrame: frame)

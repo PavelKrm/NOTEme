@@ -45,6 +45,7 @@ final class LoginVM: LoginViewModelProtocol {
     
     var catchEmailError: ((String?) -> Void)?
     var catchPassError: ((String?) -> Void)?
+    var keyboardFrameChanged: ((CGRect) -> Void)?
     
     private weak var coordinator: LoginCoordinatorProtocol?
     
@@ -60,6 +61,8 @@ final class LoginVM: LoginViewModelProtocol {
         self.inputValidator = inputValidator
         self.keyboardHelper = keyboardHelper
         self.coordinator = coordinator
+        
+        bind()
     }
     
     func loginDidTap(email: String?, pass: String?) {
@@ -96,11 +99,11 @@ final class LoginVM: LoginViewModelProtocol {
         return isEmailValid && isPasswordValid
     }
     
-    func keyboardFrameChanged(completion: @escaping (CGRect) -> Void) {
-        keyboardHelper.onWillShow {
-            completion($0)
-        }.onWillHide { 
-            completion($0)
+    func bind() {
+        keyboardHelper.onWillShow { [weak self] in
+            self?.keyboardFrameChanged?($0)
+        }.onWillHide { [weak self] in
+            self?.keyboardFrameChanged?($0)
         }
     }
 }
