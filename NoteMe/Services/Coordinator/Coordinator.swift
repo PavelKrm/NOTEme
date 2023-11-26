@@ -22,10 +22,6 @@ class Coordinator {
         fatalError("Should be overriden")
     }
     
-    func removeChild(_ child: Coordinator) {
-        
-        children.removeAll { child == $0 }
-    }
 }
 
 extension Coordinator: Equatable {

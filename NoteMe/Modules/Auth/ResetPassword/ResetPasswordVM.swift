@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ResetPasswordCoordinatorProtocol: AnyObject {
+    
+    func finish()
+}
+
 protocol ResetPasswordInputValidatorUseCase {
     
     func validate(email: String?) -> Bool
@@ -19,20 +24,28 @@ protocol ResetPasswordAuthServiceUseCase {
 
 final class ResetPasswordVM: ResetPasswordViewModelProtocol {
     
-    
+    var catchAlert: (() -> Void)?
     var catchEmailError: ((String?) -> Void)?
     
+    private weak var coordinator: ResetPasswordCoordinatorProtocol?
     private var inputValidator: ResetPasswordInputValidatorUseCase
     private var authService: ResetPasswordAuthServiceUseCase
     
-    init(inputValidator: ResetPasswordInputValidatorUseCase,
+    init(coordinator: ResetPasswordCoordinatorProtocol,
+         inputValidator: ResetPasswordInputValidatorUseCase,
          authService: ResetPasswordAuthServiceUseCase) {
+        self.coordinator = coordinator
         self.inputValidator = inputValidator
         self.authService = authService
     }
     
+    func finish() {
+        coordinator?.finish()
+    }
+    
     func cancelDidTap() {
         print(#function)
+        coordinator?.finish()
     }
     
     func resetPassDidTap(email: String?) {
@@ -40,7 +53,11 @@ final class ResetPasswordVM: ResetPasswordViewModelProtocol {
         guard
             checkValidation(email: email),
             let email else { return }
-        authService.resetPassword(email: email, completion: { print($0) })
+        authService.resetPassword(email: email) {
+            print($0)
+            $0 ? self.catchAlert?() : print(false)
+            
+        }
     }
     
     private func checkValidation(email: String?) -> Bool {
@@ -50,4 +67,6 @@ final class ResetPasswordVM: ResetPasswordViewModelProtocol {
         
         return isEmailValid
     }
+    
+    
 }

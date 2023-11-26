@@ -48,3 +48,11 @@
     //ResetPasswordVC
 "ResetPassVC_reset_password_placeholder_textField" = "Введите E-mail";
 
+// Alert
+    //ResetPasswordVC
+"ResetPassVC_OkAlert_title" = "Готово";
+"ResetPassVC_OkAlert_message" = "Новый пароль был отправлен на почту";
+
+//ButtonAlert
+    //ResetPasswordVC
+"ResetPasswordVC_OkButtonAlert_title" = "Ok";

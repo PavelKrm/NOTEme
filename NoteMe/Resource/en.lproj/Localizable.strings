@@ -48,3 +48,11 @@
     //ResetPasswordVC
 "ResetPassVC_reset_password_placeholder_textField" = "Enter E-mail";
 
+// Alert
+    //ResetPasswordVC
+"ResetPassVC_OkAlert_title" = "Successed";
+"ResetPassVC_OkAlert_message" = "A new password has been sent to your email";
+
+//ButtonAlert
+    //ResetPasswordVC
+"ResetPasswordVC_OkButtonAlert_title" = "Ok";

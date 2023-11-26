@@ -11,9 +11,10 @@ final class ResetPasswordAssembler {
     
     private init() {}
     
-    static func make() -> UIViewController {
+    static func make(coordinator: ResetPasswordCoordinatorProtocol) -> UIViewController {
         
-        let vm = ResetPasswordVM(inputValidator: InputValidator(),
+        let vm = ResetPasswordVM(coordinator: coordinator,
+                                 inputValidator: InputValidator(),
                                  authService: TESTResetAuthService())
         
         return ResetPasswordVC(viewModel: vm)

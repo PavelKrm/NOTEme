@@ -17,7 +17,6 @@ import SnapKit
     func loginDidTap(email: String?, pass: String?)
     @objc func newAccountDidTap()
     func forgotPassDidTap(email: String?)
-//    func keyboardFrameChanged(completion: @escaping (CGRect) -> Void)
 }
 
 final class LoginVC: UIViewController {

@@ -16,6 +16,7 @@
 		E90ADADB2AE8382800F8989A /* UIImage+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADADA2AE8382800F8989A /* UIImage+Consts.swift */; };
 		E90ADADE2AE83B1A00F8989A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E90ADADD2AE83B1A00F8989A /* SnapKit */; };
 		E90ADAE32AE83DE000F8989A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADAE22AE83DE000F8989A /* LoginVC.swift */; };
+		E92EB2372B13B89E00C70A35 /* ResetPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB2362B13B89E00C70A35 /* ResetPasswordCoordinator.swift */; };
 		E92ED4062AF2744500FEAC39 /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED4052AF2744500FEAC39 /* UILabel+Styles.swift */; };
 		E92ED4092AF27CAE00FEAC39 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED4082AF27CAE00FEAC39 /* RegisterVC.swift */; };
 		E92ED40E2AF2835100FEAC39 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED40D2AF2835100FEAC39 /* ResetPasswordVC.swift */; };
@@ -57,6 +58,7 @@
 		E90ADAD82AE834DF00F8989A /* UIFont+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Consts.swift"; sourceTree = "<group>"; };
 		E90ADADA2AE8382800F8989A /* UIImage+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Consts.swift"; sourceTree = "<group>"; };
 		E90ADAE22AE83DE000F8989A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E92EB2362B13B89E00C70A35 /* ResetPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordCoordinator.swift; sourceTree = "<group>"; };
 		E92ED4052AF2744500FEAC39 /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
 		E92ED4082AF27CAE00FEAC39 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		E92ED40D2AF2835100FEAC39 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
@@ -174,9 +176,9 @@
 		E90ADAE02AE83DC700F8989A /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				E92ED40C2AF2833000FEAC39 /* ResetPassword */,
-				E92ED4072AF27C9B00FEAC39 /* Register */,
 				E90ADAE12AE83DD300F8989A /* Login */,
+				E92ED4072AF27C9B00FEAC39 /* Register */,
+				E92ED40C2AF2833000FEAC39 /* ResetPassword */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -190,6 +192,15 @@
 				E93AF33A2AFE977F003F9ACE /* LoginVM.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E92EB2352B13B87400C70A35 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E9CDED2D2B096EB10059B11F /* ResetPasswordAssembler.swift */,
+				E92EB2362B13B89E00C70A35 /* ResetPasswordCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		E92ED4072AF27C9B00FEAC39 /* Register */ = {
@@ -206,10 +217,10 @@
 		E92ED40C2AF2833000FEAC39 /* ResetPassword */ = {
 			isa = PBXGroup;
 			children = (
+				E92EB2352B13B87400C70A35 /* Coordinator */,
 				E9CDED282B096E2E0059B11F /* UseCases */,
 				E92ED40D2AF2835100FEAC39 /* ResetPasswordVC.swift */,
 				E9CDED262B096AB30059B11F /* ResetPasswordVM.swift */,
-				E9CDED2D2B096EB10059B11F /* ResetPasswordAssembler.swift */,
 			);
 			path = ResetPassword;
 			sourceTree = "<group>";
@@ -430,6 +441,7 @@
 				E92ED4062AF2744500FEAC39 /* UILabel+Styles.swift in Sources */,
 				E90ADAC02AE824CA00F8989A /* AppDelegate.swift in Sources */,
 				E93AF3412AFEA1B9003F9ACE /* InputValidator.swift in Sources */,
+				E92EB2372B13B89E00C70A35 /* ResetPasswordCoordinator.swift in Sources */,
 				E93AD9492B03E53A00187CCC /* KeyboardHelper.swift in Sources */,
 				E93AD9442B03DB8600187CCC /* RegisterPresentor.swift in Sources */,
 				E9CDED2A2B096E540059B11F /* KeyboardHelper+Login.swift in Sources */,

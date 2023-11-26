@@ -66,6 +66,16 @@ final class LineTextField: UIView {
         set { textField.delegate = newValue}
     }
     
+    var keyboardType: UIKeyboardType {
+        get {textField.keyboardType}
+        set {textField.keyboardType = newValue}
+    }
+    
+    var returnKeyType: UIReturnKeyType {
+        get {textField.returnKeyType}
+        set {textField.returnKeyType = newValue}
+    }
+    
     init() {
         super.init(frame: .zero)
         commonInit()
