@@ -18,8 +18,7 @@ class Coordinator {
     }
     
     func finish() {
-        
-        fatalError("Should be overriden")
+        onDidFinish?(self)
     }
     
 }

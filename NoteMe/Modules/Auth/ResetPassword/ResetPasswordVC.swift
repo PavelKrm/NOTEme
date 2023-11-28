@@ -11,7 +11,7 @@ import SnapKit
 @objc protocol ResetPasswordViewModelProtocol: AnyObject {
     
     var catchEmailError: ((String?) -> Void)? { get set }
-    var catchAlert: (() -> Void)? { get set }
+    var showAlert: (() -> Void)? { get set }
     @objc func cancelDidTap()
     func resetPassDidTap(email: String?)
     func finish()
@@ -58,7 +58,7 @@ final class ResetPasswordVC: UIViewController {
     private lazy var okButtonAlert: UIAlertAction = {
        let button = UIAlertAction(
         title: "ResetPasswordVC_OkButtonAlert_title".localized,
-        style: .default) { _ in 
+        style: .default) { _ in
             self.viewModel.finish()
         }
         
@@ -106,7 +106,7 @@ final class ResetPasswordVC: UIViewController {
             self.emailTextField.errorText = errorText
         }
         
-        viewModel.catchAlert = { [self] in
+        viewModel.showAlert = { [self] in
             self.present(alert, animated: true) {
                 
             }

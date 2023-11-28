@@ -16,7 +16,15 @@ final class AppCoordinator: Coordinator {
     }
     
     func startApp() {
-        openAuth()
+        
+        if ParametersHelper.get(.authenticated) {
+            //FIXME: - TEST CODE
+//            ParametersHelper.set(.authenticated, value: false)
+            //open onboarding or mainApp
+            openOnboardingVodule()
+        } else {
+            openAuth()
+        }
     }
 
     
@@ -26,11 +34,26 @@ final class AppCoordinator: Coordinator {
         children.append(coordinator)
         coordinator.onDidFinish = { [weak self] coordinator in
             self?.children.removeAll { $0 == coordinator }
-            self?.window.rootViewController = nil
+            self?.startApp()
         }
         
         let vc = coordinator.start()
 
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+    }
+    
+    private func openOnboardingVodule() {
+        
+        let coordinator = OnboardFirstStepCoordinator()
+        children.append(coordinator)
+        
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll() { coordinator == $0 }
+            self?.startApp()
+        }
+        
+        let vc = coordinator.start()
         window.rootViewController = vc
         window.makeKeyAndVisible()
     }
