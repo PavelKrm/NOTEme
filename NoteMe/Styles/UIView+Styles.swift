@@ -23,6 +23,11 @@ extension UIView {
         view.cornerRadius = 5.0
         view.backgroundColor = .white
         
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
+        view.layer.shadowRadius = 4.0
+        view.layer.shadowColor = UIColor.appShadow.cgColor
+        
         return view
     }
 }

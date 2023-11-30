@@ -17,6 +17,7 @@ final class OnboardSecondStepCoordinator: Coordinator {
 }
 
 extension OnboardSecondStepCoordinator: OnboardSecondStepCoordinatorProtocol {
+    
     func dismissedByUser() {
         onDismissedByUser?(self)
     }

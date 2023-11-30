@@ -13,5 +13,11 @@ extension UIImage {
     enum General {
         
         static let logo: UIImage = .init(named: "logo")!
+        static let onboardPlusIcon: UIImage = .init(named: "onboardPlusIcon")!
+        static let onboardInfoImage: UIImage = .init(named: "onboardImage")!
+        static let homeIcon: UIImage = .init(named: "homeIcon")!
+        static let profileIcon: UIImage = .init(named: "profileIcon")!
+        static let selectedProfileIcon: UIImage = .init(named: "selectedProfileIcon")!
+        static let selectedHomeIcon: UIImage = .init(named: "selectedHomeIcon")!
     }
 }

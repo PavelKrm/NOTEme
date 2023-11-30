@@ -17,6 +17,10 @@
     //ResetPasswordVC
 "ResetPassVC_reset_btn" = "Сбросить";
 "ResetPassVC_cancel_btn"= "Отмена";
+    //OnboardFirstStepVC
+"OnboardFirstStepVC_nextButton_title" = "Дальше";
+    //OnboardSecondStepVC
+"OnboardSecondStepVC_doneBtn_title" = "Закончить";
 
 // title label
     //LoginVC
@@ -25,6 +29,22 @@
 "RegisterVC_nice_to_meet_title_lbl" = "Давай знакомиться!";
     //ResetPasswordVC
 "ResetPassVC_reset_title_lbl" = "Сброс пароля";
+    //OnboardFirstStepVC
+"OnboardFirstStepVC_titleLabel_title" = "Добро пожаловать!";
+    //OnboardSecondStepVC
+"OnboardSecondStepVC_titleLabel_title"= "Разные типы уведомлений!";
+
+//Text label
+    //OnboardFirstStepVC
+"OnboardFirstStepVC_textLabel_title" = "NoteMe - это приложение, которое оповещает вас обо всем!";
+    //OnboardSecondStepVC
+"OnboardSecondStepVC_calendarItemLabel_title" = "Календарь";
+"OnboardSecondStepVC_locationItemLabel_title" = "Локация";
+"OnboardSecondStepVC_timerItemLabel_title" = "Таймер";
+"OnboardSecondStepVC_infoTextLabel_attrTitle" = "Вы можете использовать 3 типа уведомлений\r
+• Календарь - выберите дату, когда вы хотите получить уведомление.\r
+• Локация - выберите локацию и уведомление придет когда вы там окажетесь.\r
+• Таймер - установите таймер и, после его окончания, вы получите уведомление.";
 
 // LineTextField title label
     //LoginVC

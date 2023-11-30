@@ -17,6 +17,10 @@
     //ResetPasswordVC
 "ResetPassVC_reset_btn" = "Reset";
 "ResetPassVC_cancel_btn"= "Cancel";
+    //OnboardFirstStepVC
+"OnboardFirstStepVC_nextButton_title" = "Next";
+//OnboardSecondStepVC
+"OnboardSecondStepVC_doneBtn_title" = "Done";
 
 // title label
     //LoginVC
@@ -25,6 +29,23 @@
 "RegisterVC_nice_to_meet_title_lbl" = "Nice to meet you!";
     //ResetPasswordVC
 "ResetPassVC_reset_title_lbl" = "Reset Password";
+    //OnboardFirstStepVC
+"OnboardFirstStepVC_titleLabel_title" = "Welcome!";
+"OnboardFirstStepVC_textLabel_title" = "NoteMe is an application, which notify you about everything!";
+    //OnboardSecondStepVC
+"OnboardSecondStepVC_titleLabel_title"= "Different types!";
+
+//Text label
+    //OnboardFirstStepVC
+"OnboardFirstStepVC_textLabel_title" = "NoteMe is an application, which notify you about everything!";
+    //OnboardSecondStepVC
+"OnboardSecondStepVC_calendarItemLabel_title" = "Calendar";
+"OnboardSecondStepVC_locationItemLabel_title" = "Location";
+"OnboardSecondStepVC_timerItemLabel_title" = "Timer";
+"OnboardSecondStepVC_infoTextLabel_attrTitle" = "You can use 3 types of notifications\r
+• Calendar - choose the date, when you want to receive notification.\r
+• Location - choose the region and notification will come after you enter it.\r
+• Timer - set timer and after selected period you will receive the notification.";
 
 // LineTextField title label
     //LoginVC
@@ -56,3 +77,4 @@
 //ButtonAlert
     //ResetPasswordVC
 "ResetPasswordVC_OkButtonAlert_title" = "Ok";
+

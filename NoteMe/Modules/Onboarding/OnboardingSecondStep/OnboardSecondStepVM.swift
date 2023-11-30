@@ -22,6 +22,7 @@ final class OnboardSecondStepVM: OnboardSecondStepViewModelProtocol {
     }
     
     func finish() {
+        ParametersHelper.set(.onboarded, value: true)
         coordinator?.finish()
     }
     

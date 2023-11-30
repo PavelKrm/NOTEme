@@ -17,11 +17,14 @@ final class AppCoordinator: Coordinator {
     
     func startApp() {
         
-        if ParametersHelper.get(.authenticated) {
-            //FIXME: - TEST CODE
+        let authenticated = ParametersHelper.get(.authenticated)
+        let onboarded = ParametersHelper.get(.onboarded)
+        
+        if authenticated {
+//FIXME: - TEST CODE
 //            ParametersHelper.set(.authenticated, value: false)
-            //open onboarding or mainApp
-            openOnboardingVodule()
+//            ParametersHelper.set(.onboarded, value: false)
+            onboarded ? openMainApp() : openOnboardingModule()
         } else {
             openAuth()
         }
@@ -43,7 +46,7 @@ final class AppCoordinator: Coordinator {
         window.makeKeyAndVisible()
     }
     
-    private func openOnboardingVodule() {
+    private func openOnboardingModule() {
         
         let coordinator = OnboardFirstStepCoordinator()
         children.append(coordinator)
@@ -54,6 +57,13 @@ final class AppCoordinator: Coordinator {
         }
         
         let vc = coordinator.start()
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+    }
+    
+    private func openMainApp() {
+        
+        let vc = TabBarAssembler.make()
         window.rootViewController = vc
         window.makeKeyAndVisible()
     }
