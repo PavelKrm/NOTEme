@@ -11,7 +11,7 @@ import SnapKit
 @objc protocol ResetPasswordViewModelProtocol: AnyObject {
     
     var catchEmailError: ((String?) -> Void)? { get set }
-    var showAlert: (() -> Void)? { get set }
+    var showAlert: ((Bool) -> Void)? { get set }
     @objc func cancelDidTap()
     func resetPassDidTap(email: String?)
     func finish()
@@ -55,26 +55,6 @@ final class ResetPasswordVC: UIViewController {
         return textField
     }()
     
-    private lazy var okButtonAlert: UIAlertAction = {
-       let button = UIAlertAction(
-        title: "ResetPasswordVC_OkButtonAlert_title".localized,
-        style: .default) { _ in
-            self.viewModel.finish()
-        }
-        
-        return button
-    }()
-    
-    private lazy var alert: UIAlertController = {
-        let alert = UIAlertController(
-            title: "ResetPassVC_OkAlert_title".localized,
-            message: "ResetPassVC_OkAlert_message".localized,
-            preferredStyle: .alert)
-        alert.addAction(okButtonAlert)
-
-        return alert
-    }()
-    
     private var viewModel: ResetPasswordViewModelProtocol
     
     init(viewModel: ResetPasswordViewModelProtocol) {
@@ -106,11 +86,24 @@ final class ResetPasswordVC: UIViewController {
             self.emailTextField.errorText = errorText
         }
         
-        viewModel.showAlert = { [self] in
-            self.present(alert, animated: true) {
-                
-            }
+        viewModel.showAlert = { isValid in
+            self.createAlert(isValid)
         }
+    }
+    
+    private func createAlert(_ isValid: Bool) {
+        let alert = UIAlertController(
+            title: isValid ? "ResetPassVC_OkAlert_title".localized : "ResetPassVC_ErrAlert_title".localized,
+            message: isValid ? "ResetPassVC_OkAlert_message".localized : "ResetPassVC_ErrAlert_message".localized,
+            preferredStyle: .alert)
+            
+        alert.addAction(.init(title: "ResetPasswordVC_OkButtonAlert_title".localized,
+                                  style: .default,
+                                  handler: { _ in
+                isValid ? self.viewModel.finish() : alert.dismiss(animated: true)
+            }))
+        
+        self.present(alert, animated: true)
     }
     
     private func setupUI() {

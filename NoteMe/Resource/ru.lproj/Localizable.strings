@@ -72,6 +72,8 @@
     //ResetPasswordVC
 "ResetPassVC_OkAlert_title" = "Готово";
 "ResetPassVC_OkAlert_message" = "Новый пароль был отправлен на почту";
+"ResetPassVC_ErrAlert_title" = "Ошибка";
+"ResetPassVC_ErrAlert_message" = "Такой адрес не зарегистрирован";
 
 //ButtonAlert
     //ResetPasswordVC

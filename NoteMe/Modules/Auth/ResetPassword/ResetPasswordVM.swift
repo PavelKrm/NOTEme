@@ -24,7 +24,7 @@ protocol ResetPasswordAuthServiceUseCase {
 
 final class ResetPasswordVM: ResetPasswordViewModelProtocol {
     
-    var showAlert: (() -> Void)?
+    var showAlert: ((Bool) -> Void)?
     var catchEmailError: ((String?) -> Void)?
     
     private weak var coordinator: ResetPasswordCoordinatorProtocol?
@@ -55,8 +55,7 @@ final class ResetPasswordVM: ResetPasswordViewModelProtocol {
             let email else { return }
         authService.resetPassword(email: email) {
             print($0)
-            $0 ? self.showAlert?() : print(false)
-            
+            self.showAlert?($0)
         }
     }
     
@@ -67,6 +66,4 @@ final class ResetPasswordVM: ResetPasswordViewModelProtocol {
         
         return isEmailValid
     }
-    
-    
 }

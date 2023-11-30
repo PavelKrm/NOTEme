@@ -73,6 +73,8 @@
     //ResetPasswordVC
 "ResetPassVC_OkAlert_title" = "Successed";
 "ResetPassVC_OkAlert_message" = "A new password has been sent to your email";
+"ResetPassVC_ErrAlert_title" = "Error";
+"ResetPassVC_ErrAlert_message" = "This address is not registered";
 
 //ButtonAlert
     //ResetPasswordVC

@@ -23,6 +23,10 @@ final class ResetPasswordAssembler {
 
 private class TESTResetAuthService: ResetPasswordAuthServiceUseCase {
     func resetPassword(email: String, completion: @escaping(Bool) -> Void) {
-        completion(true)
+        if email == "Gg@gg.c".lowercased() {
+            completion(true)
+        } else {
+            completion(false)
+        }
     }
 }

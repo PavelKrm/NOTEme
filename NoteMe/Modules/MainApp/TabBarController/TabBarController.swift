@@ -31,16 +31,16 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewWillAppear(animated)
         
         let HomeVC = HomeAssembler.make()
-        let tabOneBarItem = UITabBarItem(title: "Home",
+        let homeVCBarItem = UITabBarItem(title: "Home",
                                          image: .General.homeIcon,
                                          selectedImage: .General.selectedHomeIcon)
-        HomeVC.tabBarItem = tabOneBarItem
+        HomeVC.tabBarItem = homeVCBarItem
         
         let ProfileVC = ProfileAssembler.make()
-        let tabTwoBarItem2 = UITabBarItem(title: "Profile",
-                                          image: .General.profileIcon,
-                                          selectedImage: .General.selectedProfileIcon)
-        ProfileVC.tabBarItem = tabTwoBarItem2
+        let profileVCBarItem = UITabBarItem(title: "Profile",
+                                            image: .General.profileIcon,
+                                            selectedImage: .General.selectedProfileIcon)
+        ProfileVC.tabBarItem = profileVCBarItem
         
         self.viewControllers = [HomeVC, ProfileVC]
     }
