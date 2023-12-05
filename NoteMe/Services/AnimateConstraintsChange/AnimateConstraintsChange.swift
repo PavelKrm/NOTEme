@@ -11,7 +11,7 @@ import SnapKit
 final class AnimateConstraintsChange {
     
     func keyboardEffect(for vc: UIViewController,
-                            target: UIView,
+                        target: UIView,
                         keyboardFrame: CGRect,
                         with padding: CGFloat = 16) {
         

@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol LoginCoordinatorProtocol: AnyObject {
     
     func finish()
     func openRegisterModule()
     func openResetPasswordModule()
+    func showAlert(_ alert: UIAlertController)
 }
 
 @objc protocol LoginKeyboardHelperUseCase {
@@ -36,9 +38,9 @@ protocol LoginInputValidatorUseCase {
 
 protocol LoginAuthServiceUseCase {
     
-    func login(email: String,
-               pass: String,
-               completion: @escaping(Bool) -> Void)
+    func signIn(email: String,
+                pass: String,
+                completion: @escaping(Result<User, Error>) -> Void)
 }
 
 final class LoginVM: LoginViewModelProtocol {
@@ -71,12 +73,21 @@ final class LoginVM: LoginViewModelProtocol {
             checkValidation(email: email, pass: pass),
             let email, let pass
         else { return }
-        authService.login(email: email, pass: pass) { [weak coordinator]
-            isSuccess in
-            print(isSuccess)
-            if isSuccess {
-                ParametersHelper.set(.authenticated, value: true)
+        
+        authService.signIn(email: email, pass: pass) { [weak coordinator] result in
+            switch result {
+            case .success(let user):
+                print(user.uid)
+                //FIXME: - uncomment
+//                ParametersHelper.set(.authenticated, value: true)
                 coordinator?.finish()
+                
+            case .failure(let error):
+                print(error)
+                let alertVC = AlertBuilder.build(title: "error",
+                                                 message: error.localizedDescription,
+                                                 okTitle: "Ok")
+                coordinator?.showAlert(alertVC)
             }
         }
     }
