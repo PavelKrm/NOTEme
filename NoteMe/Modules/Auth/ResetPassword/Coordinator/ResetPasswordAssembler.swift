@@ -15,18 +15,8 @@ final class ResetPasswordAssembler {
         
         let vm = ResetPasswordVM(coordinator: coordinator,
                                  inputValidator: InputValidator(),
-                                 authService: TESTResetAuthService())
+                                 authService: AuthService())
         
         return ResetPasswordVC(viewModel: vm)
-    }
-}
-
-private class TESTResetAuthService: ResetPasswordAuthServiceUseCase {
-    func resetPassword(email: String, completion: @escaping(Bool) -> Void) {
-        if email == "Gg@gg.c".lowercased() {
-            completion(true)
-        } else {
-            completion(false)
-        }
     }
 }

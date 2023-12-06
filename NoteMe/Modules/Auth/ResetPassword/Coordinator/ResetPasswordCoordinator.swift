@@ -9,8 +9,12 @@ import UIKit
 
 final class ResetPasswordCoordinator: Coordinator {
     
+    private var rootVC: UIViewController?
+    
     override func start() -> UIViewController {
-        return ResetPasswordAssembler.make(coordinator: self)
+        let vc = ResetPasswordAssembler.make(coordinator: self)
+        rootVC = vc
+        return vc
     }
     
     override func finish() {
@@ -18,4 +22,9 @@ final class ResetPasswordCoordinator: Coordinator {
     }
 }
 
-extension ResetPasswordCoordinator: ResetPasswordCoordinatorProtocol {}
+extension ResetPasswordCoordinator: ResetPasswordCoordinatorProtocol {
+    
+    func showAlert(_ alert: UIAlertController) {
+        rootVC?.present(alert, animated: true)
+    }
+}

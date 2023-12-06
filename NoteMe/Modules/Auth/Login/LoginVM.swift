@@ -33,7 +33,6 @@ protocol LoginCoordinatorProtocol: AnyObject {
 protocol LoginInputValidatorUseCase {
     
     func validate(email: String?) -> Bool
-    func validate(pass:String?) -> Bool
 }
 
 protocol LoginAuthServiceUseCase {
@@ -46,7 +45,6 @@ protocol LoginAuthServiceUseCase {
 final class LoginVM: LoginViewModelProtocol {
     
     var catchEmailError: ((String?) -> Void)?
-    var catchPassError: ((String?) -> Void)?
     var keyboardFrameChanged: ((CGRect) -> Void)?
     
     private weak var coordinator: LoginCoordinatorProtocol?
@@ -83,8 +81,7 @@ final class LoginVM: LoginViewModelProtocol {
                 coordinator?.finish()
                 
             case .failure(let error):
-                print(error)
-                let alertVC = AlertBuilder.build(title: "error",
+                let alertVC = AlertBuilder.build(title: "Error",
                                                  message: error.localizedDescription,
                                                  okTitle: "Ok")
                 coordinator?.showAlert(alertVC)
@@ -105,12 +102,9 @@ final class LoginVM: LoginViewModelProtocol {
     private func checkValidation(email: String?, pass: String?) -> Bool {
         
         let isEmailValid = inputValidator.validate(email: email)
-        let isPasswordValid = inputValidator.validate(pass: pass)
-        
         catchEmailError?(isEmailValid ? nil : "Wrong e-mail")
-        catchPassError?(isPasswordValid ? nil : "Non-valid password")
         
-        return isEmailValid && isPasswordValid
+        return isEmailValid
     }
     
     func bind() {

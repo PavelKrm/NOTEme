@@ -10,6 +10,7 @@ import UIKit
 protocol ResetPasswordCoordinatorProtocol: AnyObject {
     
     func finish()
+    func showAlert(_ alert: UIAlertController)
 }
 
 protocol ResetPasswordInputValidatorUseCase {
@@ -24,7 +25,6 @@ protocol ResetPasswordAuthServiceUseCase {
 
 final class ResetPasswordVM: ResetPasswordViewModelProtocol {
     
-    var showAlert: ((Bool) -> Void)?
     var catchEmailError: ((String?) -> Void)?
     
     private weak var coordinator: ResetPasswordCoordinatorProtocol?
@@ -53,9 +53,22 @@ final class ResetPasswordVM: ResetPasswordViewModelProtocol {
         guard
             checkValidation(email: email),
             let email else { return }
-        authService.resetPassword(email: email) {
-            print($0)
-            self.showAlert?($0)
+        authService.resetPassword(email: email) { [weak coordinator] isSucces in
+            if isSucces {
+                let alert = AlertBuilder.build(
+                    title: "ResetPassVC_OkAlert_title".localized,
+                    message: "ResetPassVC_OkAlert_message".localized,
+                    okTitle: "ResetPasswordVC_OkButtonAlert_title".localized) {
+                        coordinator?.finish()
+                    }
+                coordinator?.showAlert(alert)
+            } else {
+                let alert = AlertBuilder.build(
+                    title: "ResetPassVC_ErrAlert_title".localized,
+                    message: "ResetPassVC_ErrAlert_message".localized,
+                    okTitle: "ResetPasswordVC_OkButtonAlert_title".localized)
+                coordinator?.showAlert(alert)
+            }
         }
     }
     

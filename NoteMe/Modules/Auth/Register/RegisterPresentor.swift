@@ -6,17 +6,19 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol RegisterCoordinatorProtocol: AnyObject {
     
     func finish()
+    func showAlert(_ alert: UIAlertController)
 }
 
-protocol SignupAuthServiceUseCase {
+protocol RegisterAuthServiceUseCase {
     
-    func signup(email: String,
+    func signUp(email: String,
                 pass: String,
-                completion: @escaping(Bool) -> Void)
+                completion: @escaping(Result<User, Error>) -> Void)
 }
 
 protocol RegisterInputValidatorUseCase {
@@ -54,13 +56,13 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     
     private weak var coordinator: RegisterCoordinatorProtocol?
     
-    private let authService: SignupAuthServiceUseCase
+    private let authService: RegisterAuthServiceUseCase
     private let keyboardHelper: RegisterKeyboardHelperUseCase
     private let inputValidator: RegisterInputValidatorUseCase
     
     init(coordinator: RegisterCoordinatorProtocol,
          keyboardHelper: RegisterKeyboardHelperUseCase,
-         authService: SignupAuthServiceUseCase,
+         authService: RegisterAuthServiceUseCase,
          inputValidator: RegisterInputValidatorUseCase) {
         self.keyboardHelper = keyboardHelper
         self.authService = authService
@@ -84,11 +86,20 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         guard
             checkValidation(email: email, pass: pass, repeat: `repeat`),
             let email, let pass else { return }
-        
-        authService.signup(email: email, pass: pass) { [weak coordinator]
-            isSuccess in
-            print(isSuccess)
-            coordinator?.finish()
+        authService.signUp(email: email, pass: pass) { [weak coordinator]
+            result in
+            switch result {
+            case .success(let user):
+                print(user.uid)
+                coordinator?.finish()
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+                let alert = AlertBuilder.build(title: "Error",
+                                               message: error.localizedDescription,
+                                               okTitle: "Ok")
+                coordinator?.showAlert(alert)
+            }
         }
     }
     

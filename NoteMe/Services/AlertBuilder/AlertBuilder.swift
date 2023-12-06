@@ -35,6 +35,6 @@ final class AlertBuilder {
             alertVC.addAction(action)
         }
         
-        return alertVC 
+        return alertVC
     }
 }

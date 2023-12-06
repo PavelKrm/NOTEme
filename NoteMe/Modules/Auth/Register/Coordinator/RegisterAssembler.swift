@@ -15,7 +15,7 @@ final class RegisterAssembler {
         
         let presenter = RegisterPresenter(coordinator: coordinator,
                                           keyboardHelper: KeyboardHelper(),
-                                          authService: TESTSignupAuthService(),
+                                          authService: AuthService(),
                                           inputValidator: InputValidator())
         let vc = RegisterVC(presenter: presenter,
                             animateConstsChange: AnimateConstraintsChange())
@@ -23,13 +23,5 @@ final class RegisterAssembler {
         presenter.delegate = vc
         
         return vc
-    }
-}
-
-private class TESTSignupAuthService: SignupAuthServiceUseCase {
-    func signup(email: String,
-                pass: String,
-                completion: @escaping (Bool) -> Void) {
-        completion(true)
     }
 }
