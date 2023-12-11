@@ -42,10 +42,10 @@
 "OnboardSecondStepVC_calendarItemLabel_title" = "Calendar";
 "OnboardSecondStepVC_locationItemLabel_title" = "Location";
 "OnboardSecondStepVC_timerItemLabel_title" = "Timer";
-"OnboardSecondStepVC_infoTextLabel_attrTitle" = "You can use 3 types of notifications\r
-• Calendar - choose the date, when you want to receive notification.\r
-• Location - choose the region and notification will come after you enter it.\r
-• Timer - set timer and after selected period you will receive the notification.";
+"OnboardSecondStepVC_infoTextLabel_htmlTitle" = "You can use 3 types of notifications<br>
+<t style =\"margin-left: 8px;\"><b>• Calendar</b> - choose the date, when you want to receive notification.<br>
+<b>• Location</b> - choose the region and notification will come after you enter it.<br>
+<b>• Timer</b> - set timer and after selected period you will receive the notification.";
 
 // LineTextField title label
     //LoginVC

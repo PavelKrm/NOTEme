@@ -41,10 +41,10 @@
 "OnboardSecondStepVC_calendarItemLabel_title" = "Календарь";
 "OnboardSecondStepVC_locationItemLabel_title" = "Локация";
 "OnboardSecondStepVC_timerItemLabel_title" = "Таймер";
-"OnboardSecondStepVC_infoTextLabel_attrTitle" = "Вы можете использовать 3 типа уведомлений\r
-• Календарь - выберите дату, когда вы хотите получить уведомление.\r
-• Локация - выберите локацию и уведомление придет когда вы там окажетесь.\r
-• Таймер - установите таймер и, после его окончания, вы получите уведомление.";
+"OnboardSecondStepVC_infoTextLabel_htmlTitle" = "Вы можете использовать 3 типа уведомлений<br>
+<t style =\"margin-left: 8px;\"><b>• Календарь</b> - выберите дату, когда вы хотите  получить уведомление.<br>
+<b>• Локация</b> - выберите локацию и уведомление  придет когда вы там окажетесь.<br>
+<b>• Таймер</b> - установите таймер и, после его  окончания, вы получите уведомление.";
 
 // LineTextField title label
     //LoginVC

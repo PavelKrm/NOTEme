@@ -26,7 +26,6 @@
 		E92EB24D2B165C1800C70A35 /* OnboardSecondStepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB24C2B165C1800C70A35 /* OnboardSecondStepVM.swift */; };
 		E92EB24F2B165CAB00C70A35 /* OnboardSecondStepAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB24E2B165CAB00C70A35 /* OnboardSecondStepAssembler.swift */; };
 		E92EB2512B165D5200C70A35 /* OnboardSecondStepCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB2502B165D5200C70A35 /* OnboardSecondStepCoordinator.swift */; };
-		E92EB2532B173D6600C70A35 /* UITextView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB2522B173D6600C70A35 /* UITextView+Styles.swift */; };
 		E92EB25B2B17D02F00C70A35 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB25A2B17D02F00C70A35 /* HomeVC.swift */; };
 		E92EB25D2B17D03C00C70A35 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB25C2B17D03C00C70A35 /* HomeVM.swift */; };
 		E92EB25F2B17D21E00C70A35 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB25E2B17D21E00C70A35 /* HomeCoordinator.swift */; };
@@ -59,6 +58,7 @@
 		E92EB2C12B1FA95700C70A35 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = E92EB2C02B1FA95700C70A35 /* FirebaseCrashlytics */; };
 		E92EB2E72B20970900C70A35 /* AuthService+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB2E62B20970900C70A35 /* AuthService+Register.swift */; };
 		E92EB2E92B20A26300C70A35 /* AythService+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB2E82B20A26300C70A35 /* AythService+ResetPassword.swift */; };
+		E92EB3312B27781300C70A35 /* NSAttributedString+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB3302B27781300C70A35 /* NSAttributedString+Style.swift */; };
 		E92ED4062AF2744500FEAC39 /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED4052AF2744500FEAC39 /* UILabel+Styles.swift */; };
 		E92ED4092AF27CAE00FEAC39 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED4082AF27CAE00FEAC39 /* RegisterVC.swift */; };
 		E92ED40E2AF2835100FEAC39 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED40D2AF2835100FEAC39 /* ResetPasswordVC.swift */; };
@@ -110,7 +110,6 @@
 		E92EB24C2B165C1800C70A35 /* OnboardSecondStepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepVM.swift; sourceTree = "<group>"; };
 		E92EB24E2B165CAB00C70A35 /* OnboardSecondStepAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepAssembler.swift; sourceTree = "<group>"; };
 		E92EB2502B165D5200C70A35 /* OnboardSecondStepCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepCoordinator.swift; sourceTree = "<group>"; };
-		E92EB2522B173D6600C70A35 /* UITextView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Styles.swift"; sourceTree = "<group>"; };
 		E92EB25A2B17D02F00C70A35 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E92EB25C2B17D03C00C70A35 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		E92EB25E2B17D21E00C70A35 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
@@ -127,6 +126,7 @@
 		E92EB2AE2B1F98EC00C70A35 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		E92EB2E62B20970900C70A35 /* AuthService+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Register.swift"; sourceTree = "<group>"; };
 		E92EB2E82B20A26300C70A35 /* AythService+ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AythService+ResetPassword.swift"; sourceTree = "<group>"; };
+		E92EB3302B27781300C70A35 /* NSAttributedString+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Style.swift"; sourceTree = "<group>"; };
 		E92ED4052AF2744500FEAC39 /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
 		E92ED4082AF27CAE00FEAC39 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		E92ED40D2AF2835100FEAC39 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
@@ -540,7 +540,7 @@
 				E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */,
 				E92ED4052AF2744500FEAC39 /* UILabel+Styles.swift */,
 				E92ED4182AF2DB4F00FEAC39 /* UIView+Styles.swift */,
-				E92EB2522B173D6600C70A35 /* UITextView+Styles.swift */,
+				E92EB3302B27781300C70A35 /* NSAttributedString+Style.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -698,7 +698,6 @@
 				E93AD9492B03E53A00187CCC /* KeyboardHelper.swift in Sources */,
 				E92EB26C2B18A7EB00C70A35 /* ProfileVM.swift in Sources */,
 				E93AD9442B03DB8600187CCC /* RegisterPresentor.swift in Sources */,
-				E92EB2532B173D6600C70A35 /* UITextView+Styles.swift in Sources */,
 				E9CDED2A2B096E540059B11F /* KeyboardHelper+Login.swift in Sources */,
 				E92EB2682B18A3D200C70A35 /* TabBarAssembler.swift in Sources */,
 				E93729E62B0D129D006860AB /* Coordinator.swift in Sources */,
@@ -713,6 +712,7 @@
 				E92EB2472B1657D500C70A35 /* OnboardFirstStepCoordinator.swift in Sources */,
 				E92EB24D2B165C1800C70A35 /* OnboardSecondStepVM.swift in Sources */,
 				E92EB26E2B18A83900C70A35 /* ProfileAssembler.swift in Sources */,
+				E92EB3312B27781300C70A35 /* NSAttributedString+Style.swift in Sources */,
 				E92ED40E2AF2835100FEAC39 /* ResetPasswordVC.swift in Sources */,
 				E9CDED2C2B096E7D0059B11F /* InputValidator+ResetPassword.swift in Sources */,
 				E92EB2AC2B1F98D000C70A35 /* AuthSevice+Login.swift in Sources */,

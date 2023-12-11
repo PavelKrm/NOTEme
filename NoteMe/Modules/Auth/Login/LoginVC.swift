@@ -96,7 +96,7 @@ final class LoginVC: UIViewController {
         viewModel.keyboardFrameChanged = { frame in
             self.animateConstsChange.keyboardEffect(for: self,
                                                     target: self.signInView,
-                                               keyboardFrame: frame)
+                                                    keyboardFrame: frame)
         }
     }
     

@@ -44,7 +44,13 @@ final class OnboardSecondStepVC: UIViewController {
         .infoLabel("OnboardSecondStepVC_timerItemLabel_title".localized,
                    with: 16.0)
     
-    private lazy var infoTextLabel: UILabel = .attrTextLabel("OnboardSecondStepVC_infoTextLabel_attrTitle".localized)
+    private lazy var infoTextLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = .zero
+        label.attributedText = .parse(html: "OnboardSecondStepVC_infoTextLabel_htmlTitle".localized,
+                                      font: .appFont.withSize(13.0))
+        return label
+    }()
     
     private lazy var doneButton: UIButton =
         .yellowRoundedButton("OnboardSecondStepVC_doneBtn_title".localized)

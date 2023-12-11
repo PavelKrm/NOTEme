@@ -72,12 +72,13 @@ final class LoginVM: LoginViewModelProtocol {
             let email, let pass
         else { return }
         
-        authService.signIn(email: email, pass: pass) { [weak coordinator] result in
+        authService.signIn(email: email, pass: pass) { [weak coordinator]
+            result in
             switch result {
             case .success(let user):
                 print(user.uid)
                 //FIXME: - uncomment
-//                ParametersHelper.set(.authenticated, value: true)
+                ParametersHelper.set(.authenticated, value: true)
                 coordinator?.finish()
                 
             case .failure(let error):
