@@ -23,7 +23,7 @@ final class OnboardSecondStepVC: UIViewController {
         UIImageView(image: .General.logo)
     
     private lazy var titleLabel: UILabel =
-        .titleLabel("OnboardSecondStepVC_titleLabel_title".localized)
+        .titleLabel(L10n.titleLbl)
     
     private lazy var infoView: UIView = .signView()
     
@@ -35,25 +35,22 @@ final class OnboardSecondStepVC: UIViewController {
         UIImageView(image: .General.onboardInfoImage)
     
     private lazy var calendarItemLabel: UILabel =
-        .infoLabel("OnboardSecondStepVC_calendarItemLabel_title".localized,
-                   with: 16.0)
+        .infoLabel(L10n.calendarItemLbl, with: 16.0)
     private lazy var locationItemLabel: UILabel =
-        .infoLabel("OnboardSecondStepVC_locationItemLabel_title".localized,
-                   with: 16.0)
+        .infoLabel(L10n.locationItemLbl,  with: 16.0)
     private lazy var timerItemLabel: UILabel =
-        .infoLabel("OnboardSecondStepVC_timerItemLabel_title".localized,
-                   with: 16.0)
+        .infoLabel(L10n.timerItemLbl,  with: 16.0)
     
     private lazy var infoTextLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = .zero
-        label.attributedText = .parse(html: "OnboardSecondStepVC_infoTextLabel_htmlTitle".localized,
+        label.attributedText = .parse(html: L10n.infoTextLbl,
                                       font: .appFont.withSize(13.0))
         return label
     }()
     
     private lazy var doneButton: UIButton =
-        .yellowRoundedButton("OnboardSecondStepVC_doneBtn_title".localized)
+        .yellowRoundedButton(L10n.doneBtn)
         .withAction(viewModel, #selector(OnboardSecondStepViewModelProtocol.finish))
     
     private var viewModel: OnboardSecondStepViewModelProtocol
@@ -176,5 +173,18 @@ final class OnboardSecondStepVC: UIViewController {
             make.left.equalTo(infoImageView.snp.left).inset(32.0)
             make.height.equalTo(24.0)
         }
+    }
+}
+
+//MARK: - L10n
+
+extension OnboardSecondStepVC {
+    private enum L10n {
+        static var titleLbl = "OnboardSecondStepVC_titleLabel_title".localized
+        static var calendarItemLbl = "OnboardSecondStepVC_calendarItemLabel_title".localized
+        static var locationItemLbl = "OnboardSecondStepVC_locationItemLabel_title".localized
+        static var timerItemLbl = "OnboardSecondStepVC_timerItemLabel_title".localized
+        static var infoTextLbl = "OnboardSecondStepVC_infoTextLabel_htmlTitle".localized
+        static var doneBtn = "OnboardSecondStepVC_doneBtn_title".localized
     }
 }

@@ -11,13 +11,9 @@ final class HomeCoordinator: Coordinator {
     
     private var rootNC: UINavigationController?
     
-//    override func start() -> UIViewController {
-//        
-//        let vc = HomeAssembler.make(coordinator: self)
-//        let nc = UINavigationController(rootViewController: vc)
-//        self.rootNC = nc
-//        return nc
-//    }
+    override func start() -> UIViewController {
+        return HomeAssembler.make()
+    }
 }
 
 extension HomeCoordinator: HomeViewModelCoordinatorProtocol {}

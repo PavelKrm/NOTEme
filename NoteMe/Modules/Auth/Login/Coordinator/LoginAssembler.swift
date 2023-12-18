@@ -16,7 +16,8 @@ final class LoginAssembler {
         let vm = LoginVM(coordinator: coodinator,
                          authService: AuthService(),
                          inputValidator: InputValidator(),
-                         keyboardHelper: KeyboardHelper())
+                         keyboardHelper: KeyboardHelper(),
+                         alertService: AlertService.current)
         return LoginVC(viewModel: vm,
                        animateConstsChange: AnimateConstraintsChange())
     }

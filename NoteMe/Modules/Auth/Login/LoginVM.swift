@@ -13,7 +13,6 @@ protocol LoginCoordinatorProtocol: AnyObject {
     func finish()
     func openRegisterModule()
     func openResetPasswordModule()
-    func showAlert(_ alert: UIAlertController)
 }
 
 @objc protocol LoginKeyboardHelperUseCase {
@@ -28,6 +27,11 @@ protocol LoginCoordinatorProtocol: AnyObject {
     @objc optional func onDidShow(_ handler: @escaping KeyboardFrameHandler) -> Self
     @discardableResult
     @objc optional func onDidhide(_ handler: @escaping KeyboardFrameHandler) -> Self
+}
+
+protocol LoginAlertServiceUseCase {
+    
+    func showAlert(title: String, message: String, okTitle: String)
 }
 
 protocol LoginInputValidatorUseCase {
@@ -52,15 +56,19 @@ final class LoginVM: LoginViewModelProtocol {
     private let authService: LoginAuthServiceUseCase
     private let inputValidator: LoginInputValidatorUseCase
     private let keyboardHelper: LoginKeyboardHelperUseCase
+    private let alertService: LoginAlertServiceUseCase
     
     init(coordinator: LoginCoordinatorProtocol,
          authService: LoginAuthServiceUseCase,
          inputValidator: LoginInputValidatorUseCase,
-         keyboardHelper: KeyboardHelper) {
+         keyboardHelper: KeyboardHelper,
+         alertService: LoginAlertServiceUseCase) {
+        
         self.authService = authService
         self.inputValidator = inputValidator
         self.keyboardHelper = keyboardHelper
         self.coordinator = coordinator
+        self.alertService = alertService
         
         bind()
     }
@@ -72,20 +80,20 @@ final class LoginVM: LoginViewModelProtocol {
             let email, let pass
         else { return }
         
-        authService.signIn(email: email, pass: pass) { [weak coordinator]
+        authService.signIn(email: email, pass: pass) { [weak self]
             result in
             switch result {
             case .success(let user):
                 print(user.uid)
                 //FIXME: - uncomment
                 ParametersHelper.set(.authenticated, value: true)
-                coordinator?.finish()
+                self?.coordinator?.finish()
                 
             case .failure(let error):
-                let alertVC = AlertBuilder.build(title: "Error",
-                                                 message: error.localizedDescription,
-                                                 okTitle: "Ok")
-                coordinator?.showAlert(alertVC)
+                
+                self?.alertService.showAlert(title: "Error",
+                                               message: error.localizedDescription,
+                                               okTitle: "ok")
             }
         }
     }

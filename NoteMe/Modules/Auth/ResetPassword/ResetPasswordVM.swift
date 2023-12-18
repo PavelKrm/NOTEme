@@ -10,7 +10,6 @@ import UIKit
 protocol ResetPasswordCoordinatorProtocol: AnyObject {
     
     func finish()
-    func showAlert(_ alert: UIAlertController)
 }
 
 protocol ResetPasswordInputValidatorUseCase {
@@ -55,19 +54,16 @@ final class ResetPasswordVM: ResetPasswordViewModelProtocol {
             let email else { return }
         authService.resetPassword(email: email) { [weak coordinator] isSucces in
             if isSucces {
-                let alert = AlertBuilder.build(
-                    title: "ResetPassVC_OkAlert_title".localized,
-                    message: "ResetPassVC_OkAlert_message".localized,
-                    okTitle: "ResetPasswordVC_OkButtonAlert_title".localized) {
-                        coordinator?.finish()
-                    }
-                coordinator?.showAlert(alert)
+                AlertService.current.showAlert(title: L10n.okAlertTitle,
+                                               message: L10n.okAlertMessage,
+                                               okTitle: L10n.okBtnAlertTitle,
+                                               okHandler:  {
+                    coordinator?.finish()
+                })
             } else {
-                let alert = AlertBuilder.build(
-                    title: "ResetPassVC_ErrAlert_title".localized,
-                    message: "ResetPassVC_ErrAlert_message".localized,
-                    okTitle: "ResetPasswordVC_OkButtonAlert_title".localized)
-                coordinator?.showAlert(alert)
+                AlertService.current.showAlert(title: L10n.errorAlertTitle,
+                                               message: L10n.errorAlertMessage,
+                                               okTitle: L10n.okBtnAlertTitle)
             }
         }
     }
@@ -78,5 +74,18 @@ final class ResetPasswordVM: ResetPasswordViewModelProtocol {
         catchEmailError?(isEmailValid ? nil : "Wrong e-mail")
         
         return isEmailValid
+    }
+}
+
+//MARK: - L10n
+
+extension ResetPasswordVM {
+    
+    private enum L10n {
+        static var okAlertTitle = "ResetPassVC_OkAlert_title".localized
+        static var okAlertMessage = "ResetPassVC_OkAlert_message".localized
+        static var okBtnAlertTitle = "ResetPasswordVC_OkButtonAlert_title".localized
+        static var errorAlertTitle = "ResetPassVC_ErrAlert_title".localized
+        static var errorAlertMessage = "ResetPassVC_ErrAlert_message".localized
     }
 }

@@ -23,39 +23,39 @@ final class RegisterVC: UIViewController {
     UIImageView(image: .General.logo)
     
     private lazy var registerButton: UIButton =
-        .yellowRoundedButton("RegisterVC_register_btn".localized)
+        .yellowRoundedButton(L10n.registerBtn)
         .withAction(self, #selector(registerDidTap))
     
     private lazy var haveAnAccountButton: UIButton =
-        .underlineYellowButton("RegisterVC_have_an_acc_btn".localized)
+        .underlineYellowButton(L10n.haveAnAccBtn)
         .withAction(presenter,
                     #selector(RegisterPresenterProtocol.haveAnAccountDidTap))
     
     private lazy var titleLabel: UILabel =
-        .titleLabel("RegisterVC_nice_to_meet_title_lbl".localized)
+        .titleLabel(L10n.niceToMeetTitleLbl)
     
     private lazy var signInView: UIView = .signView()
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "RegisterVC_email_title_textField".localized
-        textField.placeholder = "RegisterVC_email_placeholder_textField".localized
+        textField.title = L10n.emailTitleTextField
+        textField.placeholder = L10n.emailPHolderTextField
         
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
         let textFIeld = LineTextField()
-        textFIeld.title = "RegisterVC_password_title_textField".localized
-        textFIeld.placeholder = "RegisterVC_password_placeholder_textField".localized
+        textFIeld.title = L10n.passTitleTextField
+        textFIeld.placeholder = L10n.passPlaceholderTextField
         
         return textFIeld
     }()
     
     private lazy var repeatPassTextField: LineTextField = {
         let textFIeld = LineTextField()
-        textFIeld.title = "RegisterVC_repeat_password_title_textField".localized
-        textFIeld.placeholder = "RegisterVC_repeat_password_placeholder_textField".localized
+        textFIeld.title = L10n.repeatPassTitleTextField
+        textFIeld.placeholder = L10n.repeatPassPHolderTextField
         
         return textFIeld
     }()
@@ -167,6 +167,8 @@ final class RegisterVC: UIViewController {
     }
 }
 
+//MARK: - Delegate
+
 extension RegisterVC: RegisterPresenterDelegate {
     
     func keyboardFrameChanged(_ frame: CGRect) {
@@ -186,5 +188,21 @@ extension RegisterVC: RegisterPresenterDelegate {
     
     func setRepeatPasswordError(error: String?) {
         repeatPassTextField.errorText = error
+    }
+}
+
+//MARK: - L10n
+extension RegisterVC {
+    
+    private enum L10n {
+        static var registerBtn = "RegisterVC_register_btn".localized
+        static var haveAnAccBtn = "RegisterVC_have_an_acc_btn".localized
+        static var niceToMeetTitleLbl = "RegisterVC_nice_to_meet_title_lbl".localized
+        static var emailTitleTextField = "RegisterVC_email_title_textField".localized
+        static var emailPHolderTextField = "RegisterVC_email_placeholder_textField".localized
+        static var passTitleTextField = "RegisterVC_password_title_textField".localized
+        static var passPlaceholderTextField = "RegisterVC_password_placeholder_textField".localized
+        static var repeatPassTitleTextField = "RegisterVC_repeat_password_title_textField".localized
+        static var repeatPassPHolderTextField = "RegisterVC_repeat_password_placeholder_textField".localized
     }
 }

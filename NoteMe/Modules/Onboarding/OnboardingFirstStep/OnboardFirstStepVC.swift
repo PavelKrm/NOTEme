@@ -23,16 +23,16 @@ final class OnboardFirstStepVC: UIViewController {
         UIImageView(image: .General.logo)
     
     private lazy var titleLabel: UILabel =
-        .titleLabel("OnboardFirstStepVC_titleLabel_title".localized)
+        .titleLabel(L10n.titleLbl)
     
     private lazy var infoView: UIView = .signView()
     
     private lazy var textLabel: UILabel =
-        .infoLabel("OnboardFirstStepVC_textLabel_title".localized,
+        .infoLabel(L10n.textLblTitle,
                    with: 13.0)
     
     private lazy var nextButton: UIButton =
-        .yellowRoundedButton("OnboardFirstStepVC_nextButton_title".localized)
+        .yellowRoundedButton(L10n.nextBtn)
         .withAction(viewModel, #selector(OnboardFirstStepViewModelProtocol.nextDidTap))
     
     private var viewModel: OnboardFirstStepViewModelProtocol
@@ -108,5 +108,15 @@ final class OnboardFirstStepVC: UIViewController {
         textLabel.snp.makeConstraints { make in
             make.top.bottom.horizontalEdges.equalToSuperview().inset(16.0)
         }
+    }
+}
+
+//MARK: - L10n
+
+extension OnboardFirstStepVC {
+    private enum L10n {
+        static var titleLbl = "OnboardFirstStepVC_titleLabel_title".localized
+        static var textLblTitle = "OnboardFirstStepVC_textLabel_title".localized
+        static var nextBtn = "OnboardFirstStepVC_nextButton_title".localized
     }
 }

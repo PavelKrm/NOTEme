@@ -17,6 +17,8 @@ final class ProfileVC: UIViewController {
     init(viewModel: ProfileViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        
+        setupTabBarItem()
     }
     
     required init?(coder: NSCoder) {
@@ -31,6 +33,21 @@ final class ProfileVC: UIViewController {
     
     private func setupUI() {
         
-        view.backgroundColor = .appBlack
+        view.backgroundColor = .appGray
+    }
+    
+    private func setupTabBarItem() {
+        
+        self.tabBarItem = UITabBarItem(title: L10n.tabBarItemTitle,
+                                      image: .General.profileIcon,
+                                      tag: .zero)
+    }
+}
+
+//MARK: - L10n
+
+extension ProfileVC {
+    private enum L10n {
+        static let tabBarItemTitle = "ProfileVC_tabBarItem_Title".localized
     }
 }

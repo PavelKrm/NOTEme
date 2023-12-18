@@ -9,10 +9,13 @@ import UIKit
 
 final class AppCoordinator: Coordinator {
     
+    static var windowScene: UIWindowScene?
+    
     private var window: UIWindow
     
     init(scene: UIWindowScene) {
         self.window = UIWindow(windowScene: scene)
+        Self.windowScene = scene
     }
     
     func startApp() {
@@ -63,7 +66,15 @@ final class AppCoordinator: Coordinator {
     
     private func openMainApp() {
         
-        let vc = TabBarAssembler.make()
+        let coordinator = MainTabBarCoordinator()
+        children.append(coordinator)
+        
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll { $0 == coordinator }
+            self?.startApp()
+        }
+        
+        let vc = coordinator.start()
         window.rootViewController = vc
         window.makeKeyAndVisible()
     }

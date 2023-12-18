@@ -8,9 +8,7 @@
 import UIKit
 import SnapKit
 
-protocol HomeViewModelProtocol {
-    
-}
+protocol HomeViewModelProtocol {}
 
 final class HomeVC: UIViewController {
     
@@ -19,6 +17,8 @@ final class HomeVC: UIViewController {
     init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        
+        setupTabBarItem()
     }
     
     required init?(coder: NSCoder) {
@@ -34,5 +34,20 @@ final class HomeVC: UIViewController {
     private func setupUI() {
         
         view.backgroundColor = .appYellow
+    }
+    
+    private func setupTabBarItem() {
+        
+        self.tabBarItem = UITabBarItem(title: L10n.tabBarItemTitle,
+                                      image: .General.homeIcon,
+                                      tag: .zero)
+    }
+}
+
+//MARK: - L10n
+
+extension HomeVC {
+    private enum L10n {
+        static let tabBarItemTitle = "HomeVC_tabBarItem_Title".localized
     }
 }

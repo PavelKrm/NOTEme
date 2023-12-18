@@ -22,9 +22,4 @@ final class ResetPasswordCoordinator: Coordinator {
     }
 }
 
-extension ResetPasswordCoordinator: ResetPasswordCoordinatorProtocol {
-    
-    func showAlert(_ alert: UIAlertController) {
-        rootVC?.present(alert, animated: true)
-    }
-}
+extension ResetPasswordCoordinator: ResetPasswordCoordinatorProtocol {}

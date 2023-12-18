@@ -7,17 +7,6 @@
 
 import UIKit
 
-protocol HomeViewModelCoordinatorProtocol: AnyObject {
-    
-    func finish()
-}
+protocol HomeViewModelCoordinatorProtocol: AnyObject {}
 
-final class HomeVM: HomeViewModelProtocol {
-    
-//    private weak var coordinator: HomeViewModelCoordinatorProtocol?
-//    
-//    init(coordinator: HomeViewModelCoordinatorProtocol? = nil) {
-//        self.coordinator = coordinator
-//    }
-    
-}
+final class HomeVM: HomeViewModelProtocol {}

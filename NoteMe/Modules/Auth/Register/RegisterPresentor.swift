@@ -94,11 +94,9 @@ final class RegisterPresenter: RegisterPresenterProtocol {
                 coordinator?.finish()
                 
             case .failure(let error):
-                print(error.localizedDescription)
-                let alert = AlertBuilder.build(title: "Error",
+                AlertService.current.showAlert(title: L10n.errorAlertTitle,
                                                message: error.localizedDescription,
-                                               okTitle: "Ok")
-                coordinator?.showAlert(alert)
+                                               okTitle: L10n.okBtnAlertTitle)
             }
         }
     }
@@ -115,10 +113,24 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         let isPasswordValid = inputValidator.validate(pass: pass)
         let isRepeatPassValid = (pass == `repeat` ? true : false)
         
-        self.delegate?.setEmailError(error: isEmailValid ? nil : "Wrong e-mail")
-        self.delegate?.setPasswordError(error: isPasswordValid ? nil : "Non-valid password")
-        self.delegate?.setRepeatPasswordError(error: isRepeatPassValid ? nil : "Non-valid repeat")
+        self.delegate?.setEmailError(
+            error: isEmailValid ? nil : "Wrong e-mail")
+        self.delegate?.setPasswordError(
+            error: isPasswordValid ? nil : "Non-valid password")
+        self.delegate?.setRepeatPasswordError(
+            error: isRepeatPassValid ? nil : "Non-valid repeat")
         
         return isEmailValid && isPasswordValid && isRepeatPassValid
+    }
+}
+
+// MARK: - L10n
+
+extension RegisterPresenter {
+    
+    private enum L10n {
+        
+        static var errorAlertTitle = "RegisterPresenter_ErrorAlert_title".localized
+        static var okBtnAlertTitle = "RegisterPresenter_okButtonAlert_tatile".localized
     }
 }

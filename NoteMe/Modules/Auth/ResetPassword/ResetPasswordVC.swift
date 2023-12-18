@@ -26,7 +26,7 @@ final class ResetPasswordVC: UIViewController {
     UIImageView(image: .General.logo)
     
     private lazy var resetButton: UIButton =
-        .yellowRoundedButton("ResetPassVC_reset_btn".localized)
+        .yellowRoundedButton(L10n.resetBtn)
         .withAction(self, #selector(resetButtonDidTap))
     
     private lazy var cancelButton: UIButton = 
@@ -34,11 +34,11 @@ final class ResetPasswordVC: UIViewController {
         .withAction(viewModel,
                     #selector(ResetPasswordViewModelProtocol.cancelDidTap))
     
-    private lazy var titleLabel: UILabel = .titleLabel("ResetPassVC_reset_title_lbl".localized)
+    private lazy var titleLabel: UILabel = .titleLabel(L10n.titleLbl)
     private lazy var resetPasView: UIView = .signView()
     private lazy var resetInfoLabel: UILabel = {
         let label = UILabel()
-        label.text = "ResetPassVC_reset_password_title_textField".localized
+        label.text = L10n.resPassTitleTextField
         label.font = .appFont.withSize(13.0)
         label.numberOfLines = 2
         
@@ -47,7 +47,7 @@ final class ResetPasswordVC: UIViewController {
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.placeholder = "ResetPassVC_reset_password_placeholder_textField".localized
+        textField.placeholder = L10n.resPassPHolderTextField
         textField.keyboardType = UIKeyboardType.emailAddress
         textField.returnKeyType = UIReturnKeyType.done
         
@@ -157,5 +157,17 @@ final class ResetPasswordVC: UIViewController {
     @objc private func resetButtonDidTap() {
         
         viewModel.resetPassDidTap(email: emailTextField.text)
+    }
+}
+
+//MARK: - L10n
+
+extension ResetPasswordVC {
+    
+    private enum L10n {
+        static var resetBtn = "ResetPassVC_reset_btn".localized
+        static var titleLbl = "ResetPassVC_reset_title_lbl".localized
+        static var resPassTitleTextField = "ResetPassVC_reset_password_title_textField".localized
+        static var resPassPHolderTextField = "ResetPassVC_reset_password_placeholder_textField".localized
     }
 }

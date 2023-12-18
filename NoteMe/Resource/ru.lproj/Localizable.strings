@@ -42,9 +42,9 @@
 "OnboardSecondStepVC_locationItemLabel_title" = "Локация";
 "OnboardSecondStepVC_timerItemLabel_title" = "Таймер";
 "OnboardSecondStepVC_infoTextLabel_htmlTitle" = "Вы можете использовать 3 типа уведомлений<br>
-<t style =\"margin-left: 8px;\"><b>• Календарь</b> - выберите дату, когда вы хотите  получить уведомление.<br>
-<b>• Локация</b> - выберите локацию и уведомление  придет когда вы там окажетесь.<br>
-<b>• Таймер</b> - установите таймер и, после его  окончания, вы получите уведомление.";
+<ul><li><b>Календарь</b> - выберите дату, когда вы хотите  получить уведомление.
+<li><b>Локация</b> - выберите локацию и уведомление  придет когда вы там окажетесь.
+<li><b>Таймер</b> - установите таймер и, после его  окончания, вы получите уведомление.</ul>";
 
 // LineTextField title label
     //LoginVC
@@ -74,7 +74,17 @@
 "ResetPassVC_OkAlert_message" = "Новый пароль был отправлен на почту";
 "ResetPassVC_ErrAlert_title" = "Ошибка";
 "ResetPassVC_ErrAlert_message" = "Такой адрес не зарегистрирован";
+    //RegisterPresenter
+"RegisterPresenter_ErrorAlert_title" = "Ошибка";
 
 //ButtonAlert
     //ResetPasswordVC
-"ResetPasswordVC_OkButtonAlert_title" = "Ok";
+"ResetPasswordVC_OkButtonAlert_title" = "Oк";
+    //RegisterPresenter
+"RegisterPresenter_okButtonAlert_tatile" = "Ок";
+
+//TubBar
+    //HomeVC
+"HomeVC_tabBarItem_Title" = "Главная";
+    //ProfileVC
+"ProfileVC_tabBarItem_Title" = "Профиль";

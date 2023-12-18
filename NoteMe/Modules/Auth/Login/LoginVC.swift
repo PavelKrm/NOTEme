@@ -28,16 +28,16 @@ final class LoginVC: UIViewController {
     UIImageView(image: .General.logo)
     
     private lazy var loginButton: UIButton =
-        .yellowRoundedButton("LoginVC_login_btn".localized)
+        .yellowRoundedButton(L10n.loginBtn)
         .withAction(self, #selector(loginDidTap))
     
     private lazy var signUpButton: UIButton = 
-        .underlineYellowButton("LoginVC_signup_btn".localized)
+        .underlineYellowButton(L10n.signupBtn)
         .withAction(viewModel,
                     #selector(LoginViewModelProtocol.newAccountDidTap))
     
     private lazy var forgotPasButton: UIButton = 
-        .underlineGrayButton("LoginVC_forgot_btn".localized)
+        .underlineGrayButton(L10n.forgotBtn)
         .withAction(self, #selector(forgotPassDidTap))
     
     private lazy var titleLabel: UILabel =
@@ -47,16 +47,16 @@ final class LoginVC: UIViewController {
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "LoginVC_email_title_textField".localized
-        textField.placeholder = "LoginVC_email_placeholder_textField".localized
+        textField.title = L10n.emailTitleTextField
+        textField.placeholder = L10n.emailPalceholderTextField
         
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
         let textFIeld = LineTextField()
-        textFIeld.title = "LoginVC_password_title_textField".localized
-        textFIeld.placeholder = "LoginVC_password_placeholder_textField".localized
+        textFIeld.title = L10n.passTitleTextField
+        textFIeld.placeholder = L10n.passPlaceHolderTextField
         
         return textFIeld
     }()
@@ -181,5 +181,20 @@ final class LoginVC: UIViewController {
     
     @objc private func forgotPassDidTap() {
         viewModel.forgotPassDidTap(email: emailTextField.text)
+    }
+}
+
+//MARK: - L10n
+
+extension LoginVC {
+    
+    private enum L10n {
+        static var loginBtn = "LoginVC_login_btn".localized
+        static var signupBtn = "LoginVC_signup_btn".localized
+        static var forgotBtn = "LoginVC_forgot_btn".localized
+        static var emailTitleTextField = "LoginVC_email_title_textField".localized
+        static var emailPalceholderTextField = "LoginVC_email_placeholder_textField".localized
+        static var passTitleTextField = "LoginVC_password_title_textField".localized
+        static var passPlaceHolderTextField = "LoginVC_password_placeholder_textField".localized
     }
 }

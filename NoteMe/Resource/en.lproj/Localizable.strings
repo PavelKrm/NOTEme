@@ -43,9 +43,9 @@
 "OnboardSecondStepVC_locationItemLabel_title" = "Location";
 "OnboardSecondStepVC_timerItemLabel_title" = "Timer";
 "OnboardSecondStepVC_infoTextLabel_htmlTitle" = "You can use 3 types of notifications<br>
-<t style =\"margin-left: 8px;\"><b>• Calendar</b> - choose the date, when you want to receive notification.<br>
-<b>• Location</b> - choose the region and notification will come after you enter it.<br>
-<b>• Timer</b> - set timer and after selected period you will receive the notification.";
+<ul><li><b>Calendar</b> - choose the date, when you want to receive notification.
+<li><b>Location</b> - choose the region and notification will come after you enter it.
+<li><b>Timer</b> - set timer and after selected period you will receive the notification.</ul>";
 
 // LineTextField title label
     //LoginVC
@@ -75,8 +75,18 @@
 "ResetPassVC_OkAlert_message" = "A new password has been sent to your email";
 "ResetPassVC_ErrAlert_title" = "Error";
 "ResetPassVC_ErrAlert_message" = "This address is not registered";
+    //RegisterPresenter
+"RegisterPresenter_ErrorAlert_title" = "Error";
 
 //ButtonAlert
     //ResetPasswordVC
 "ResetPasswordVC_OkButtonAlert_title" = "Ok";
+    //RegisterPresenter
+"RegisterPresenter_okButtonAlert_tatile" = "Ok";
+
+//TubBar
+    //HomeVC
+"HomeVC_tabBarItem_Title" = "Home";
+    //ProfileVC
+"ProfileVC_tabBarItem_Title" = "Profile";
 
