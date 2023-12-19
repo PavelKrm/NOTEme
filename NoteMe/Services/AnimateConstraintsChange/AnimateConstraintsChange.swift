@@ -10,10 +10,13 @@ import SnapKit
 
 final class AnimateConstraintsChange {
     
-    func keyboardEffect(for vc: UIViewController,
-                        target: UIView,
+    func keyboardEffect(for vc: UIViewController?,
+                        target: UIView?,
                         keyboardFrame: CGRect,
                         with padding: CGFloat = 16) {
+        guard
+            let vc, let target
+        else { return }
         
         let heightTopSafeArea = vc.view.safeAreaLayoutGuide.layoutFrame.minY
         let maxY = target.frame.maxY + padding + heightTopSafeArea

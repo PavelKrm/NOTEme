@@ -89,13 +89,13 @@ final class LoginVC: UIViewController {
     }
     
     private func bind() {
-        viewModel.catchEmailError = { errorText in
-            self.emailTextField.errorText = errorText
+        viewModel.catchEmailError = { [weak self] errorText in
+            self?.emailTextField.errorText = errorText
         }
         
-        viewModel.keyboardFrameChanged = { frame in
-            self.animateConstsChange.keyboardEffect(for: self,
-                                                    target: self.signInView,
+        viewModel.keyboardFrameChanged = { [weak self] frame in
+            self?.animateConstsChange.keyboardEffect(for: self,
+                                                    target: self?.signInView,
                                                     keyboardFrame: frame)
         }
     }
