@@ -13,7 +13,7 @@ final class ProfileAssembler {
     
     static func make() -> UIViewController {
         
-        let vm = ProfileVM()
+        let vm = ProfileVM(authService: AuthService())
         return ProfileVC(viewModel: vm)
     }
 }

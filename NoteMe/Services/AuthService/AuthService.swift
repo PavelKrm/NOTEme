@@ -7,11 +7,22 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 final class AuthService {
     
     private var firebase: Auth {
         return Auth.auth()
+    }
+    
+    func checkUserEmail(completion: @escaping(String?) -> Void) {
+        completion(firebase.currentUser?.email)
+    }
+    
+    func logout() -> Bool {
+        var error = try? firebase.signOut()
+        
+        return error != nil ? false : true
     }
     
     func signIn(email: String,

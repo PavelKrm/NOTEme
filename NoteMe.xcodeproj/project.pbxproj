@@ -89,6 +89,8 @@
 		E9CDED2A2B096E540059B11F /* KeyboardHelper+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CDED292B096E540059B11F /* KeyboardHelper+Login.swift */; };
 		E9CDED2C2B096E7D0059B11F /* InputValidator+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CDED2B2B096E7D0059B11F /* InputValidator+ResetPassword.swift */; };
 		E9CDED2E2B096EB10059B11F /* ResetPasswordAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CDED2D2B096EB10059B11F /* ResetPasswordAssembler.swift */; };
+		E9EE6B372B53EBBF0029F4AA /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EE6B362B53EBBF0029F4AA /* SettingsButton.swift */; };
+		E9EE6B3A2B5429910029F4AA /* AuthService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EE6B392B5429910029F4AA /* AuthService+Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +163,8 @@
 		E9CDED292B096E540059B11F /* KeyboardHelper+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Login.swift"; sourceTree = "<group>"; };
 		E9CDED2B2B096E7D0059B11F /* InputValidator+ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+ResetPassword.swift"; sourceTree = "<group>"; };
 		E9CDED2D2B096EB10059B11F /* ResetPasswordAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordAssembler.swift; sourceTree = "<group>"; };
+		E9EE6B362B53EBBF0029F4AA /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		E9EE6B392B5429910029F4AA /* AuthService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Profile.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +376,7 @@
 		E92EB2572B17D00A00C70A35 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				E9EE6B382B54296D0029F4AA /* UseCases */,
 				E92EB2592B17D01D00C70A35 /* Coordinator */,
 				E92EB2692B18A72600C70A35 /* ProfileVC.swift */,
 				E92EB26B2B18A7EB00C70A35 /* ProfileVM.swift */,
@@ -563,6 +568,7 @@
 			isa = PBXGroup;
 			children = (
 				E9B1C1302AF16EC9005C5852 /* LineTextField.swift */,
+				E9EE6B362B53EBBF0029F4AA /* SettingsButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -572,6 +578,14 @@
 			children = (
 				E9CDED2B2B096E7D0059B11F /* InputValidator+ResetPassword.swift */,
 				E92EB2E82B20A26300C70A35 /* AythService+ResetPassword.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		E9EE6B382B54296D0029F4AA /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E9EE6B392B5429910029F4AA /* AuthService+Profile.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -680,6 +694,8 @@
 				E93AF3442AFEA818003F9ACE /* InputValidator+Login.swift in Sources */,
 				E92EB25F2B17D21E00C70A35 /* HomeCoordinator.swift in Sources */,
 				E9CDED2E2B096EB10059B11F /* ResetPasswordAssembler.swift in Sources */,
+				E9EE6B3A2B5429910029F4AA /* AuthService+Profile.swift in Sources */,
+				E9EE6B372B53EBBF0029F4AA /* SettingsButton.swift in Sources */,
 				E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */,
 				E97A229F2B30E20F0048A2F8 /* AlertService+Login.swift in Sources */,
 				E92EB2E92B20A26300C70A35 /* AythService+ResetPassword.swift in Sources */,

@@ -54,9 +54,11 @@ extension UILabel {
                          textColor: .appText)
     }
     
-    static func infoLabel(_ text: String?, with size: CGFloat) -> UILabel {
+    static func infoLabel(_ text: String?,
+                          with size: CGFloat,
+                          font: UIFont = .appFont) -> UILabel {
         return self.textLabel(text: text,
-                              font: .appFont,
+                              font: font,
                               fontSize: size,
                               textColor: .appText,
                               lines: 2)

@@ -21,6 +21,10 @@
 "OnboardFirstStepVC_nextButton_title" = "Дальше";
     //OnboardSecondStepVC
 "OnboardSecondStepVC_doneBtn_title" = "Закончить";
+    //ProfileVC
+"ProfileVC_notifiBtn_Title" = "Уведомления";
+"ProfileVC_exportBtn_Title" = "Экспорт";
+"ProfileVC_logoutBtn_Title" = "Выйти из аккаунта";
 
 // title label
     //LoginVC
@@ -33,6 +37,10 @@
 "OnboardFirstStepVC_titleLabel_title" = "Добро пожаловать!";
     //OnboardSecondStepVC
 "OnboardSecondStepVC_titleLabel_title"= "Разные типы уведомлений!";
+    //ProfileVC
+"ProfileVC_accountLbl_Title" = "Аккаунт";
+"ProfileVC_settingsLbl_Title" = "Настройки";
+"ProfileVC_emailLbl_Title" = "Ваша почта:";
 
 //Text label
     //OnboardFirstStepVC

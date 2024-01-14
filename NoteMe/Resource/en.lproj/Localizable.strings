@@ -19,8 +19,12 @@
 "ResetPassVC_cancel_btn"= "Cancel";
     //OnboardFirstStepVC
 "OnboardFirstStepVC_nextButton_title" = "Next";
-//OnboardSecondStepVC
+    //OnboardSecondStepVC
 "OnboardSecondStepVC_doneBtn_title" = "Done";
+    //ProfileVC
+"ProfileVC_notifiBtn_Title" = "Notifications";
+"ProfileVC_exportBtn_Title" = "Export";
+"ProfileVC_logoutBtn_Title" = "Logout";
 
 // title label
     //LoginVC
@@ -34,6 +38,10 @@
 "OnboardFirstStepVC_textLabel_title" = "NoteMe is an application, which notify you about everything!";
     //OnboardSecondStepVC
 "OnboardSecondStepVC_titleLabel_title"= "Different types!";
+    //ProfileVC
+"ProfileVC_accountLbl_Title" = "Account";
+"ProfileVC_settingsLbl_Title" = "Settings";
+"ProfileVC_emailLbl_Title" = "Your email:";
 
 //Text label
     //OnboardFirstStepVC
