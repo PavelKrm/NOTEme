@@ -84,12 +84,18 @@
 "ResetPassVC_ErrAlert_message" = "Такой адрес не зарегистрирован";
     //RegisterPresenter
 "RegisterPresenter_ErrorAlert_title" = "Ошибка";
+    //ProfileVC
+"ProfileVM_logoutAlert_Title" = "Выйти?";
+"ProfileVM_logoutAlert_Message" ="Вы уверены?";
 
 //ButtonAlert
     //ResetPasswordVC
 "ResetPasswordVC_OkButtonAlert_title" = "Oк";
     //RegisterPresenter
 "RegisterPresenter_okButtonAlert_tatile" = "Ок";
+    //ProfileVC
+"ProfileVM_logoutAlert_OkTitle" = "Да";
+"ProfileVM_logoutAlert_CancelTitle" = "Отмена";
 
 //TubBar
     //HomeVC

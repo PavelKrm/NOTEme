@@ -78,6 +78,9 @@
 		E93AF33D2AFE97F9003F9ACE /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AF33C2AFE97F9003F9ACE /* LoginAssembler.swift */; };
 		E93AF3412AFEA1B9003F9ACE /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AF3402AFEA1B9003F9ACE /* InputValidator.swift */; };
 		E93AF3442AFEA818003F9ACE /* InputValidator+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AF3432AFEA818003F9ACE /* InputValidator+Login.swift */; };
+		E96F69492B553D5E003BC39B /* ProfileCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F69482B553D5E003BC39B /* ProfileCustomCell.swift */; };
+		E96F694C2B555440003BC39B /* SettingsButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F694B2B555440003BC39B /* SettingsButtonModel.swift */; };
+		E96F694E2B557C48003BC39B /* AlertService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F694D2B557C48003BC39B /* AlertService+Profile.swift */; };
 		E97A229F2B30E20F0048A2F8 /* AlertService+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A229E2B30E20F0048A2F8 /* AlertService+Login.swift */; };
 		E97A22A12B30E93D0048A2F8 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A22A02B30E93D0048A2F8 /* MainTabBarVC.swift */; };
 		E97A22A32B30EA300048A2F8 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A22A22B30EA300048A2F8 /* MainTabBarCoordinator.swift */; };
@@ -89,7 +92,7 @@
 		E9CDED2A2B096E540059B11F /* KeyboardHelper+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CDED292B096E540059B11F /* KeyboardHelper+Login.swift */; };
 		E9CDED2C2B096E7D0059B11F /* InputValidator+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CDED2B2B096E7D0059B11F /* InputValidator+ResetPassword.swift */; };
 		E9CDED2E2B096EB10059B11F /* ResetPasswordAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CDED2D2B096EB10059B11F /* ResetPasswordAssembler.swift */; };
-		E9EE6B372B53EBBF0029F4AA /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EE6B362B53EBBF0029F4AA /* SettingsButton.swift */; };
+		E9EE6B372B53EBBF0029F4AA /* CustomSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EE6B362B53EBBF0029F4AA /* CustomSettingsButton.swift */; };
 		E9EE6B3A2B5429910029F4AA /* AuthService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EE6B392B5429910029F4AA /* AuthService+Profile.swift */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +155,9 @@
 		E93AF33C2AFE97F9003F9ACE /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
 		E93AF3402AFEA1B9003F9ACE /* InputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidator.swift; sourceTree = "<group>"; };
 		E93AF3432AFEA818003F9ACE /* InputValidator+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Login.swift"; sourceTree = "<group>"; };
+		E96F69482B553D5E003BC39B /* ProfileCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCustomCell.swift; sourceTree = "<group>"; };
+		E96F694B2B555440003BC39B /* SettingsButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonModel.swift; sourceTree = "<group>"; };
+		E96F694D2B557C48003BC39B /* AlertService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Profile.swift"; sourceTree = "<group>"; };
 		E97A229E2B30E20F0048A2F8 /* AlertService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Login.swift"; sourceTree = "<group>"; };
 		E97A22A02B30E93D0048A2F8 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		E97A22A22B30EA300048A2F8 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -163,7 +169,7 @@
 		E9CDED292B096E540059B11F /* KeyboardHelper+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Login.swift"; sourceTree = "<group>"; };
 		E9CDED2B2B096E7D0059B11F /* InputValidator+ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+ResetPassword.swift"; sourceTree = "<group>"; };
 		E9CDED2D2B096EB10059B11F /* ResetPasswordAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordAssembler.swift; sourceTree = "<group>"; };
-		E9EE6B362B53EBBF0029F4AA /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		E9EE6B362B53EBBF0029F4AA /* CustomSettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSettingsButton.swift; sourceTree = "<group>"; };
 		E9EE6B392B5429910029F4AA /* AuthService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Profile.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,6 +223,7 @@
 				E90ADAD32AE82D0700F8989A /* App */,
 				E9B1C12F2AF16E9B005C5852 /* Custom */,
 				E92EB26F2B1F847F00C70A35 /* GoogleService-Info.plist */,
+				E96F694A2B5553B6003BC39B /* Models */,
 				E90ADADF2AE83D7900F8989A /* Modules */,
 				E90ADAD42AE82DB100F8989A /* Resource */,
 				E93AF33E2AFEA14A003F9ACE /* Services */,
@@ -376,6 +383,7 @@
 		E92EB2572B17D00A00C70A35 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				E96F69472B553D12003BC39B /* Cell */,
 				E9EE6B382B54296D0029F4AA /* UseCases */,
 				E92EB2592B17D01D00C70A35 /* Coordinator */,
 				E92EB2692B18A72600C70A35 /* ProfileVC.swift */,
@@ -543,6 +551,22 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		E96F69472B553D12003BC39B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E96F69482B553D5E003BC39B /* ProfileCustomCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E96F694A2B5553B6003BC39B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E96F694B2B555440003BC39B /* SettingsButtonModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E9B1C1292AF15EC9005C5852 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,7 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				E9B1C1302AF16EC9005C5852 /* LineTextField.swift */,
-				E9EE6B362B53EBBF0029F4AA /* SettingsButton.swift */,
+				E9EE6B362B53EBBF0029F4AA /* CustomSettingsButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -586,6 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				E9EE6B392B5429910029F4AA /* AuthService+Profile.swift */,
+				E96F694D2B557C48003BC39B /* AlertService+Profile.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -688,14 +713,17 @@
 			files = (
 				E90ADADB2AE8382800F8989A /* UIImage+Consts.swift in Sources */,
 				E92EB2412B16547100C70A35 /* OnboardFirstStepVC.swift in Sources */,
+				E96F694E2B557C48003BC39B /* AlertService+Profile.swift in Sources */,
 				E97A22A52B30ECA90048A2F8 /* ProfileCoordinator.swift in Sources */,
 				E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */,
 				E93729EC2B0D24C0006860AB /* RegisterCoordinator.swift in Sources */,
 				E93AF3442AFEA818003F9ACE /* InputValidator+Login.swift in Sources */,
 				E92EB25F2B17D21E00C70A35 /* HomeCoordinator.swift in Sources */,
+				E96F694C2B555440003BC39B /* SettingsButtonModel.swift in Sources */,
 				E9CDED2E2B096EB10059B11F /* ResetPasswordAssembler.swift in Sources */,
 				E9EE6B3A2B5429910029F4AA /* AuthService+Profile.swift in Sources */,
-				E9EE6B372B53EBBF0029F4AA /* SettingsButton.swift in Sources */,
+				E96F69492B553D5E003BC39B /* ProfileCustomCell.swift in Sources */,
+				E9EE6B372B53EBBF0029F4AA /* CustomSettingsButton.swift in Sources */,
 				E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */,
 				E97A229F2B30E20F0048A2F8 /* AlertService+Login.swift in Sources */,
 				E92EB2E92B20A26300C70A35 /* AythService+ResetPassword.swift in Sources */,

@@ -16,7 +16,7 @@ import SnapKit
 
 final class RegisterVC: UIViewController {
     
-    private lazy var contenView: UIView = .contentView()
+    private lazy var contenView: UIView = .backgroundView()
     
     private lazy var logoContainer: UIView = UIView()
     private lazy var logoImageView: UIImageView =
@@ -34,7 +34,7 @@ final class RegisterVC: UIViewController {
     private lazy var titleLabel: UILabel =
         .titleLabel(L10n.niceToMeetTitleLbl)
     
-    private lazy var signInView: UIView = .signView()
+    private lazy var signInView: UIView = .contentView()
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()

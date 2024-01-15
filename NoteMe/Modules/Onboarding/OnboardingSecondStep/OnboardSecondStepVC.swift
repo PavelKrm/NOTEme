@@ -15,7 +15,7 @@ import SnapKit
 
 final class OnboardSecondStepVC: UIViewController {
     
-    private lazy var contentView: UIView = .contentView()
+    private lazy var contentView: UIView = .backgroundView()
     
     private lazy var logoContainer: UIView = UIView()
     
@@ -25,7 +25,7 @@ final class OnboardSecondStepVC: UIViewController {
     private lazy var titleLabel: UILabel =
         .titleLabel(L10n.titleLbl)
     
-    private lazy var infoView: UIView = .signView()
+    private lazy var infoView: UIView = .contentView()
     
     private lazy var infoImageContainer: UIView = UIView()
     

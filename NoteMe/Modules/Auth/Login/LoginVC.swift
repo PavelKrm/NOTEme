@@ -20,7 +20,7 @@ import SnapKit
 
 final class LoginVC: UIViewController {
     
-    private lazy var contenView: UIView = .contentView()
+    private lazy var contenView: UIView = .backgroundView()
     
     private lazy var logoContainer: UIView = UIView()
     
@@ -43,7 +43,7 @@ final class LoginVC: UIViewController {
     private lazy var titleLabel: UILabel =
         .titleLabel("LoginVC_welcome_title_lbl".localized)
     
-    private lazy var signInView: UIView = .signView()
+    private lazy var signInView: UIView = .contentView()
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()

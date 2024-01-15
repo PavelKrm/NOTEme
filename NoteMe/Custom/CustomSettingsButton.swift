@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class SettingsButton: UIView {
+final class CustomSettingsButton: UIView {
     
     private lazy var separator: UIView = {
         let view = UIView()

@@ -12,6 +12,7 @@ protocol ProfileViewModelProtocol {
     
     var catchEmail: ((String?) -> Void)? { get set }
     var catchExportInfo: ((String?) -> Void)? { get set }
+    var buttons: [SettingsButton] { get }
     
     func getEmail()
     func notificationDidTap()
@@ -43,30 +44,15 @@ final class ProfileVC: UIViewController {
     private lazy var emailLbl: UILabel = .infoLabel(nil,
                                                      with: 17.0)
     
-    private lazy var notifiButton: SettingsButton = {
-        let button = SettingsButton()
-        button.buttonTitle = L10n.notifiBtnTitle
-        button.buttonImage = .General.notifiIcon
-        button.buttonColor = .appText
-        button.infoLabel = "Never"
-        return button
-    }()
-    
-    private lazy var exportButton: SettingsButton = {
-        let button = SettingsButton()
-        button.buttonTitle = L10n.exportBtnTitle
-        button.buttonImage = .General.exportIcon
-        button.buttonColor = .appText
-        button.infoLabel = "Never"
-        return button
-    }()
-    
-    private lazy var logoutButton: SettingsButton = {
-        let button = SettingsButton()
-        button.buttonTitle = L10n.logoutBtnTitle
-        button.buttonImage = .General.logoutIcon
-        button.buttonColor = .appRed
-        return button
+    private lazy var settingsTableView: UITableView = {
+        let tv = UITableView()
+        tv.backgroundColor = .white
+        tv.register(ProfileCustomCell.self,
+                    forCellReuseIdentifier: ProfileCustomCell.identifier)
+        tv.delegate = self
+        tv.dataSource = self
+        tv.isScrollEnabled = false
+        return tv
     }()
     
     private var viewModel: ProfileViewModelProtocol
@@ -96,17 +82,11 @@ final class ProfileVC: UIViewController {
         viewModel.catchEmail = { [weak self] email in
             self?.emailLbl.text = email
         }
-        
-        viewModel.catchExportInfo = { [weak self] exportInfo in
-            self?.exportButton.infoLabel = exportInfo
-        }
     }
     
     private func setupUI() {
         
         view.backgroundColor = .appGray
-        accountView.backgroundColor = .white
-        settingsView.backgroundColor = .white
         
         view.addSubview(accountLbl)
         view.addSubview(accountView)
@@ -116,11 +96,7 @@ final class ProfileVC: UIViewController {
         accountView.addSubview(emailTitleLbl)
         accountView.addSubview(emailLbl)
         
-        settingsView.addSubview(logoutButton)
-        settingsView.addSubview(exportButton)
-        settingsView.addSubview(notifiButton)
-        
-      
+        settingsView.addSubview(settingsTableView)
     }
     
     private func setupTabBarItem() {
@@ -150,33 +126,58 @@ final class ProfileVC: UIViewController {
         settingsView.snp.makeConstraints { make in
             make.top.equalTo(settingsLbl.snp.bottom).inset(-16.0)
             make.horizontalEdges.equalToSuperview().inset(20.0)
+//            make.height.equalTo(150.0)
         }
         
         emailTitleLbl.snp.makeConstraints { make in
             make.top.left.equalToSuperview().inset(16.0)
         }
+        
         emailLbl.snp.makeConstraints { make in
             make.top.equalTo(emailTitleLbl.snp.bottom).inset(-4.0)
             make.horizontalEdges.equalToSuperview().inset(16.0)
             make.bottom.equalToSuperview().inset(16.0)
         }
         
-        notifiButton.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.top.equalToSuperview().inset(16.0)
+        settingsTableView.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview().inset(16.0)
+            make.top.bottom.equalToSuperview().inset(4.0)
+            make.height.equalTo(120.0)
         }
+    }
+}
+
+//MARK: - UITableViewDelegate, UITableViewDataSource
+
+extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        return viewModel.buttons.count
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: ProfileCustomCell.identifier,
+            for: indexPath) as? ProfileCustomCell
+        else { fatalError("noup") }
         
-        exportButton.snp.makeConstraints { make in
-            make.top.equalTo(notifiButton.snp.bottom).inset(-12.0)
-            make.horizontalEdges.equalToSuperview().inset(16.0)
+        cell.configure(with: viewModel.buttons[indexPath.row])
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 0 {
+            viewModel.notificationDidTap()
+        } else if indexPath.row == 1 {
+            viewModel.exportDidTap()
+        } else {
+            viewModel.logoutDidTap()
         }
-        
-        logoutButton.snp.makeConstraints { make in
-            make.top.equalTo(exportButton.snp.bottom).inset(-12.0)
-            make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.bottom.equalToSuperview().inset(16.0)
-        }
-        
     }
 }
 

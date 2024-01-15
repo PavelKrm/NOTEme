@@ -85,12 +85,18 @@
 "ResetPassVC_ErrAlert_message" = "This address is not registered";
     //RegisterPresenter
 "RegisterPresenter_ErrorAlert_title" = "Error";
+    //ProfileVC
+"ProfileVM_logoutAlert_Title" = "Logout";
+"ProfileVM_logoutAlert_Message" ="Are you want to logout?";
 
 //ButtonAlert
     //ResetPasswordVC
 "ResetPasswordVC_OkButtonAlert_title" = "Ok";
     //RegisterPresenter
 "RegisterPresenter_okButtonAlert_tatile" = "Ok";
+    //ProfileVC
+"ProfileVM_logoutAlert_OkTitle" = "Ok";
+"ProfileVM_logoutAlert_CancelTitle" = "Cancel";
 
 //TubBar
     //HomeVC

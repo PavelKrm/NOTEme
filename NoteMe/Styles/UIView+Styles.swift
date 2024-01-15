@@ -9,25 +9,21 @@ import UIKit
 
 extension UIView {
     
-    static func contentView() -> UIView {
-        
+    static func backgroundView() -> UIView {
         let view = UIView()
         view.backgroundColor = .appGray
-        
         return view
     }
     
-    static func signView() -> UIView {
+    static func contentView() -> UIView {
         
         let view = UIView()
-        view.cornerRadius = 5.0
         view.backgroundColor = .white
-        
+        view.cornerRadius = 5.0
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
         view.layer.shadowRadius = 4.0
         view.layer.shadowColor = UIColor.appShadow.cgColor
-        
         return view
     }
 }

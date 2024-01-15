@@ -18,7 +18,7 @@ import SnapKit
 
 final class ResetPasswordVC: UIViewController {
     
-    private lazy var contenView: UIView = .contentView()
+    private lazy var contenView: UIView = .backgroundView()
     
     private lazy var logoContainer: UIView = UIView()
     
@@ -35,7 +35,7 @@ final class ResetPasswordVC: UIViewController {
                     #selector(ResetPasswordViewModelProtocol.cancelDidTap))
     
     private lazy var titleLabel: UILabel = .titleLabel(L10n.titleLbl)
-    private lazy var resetPasView: UIView = .signView()
+    private lazy var resetPasView: UIView = .contentView()
     private lazy var resetInfoLabel: UILabel = {
         let label = UILabel()
         label.text = L10n.resPassTitleTextField
