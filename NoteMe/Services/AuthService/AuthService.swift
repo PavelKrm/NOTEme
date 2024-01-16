@@ -19,10 +19,15 @@ final class AuthService {
         completion(firebase.currentUser?.email)
     }
     
+    // есть вопрос по этой функции, в документации что-то не понятно описано
     func logout() -> Bool {
-        var error = try? firebase.signOut()
         
-        return error != nil ? false : true
+        do {
+            try firebase.signOut()
+            return true
+        } catch {
+            return false
+        }
     }
     
     func signIn(email: String,

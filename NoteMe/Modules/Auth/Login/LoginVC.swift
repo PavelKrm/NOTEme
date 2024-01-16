@@ -49,6 +49,8 @@ final class LoginVC: UIViewController {
         let textField = LineTextField()
         textField.title = L10n.emailTitleTextField
         textField.placeholder = L10n.emailPalceholderTextField
+        textField.keyboardType = UIKeyboardType.emailAddress
+        textField.returnKeyType = UIReturnKeyType.done
         
         return textField
     }()

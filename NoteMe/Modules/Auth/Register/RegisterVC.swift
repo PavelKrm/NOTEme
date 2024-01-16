@@ -40,6 +40,8 @@ final class RegisterVC: UIViewController {
         let textField = LineTextField()
         textField.title = L10n.emailTitleTextField
         textField.placeholder = L10n.emailPHolderTextField
+        textField.keyboardType = UIKeyboardType.emailAddress
+        textField.returnKeyType = UIReturnKeyType.done
         
         return textField
     }()

@@ -14,7 +14,7 @@ final class ProfileAssembler {
     static func make() -> UIViewController {
         
         let vm = ProfileVM(authService: AuthService(),
-                           alertService: AlertService())
+                           alertService: AlertService.current)
         return ProfileVC(viewModel: vm)
     }
 }

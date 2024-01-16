@@ -16,11 +16,11 @@ protocol ProfileAuthServiceUseCase {
 
 protocol ProfileAlertServiceUseCase {
     
-    func showOkAlert(title: String,
+    func show(title: String,
                      message: String,
                      okTitle: String,
-                     cancelTitle: String)
-//                   okHandler : (() -> Void)?)
+                     cancelTitle: String,
+                     okHandler : (() -> Void)?)
 }
 
 final class ProfileVM: ProfileViewModelProtocol {
@@ -69,19 +69,22 @@ final class ProfileVM: ProfileViewModelProtocol {
     
     func logoutDidTap() {
         
-        alertService.showOkAlert(
+        alertService.show(
             title: L10n.logoutAlertTitle,
             message: "\(L10n.logoutAlertMsg) \n\(userEmail ?? "")",
             okTitle: L10n.logoutAlertOkTitle,
-            cancelTitle: L10n.logoutAlertCancelTitle)
-//          { [weak self] in
-//
-////            let isLogout = self?.authService.logout()
-////            
-////            if let isLogout {
-////                ParametersHelper.set(.authenticated, value: false)
-////            }
-//        }
+            cancelTitle: L10n.logoutAlertCancelTitle) { [weak self] in
+
+            if let isLogout = self?.authService.logout() {
+                    
+                if isLogout {
+                    ParametersHelper.set(.authenticated, value: false)
+                    print("Logout")
+                } else {
+                    print("error")
+                }
+            }
+        }
     }
 }
 

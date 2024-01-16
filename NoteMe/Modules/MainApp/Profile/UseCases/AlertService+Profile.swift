@@ -8,7 +8,15 @@
 import Foundation
 
 extension AlertService: ProfileAlertServiceUseCase {
-    func showOkAlert(title: String, message: String, okTitle: String, cancelTitle: String) {
-        showAlert(title: title, message: message, cancelTitle: cancelTitle, okTitle: okTitle)
+    func show(title: String,
+                     message: String,
+                     okTitle: String,
+                     cancelTitle: String,
+                     okHandler: (() -> Void)?) {
+        showAlert(title: title,
+                  message: message,
+                  cancelTitle: cancelTitle,
+                  okTitle: okTitle,
+                  okHandler: okHandler)
     }
 }
