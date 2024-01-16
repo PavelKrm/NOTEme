@@ -11,13 +11,19 @@ final class LoginAssembler {
     
     private init() {}
     
-    static func make(coodinator: LoginCoordinatorProtocol) -> UIViewController {
+    static func make(container: Container,
+                     coodinator: LoginCoordinatorProtocol) -> UIViewController {
+        
+        let authService: AuthService = container.resolve()
+        let inputValidator: InputValidator = container.resolve()
+        let alertService: AlertService = container.resolve()
+        let keyboardHelper: KeyboardHelper = container.resolve()
         
         let vm = LoginVM(coordinator: coodinator,
-                         authService: AuthService(),
-                         inputValidator: InputValidator(),
-                         keyboardHelper: KeyboardHelper(),
-                         alertService: AlertService.current)
+                         authService: authService,
+                         inputValidator: inputValidator,
+                         keyboardHelper: keyboardHelper,
+                         alertService: alertService)
         return LoginVC(viewModel: vm,
                        animateConstsChange: AnimateConstraintsChange())
     }

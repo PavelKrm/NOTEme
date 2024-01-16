@@ -10,10 +10,16 @@ import UIKit
 final class LoginCoordinator: Coordinator {
     
     private var rootVC: UIViewController?
+    private let container: Container
     
+
+    init(container: Container) {
+        self.container = container
+    }
     override func start() -> UIViewController {
         
-        let vc = LoginAssembler.make(coodinator: self)
+        let vc = LoginAssembler.make(container: container,
+                                     coodinator: self)
         rootVC = vc
         return vc
     }
