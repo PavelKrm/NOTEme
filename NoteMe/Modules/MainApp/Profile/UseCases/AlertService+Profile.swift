@@ -13,10 +13,10 @@ extension AlertService: ProfileAlertServiceUseCase {
                      okTitle: String,
                      cancelTitle: String,
                      okHandler: (() -> Void)?) {
-        showAlert(title: title,
-                  message: message,
-                  cancelTitle: cancelTitle,
-                  okTitle: okTitle,
-                  okHandler: okHandler)
+        showAlertDestructiveOk(title: title,
+                               message: message,
+                               cancelTitle: cancelTitle,
+                               okTitle: okTitle,
+                               okHandler: okHandler)
     }
 }

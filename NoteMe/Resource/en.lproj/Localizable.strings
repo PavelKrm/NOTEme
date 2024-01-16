@@ -95,7 +95,7 @@
     //RegisterPresenter
 "RegisterPresenter_okButtonAlert_tatile" = "Ok";
     //ProfileVC
-"ProfileVM_logoutAlert_OkTitle" = "Ok";
+"ProfileVM_logoutAlert_OkTitle" = "Logout";
 "ProfileVM_logoutAlert_CancelTitle" = "Cancel";
 
 //TubBar
