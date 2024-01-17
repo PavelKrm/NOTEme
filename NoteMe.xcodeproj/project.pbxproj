@@ -16,6 +16,8 @@
 		E90ADADB2AE8382800F8989A /* UIImage+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADADA2AE8382800F8989A /* UIImage+Consts.swift */; };
 		E90ADADE2AE83B1A00F8989A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E90ADADD2AE83B1A00F8989A /* SnapKit */; };
 		E90ADAE32AE83DE000F8989A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADAE22AE83DE000F8989A /* LoginVC.swift */; };
+		E925F5D22B58743700DAA1F4 /* AlertService+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925F5D12B58743700DAA1F4 /* AlertService+ResetPassword.swift */; };
+		E925F5D42B58780400DAA1F4 /* AlertService+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925F5D32B58780400DAA1F4 /* AlertService+Register.swift */; };
 		E92EB2372B13B89E00C70A35 /* ResetPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB2362B13B89E00C70A35 /* ResetPasswordCoordinator.swift */; };
 		E92EB23C2B164B7400C70A35 /* ParametersHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB23B2B164B7400C70A35 /* ParametersHelper.swift */; };
 		E92EB2412B16547100C70A35 /* OnboardFirstStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB2402B16547100C70A35 /* OnboardFirstStepVC.swift */; };
@@ -54,7 +56,7 @@
 		E92EB2BF2B1FA95700C70A35 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E92EB2BE2B1FA95700C70A35 /* FirebaseAuthCombine-Community */; };
 		E92EB2C12B1FA95700C70A35 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = E92EB2C02B1FA95700C70A35 /* FirebaseCrashlytics */; };
 		E92EB2E72B20970900C70A35 /* AuthService+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB2E62B20970900C70A35 /* AuthService+Register.swift */; };
-		E92EB2E92B20A26300C70A35 /* AythService+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB2E82B20A26300C70A35 /* AythService+ResetPassword.swift */; };
+		E92EB2E92B20A26300C70A35 /* AuthService+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB2E82B20A26300C70A35 /* AuthService+ResetPassword.swift */; };
 		E92EB3312B27781300C70A35 /* NSAttributedString+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB3302B27781300C70A35 /* NSAttributedString+Style.swift */; };
 		E92EB3362B28C1E200C70A35 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB3352B28C1E200C70A35 /* AlertService.swift */; };
 		E92ED4062AF2744500FEAC39 /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92ED4052AF2744500FEAC39 /* UILabel+Styles.swift */; };
@@ -110,6 +112,8 @@
 		E90ADAD82AE834DF00F8989A /* UIFont+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Consts.swift"; sourceTree = "<group>"; };
 		E90ADADA2AE8382800F8989A /* UIImage+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Consts.swift"; sourceTree = "<group>"; };
 		E90ADAE22AE83DE000F8989A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E925F5D12B58743700DAA1F4 /* AlertService+ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+ResetPassword.swift"; sourceTree = "<group>"; };
+		E925F5D32B58780400DAA1F4 /* AlertService+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Register.swift"; sourceTree = "<group>"; };
 		E92EB2362B13B89E00C70A35 /* ResetPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordCoordinator.swift; sourceTree = "<group>"; };
 		E92EB23B2B164B7400C70A35 /* ParametersHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersHelper.swift; sourceTree = "<group>"; };
 		E92EB2402B16547100C70A35 /* OnboardFirstStepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepVC.swift; sourceTree = "<group>"; };
@@ -132,7 +136,7 @@
 		E92EB2A92B1F95D000C70A35 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E92EB2AB2B1F98D000C70A35 /* AuthSevice+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthSevice+Login.swift"; sourceTree = "<group>"; };
 		E92EB2E62B20970900C70A35 /* AuthService+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Register.swift"; sourceTree = "<group>"; };
-		E92EB2E82B20A26300C70A35 /* AythService+ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AythService+ResetPassword.swift"; sourceTree = "<group>"; };
+		E92EB2E82B20A26300C70A35 /* AuthService+ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+ResetPassword.swift"; sourceTree = "<group>"; };
 		E92EB3302B27781300C70A35 /* NSAttributedString+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Style.swift"; sourceTree = "<group>"; };
 		E92EB3352B28C1E200C70A35 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		E92ED4052AF2744500FEAC39 /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
@@ -478,6 +482,7 @@
 				E93729DC2B0CD3F2006860AB /* KeyboardHelper+Register.swift */,
 				E93729DF2B0CD562006860AB /* InputValidator+Register.swift */,
 				E92EB2E62B20970900C70A35 /* AuthService+Register.swift */,
+				E925F5D32B58780400DAA1F4 /* AlertService+Register.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -626,7 +631,8 @@
 			isa = PBXGroup;
 			children = (
 				E9CDED2B2B096E7D0059B11F /* InputValidator+ResetPassword.swift */,
-				E92EB2E82B20A26300C70A35 /* AythService+ResetPassword.swift */,
+				E92EB2E82B20A26300C70A35 /* AuthService+ResetPassword.swift */,
+				E925F5D12B58743700DAA1F4 /* AlertService+ResetPassword.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -738,6 +744,7 @@
 			files = (
 				E90ADADB2AE8382800F8989A /* UIImage+Consts.swift in Sources */,
 				E92EB2412B16547100C70A35 /* OnboardFirstStepVC.swift in Sources */,
+				E925F5D22B58743700DAA1F4 /* AlertService+ResetPassword.swift in Sources */,
 				E96F694E2B557C48003BC39B /* AlertService+Profile.swift in Sources */,
 				E97A22A52B30ECA90048A2F8 /* ProfileCoordinator.swift in Sources */,
 				E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */,
@@ -752,7 +759,7 @@
 				E9EE6B372B53EBBF0029F4AA /* CustomSettingsButton.swift in Sources */,
 				E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */,
 				E97A229F2B30E20F0048A2F8 /* AlertService+Login.swift in Sources */,
-				E92EB2E92B20A26300C70A35 /* AythService+ResetPassword.swift in Sources */,
+				E92EB2E92B20A26300C70A35 /* AuthService+ResetPassword.swift in Sources */,
 				E92EB26A2B18A72700C70A35 /* ProfileVC.swift in Sources */,
 				E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */,
 				E93AF33B2AFE977F003F9ACE /* LoginVM.swift in Sources */,
@@ -802,6 +809,7 @@
 				E92EB26E2B18A83900C70A35 /* ProfileAssembler.swift in Sources */,
 				E92EB3312B27781300C70A35 /* NSAttributedString+Style.swift in Sources */,
 				E92ED40E2AF2835100FEAC39 /* ResetPasswordVC.swift in Sources */,
+				E925F5D42B58780400DAA1F4 /* AlertService+Register.swift in Sources */,
 				E9CDED2C2B096E7D0059B11F /* InputValidator+ResetPassword.swift in Sources */,
 				E92EB2AC2B1F98D000C70A35 /* AuthSevice+Login.swift in Sources */,
 				E92EB2512B165D5200C70A35 /* OnboardSecondStepCoordinator.swift in Sources */,

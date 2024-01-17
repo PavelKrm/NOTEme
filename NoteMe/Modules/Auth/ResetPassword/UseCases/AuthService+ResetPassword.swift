@@ -1,5 +1,5 @@
 //
-//  AythService+ResetPassword.swift
+//  AuthService+ResetPassword.swift
 //  NoteMe
 //
 //  Created by PavelKrm on 6.12.23.

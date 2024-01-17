@@ -10,9 +10,15 @@ import UIKit
 final class ResetPasswordCoordinator: Coordinator {
     
     private var rootVC: UIViewController?
+    private let container: Container
+    
+    init(container: Container) {
+        self.container = container
+    }
     
     override func start() -> UIViewController {
-        let vc = ResetPasswordAssembler.make(coordinator: self)
+        let vc = ResetPasswordAssembler.make(container: container,
+                                             coordinator: self)
         rootVC = vc
         return vc
     }

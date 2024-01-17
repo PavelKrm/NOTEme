@@ -12,12 +12,8 @@ final class Container {
     private var container: [String: Any] = [:]
     private var lazyContainer: [String: () -> Any] = [:]
     
-//    func register<Type: Any>(_ service: Type) {
-//        container["\(Type.self)"] = service
-//    }
-    
-    func register<Type: Any>(_ initialuzer: @escaping () -> Type) {
-        lazyContainer["\(Type.self)"] = initialuzer
+    func register<Type: Any>(_ initializer: @escaping () -> Type) {
+        lazyContainer["\(Type.self)"] = initializer
     }
     
     func resolve<Type: Any>() -> Type {

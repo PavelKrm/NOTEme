@@ -122,15 +122,3 @@ final class AlertService {
         return alertVC
     }
 }
-
-//extension UIAlertController {
-//    
-//    func show() {
-//        
-//        let alertService = AlertService.current
-//        
-//        alertService.buildWindow()
-//        alertService.window?.makeKeyAndVisible()
-//        alertService.window?.rootViewController?.present(self, animated: true)
-//    }
-//}

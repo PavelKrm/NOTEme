@@ -22,6 +22,13 @@ protocol ResetPasswordAuthServiceUseCase {
     func resetPassword(email: String, completion: @escaping(Bool) -> Void)
 }
 
+protocol ResetPasswordAlertServiceUseCaseProtocol {
+    func showAlert(title: String,
+                   message: String,
+                   okTitle: String,
+                   okHandler: (() -> Void)?)
+}
+
 final class ResetPasswordVM: ResetPasswordViewModelProtocol {
     
     var catchEmailError: ((String?) -> Void)?
@@ -29,13 +36,16 @@ final class ResetPasswordVM: ResetPasswordViewModelProtocol {
     private weak var coordinator: ResetPasswordCoordinatorProtocol?
     private var inputValidator: ResetPasswordInputValidatorUseCase
     private var authService: ResetPasswordAuthServiceUseCase
+    private var alertService: ResetPasswordAlertServiceUseCaseProtocol
     
     init(coordinator: ResetPasswordCoordinatorProtocol,
          inputValidator: ResetPasswordInputValidatorUseCase,
-         authService: ResetPasswordAuthServiceUseCase) {
+         authService: ResetPasswordAuthServiceUseCase,
+         alertService: ResetPasswordAlertServiceUseCaseProtocol) {
         self.coordinator = coordinator
         self.inputValidator = inputValidator
         self.authService = authService
+        self.alertService = alertService
     }
     
     func finish() {
@@ -52,18 +62,19 @@ final class ResetPasswordVM: ResetPasswordViewModelProtocol {
         guard
             checkValidation(email: email),
             let email else { return }
-        authService.resetPassword(email: email) { [weak coordinator] isSucces in
+        authService.resetPassword(email: email) { [weak self] isSucces in
             if isSucces {
-                AlertService.current.showAlert(title: L10n.okAlertTitle,
-                                               message: L10n.okAlertMessage,
-                                               okTitle: L10n.okBtnAlertTitle,
-                                               okHandler:  {
-                    coordinator?.finish()
+                self?.alertService.showAlert(title: L10n.okAlertTitle,
+                                       message: L10n.okAlertMessage,
+                                       okTitle: L10n.okBtnAlertTitle,
+                                       okHandler:  {
+                    self?.coordinator?.finish()
                 })
             } else {
-                AlertService.current.showAlert(title: L10n.errorAlertTitle,
-                                               message: L10n.errorAlertMessage,
-                                               okTitle: L10n.okBtnAlertTitle)
+                self?.alertService.showAlert(title: L10n.errorAlertTitle,
+                                       message: L10n.errorAlertMessage,
+                                       okTitle: L10n.okBtnAlertTitle,
+                                       okHandler: nil)
             }
         }
     }

@@ -14,13 +14,13 @@ protocol ProfileAuthServiceUseCase {
     func checkUserEmail(completion: @escaping(String?) -> Void)
 }
 
-protocol ProfileAlertServiceUseCase {
+protocol ProfileAlertServiceUseCaseProtocol {
     
-    func show(title: String,
-                     message: String,
-                     okTitle: String,
-                     cancelTitle: String,
-                     okHandler : (() -> Void)?)
+    func show(title: String?,
+              message: String?,
+              okTitle: String?,
+              cancelTitle: String?,
+              okHandler: (() -> Void)?)
 }
 
 final class ProfileVM: ProfileViewModelProtocol {
@@ -43,10 +43,10 @@ final class ProfileVM: ProfileViewModelProtocol {
     ]
     
     private let authService: ProfileAuthServiceUseCase
-    private let alertService: ProfileAlertServiceUseCase
+    private let alertService: ProfileAlertServiceUseCaseProtocol
     
     init(authService: ProfileAuthServiceUseCase,
-         alertService: ProfileAlertServiceUseCase) {
+         alertService: ProfileAlertServiceUseCaseProtocol) {
         self.alertService = alertService
         self.authService = authService
     }

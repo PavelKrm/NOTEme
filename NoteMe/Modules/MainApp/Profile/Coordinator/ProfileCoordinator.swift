@@ -9,7 +9,13 @@ import UIKit
 
 final class ProfileCoordinator: Coordinator {
     
+    private let container: Container
+    
+    init(container: Container) {
+        self.container = container
+    }
+    
     override func start() -> UIViewController {
-        return ProfileAssembler.make()
+        return ProfileAssembler.make(container: container)
     }
 }

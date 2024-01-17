@@ -33,7 +33,7 @@ extension LoginCoordinator: LoginCoordinatorProtocol {
     
     func openRegisterModule() {
         
-        let coordinator = RegisterCoordinator()
+        let coordinator = RegisterCoordinator(container: container)
         children.append(coordinator)
         let vc = coordinator.start()
         coordinator.onDidFinish = { [weak self] coordinator in
@@ -48,7 +48,7 @@ extension LoginCoordinator: LoginCoordinatorProtocol {
     
     func openResetPasswordModule() {
         
-        let coordinator = ResetPasswordCoordinator()
+        let coordinator = ResetPasswordCoordinator(container: container)
         children.append(coordinator)
         let vc = coordinator.start()
         coordinator.onDidFinish = { [weak self] coordinator in

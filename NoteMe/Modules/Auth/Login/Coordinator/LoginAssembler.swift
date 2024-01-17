@@ -24,8 +24,11 @@ final class LoginAssembler {
                          inputValidator: inputValidator,
                          keyboardHelper: keyboardHelper,
                          alertService: alertService)
+        
+        let constraintsChange: AnimateConstraintsChange = container.resolve()
+        
         return LoginVC(viewModel: vm,
-                       animateConstsChange: AnimateConstraintsChange())
+                       animateConstsChange: constraintsChange)
     }
 }
 

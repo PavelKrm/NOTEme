@@ -17,6 +17,7 @@ final class ContainerRegistrator {
         container.register({ KeyboardHelper() })
         container.register({ InputValidator()} )
         container.register({ AuthService() })
+        container.register({ AnimateConstraintsChange() })
         
         return container
     }

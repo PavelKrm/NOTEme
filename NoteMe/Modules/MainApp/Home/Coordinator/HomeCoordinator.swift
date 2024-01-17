@@ -9,7 +9,11 @@ import UIKit
 
 final class HomeCoordinator: Coordinator {
     
-    private var rootNC: UINavigationController?
+    private let container: Container
+    
+    init(container: Container) {
+        self.container = container
+    }
     
     override func start() -> UIViewController {
         return HomeAssembler.make()

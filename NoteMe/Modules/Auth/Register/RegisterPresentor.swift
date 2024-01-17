@@ -27,6 +27,11 @@ protocol RegisterInputValidatorUseCase {
     func validate(pass:String?) -> Bool
 }
 
+protocol RegisterAlertServiceUseCaseProtocol {
+    
+    func showAlert(title: String?, message: String?, okTitle: String?)
+}
+
 @objc protocol RegisterKeyboardHelperUseCase {
     
     typealias KeyboardFrameHandler = (CGRect) -> Void
@@ -59,15 +64,18 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     private let authService: RegisterAuthServiceUseCase
     private let keyboardHelper: RegisterKeyboardHelperUseCase
     private let inputValidator: RegisterInputValidatorUseCase
+    private let alertService: RegisterAlertServiceUseCaseProtocol
     
     init(coordinator: RegisterCoordinatorProtocol,
          keyboardHelper: RegisterKeyboardHelperUseCase,
          authService: RegisterAuthServiceUseCase,
-         inputValidator: RegisterInputValidatorUseCase) {
+         inputValidator: RegisterInputValidatorUseCase,
+         alertService: RegisterAlertServiceUseCaseProtocol) {
         self.keyboardHelper = keyboardHelper
         self.authService = authService
         self.inputValidator = inputValidator
         self.coordinator = coordinator
+        self.alertService = alertService
         
         bind()
     }
@@ -86,17 +94,17 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         guard
             checkValidation(email: email, pass: pass, repeat: `repeat`),
             let email, let pass else { return }
-        authService.signUp(email: email, pass: pass) { [weak coordinator]
+        authService.signUp(email: email, pass: pass) { [weak self]
             result in
             switch result {
             case .success(let user):
                 print(user.uid)
-                coordinator?.finish()
+                self?.coordinator?.finish()
                 
             case .failure(let error):
-                AlertService.current.showAlert(title: L10n.errorAlertTitle,
-                                               message: error.localizedDescription,
-                                               okTitle: L10n.okBtnAlertTitle)
+                self?.alertService.showAlert(title: L10n.errorAlertTitle,
+                                             message: error.localizedDescription,
+                                             okTitle: L10n.okBtnAlertTitle)
             }
         }
     }

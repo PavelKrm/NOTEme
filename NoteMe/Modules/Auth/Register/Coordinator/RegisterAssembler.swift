@@ -11,14 +11,24 @@ final class RegisterAssembler {
     
     private init() {}
     
-    static func make(coordinator: RegisterCoordinatorProtocol) -> UIViewController {
+    static func make(container: Container,
+                     coordinator: RegisterCoordinatorProtocol) -> UIViewController {
+        
+        let keyboardHelper: KeyboardHelper = container.resolve()
+        let authService: AuthService = container.resolve()
+        let inputValidator: InputValidator = container.resolve()
+        let alertServiceUseCase = RegisterAlertServiceUseCase(alertService: container.resolve())
         
         let presenter = RegisterPresenter(coordinator: coordinator,
-                                          keyboardHelper: KeyboardHelper(),
-                                          authService: AuthService(),
-                                          inputValidator: InputValidator())
+                                          keyboardHelper: keyboardHelper,
+                                          authService: authService,
+                                          inputValidator: inputValidator,
+                                          alertService: alertServiceUseCase)
+        
+        let constraintsChange: AnimateConstraintsChange = container.resolve()
+        
         let vc = RegisterVC(presenter: presenter,
-                            animateConstsChange: AnimateConstraintsChange())
+                            animateConstsChange: constraintsChange)
         
         presenter.delegate = vc
         
