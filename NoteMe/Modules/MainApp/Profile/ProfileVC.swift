@@ -47,8 +47,8 @@ final class ProfileVC: UIViewController {
     private lazy var settingsTableView: UITableView = {
         let tv = UITableView()
         tv.backgroundColor = .white
-        tv.register(ProfileCustomCell.self,
-                    forCellReuseIdentifier: ProfileCustomCell.identifier)
+        tv.register(ProfileButtonCell.self,
+                    forCellReuseIdentifier: ProfileButtonCell.identifier)
         tv.delegate = self
         tv.dataSource = self
         tv.isScrollEnabled = false
@@ -126,7 +126,6 @@ final class ProfileVC: UIViewController {
         settingsView.snp.makeConstraints { make in
             make.top.equalTo(settingsLbl.snp.bottom).inset(-16.0)
             make.horizontalEdges.equalToSuperview().inset(20.0)
-//            make.height.equalTo(150.0)
         }
         
         emailTitleLbl.snp.makeConstraints { make in
@@ -160,8 +159,8 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: ProfileCustomCell.identifier,
-            for: indexPath) as? ProfileCustomCell
+            withIdentifier: ProfileButtonCell.identifier,
+            for: indexPath) as? ProfileButtonCell
         else { fatalError("noup") }
         
         cell.configure(with: viewModel.buttons[indexPath.row])

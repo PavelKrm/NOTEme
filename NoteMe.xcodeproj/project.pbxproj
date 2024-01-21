@@ -80,7 +80,7 @@
 		E93AF33D2AFE97F9003F9ACE /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AF33C2AFE97F9003F9ACE /* LoginAssembler.swift */; };
 		E93AF3412AFEA1B9003F9ACE /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AF3402AFEA1B9003F9ACE /* InputValidator.swift */; };
 		E93AF3442AFEA818003F9ACE /* InputValidator+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AF3432AFEA818003F9ACE /* InputValidator+Login.swift */; };
-		E96F69492B553D5E003BC39B /* ProfileCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F69482B553D5E003BC39B /* ProfileCustomCell.swift */; };
+		E96F69492B553D5E003BC39B /* ProfileButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F69482B553D5E003BC39B /* ProfileButtonCell.swift */; };
 		E96F694C2B555440003BC39B /* SettingsButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F694B2B555440003BC39B /* SettingsButtonModel.swift */; };
 		E96F694E2B557C48003BC39B /* AlertService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F694D2B557C48003BC39B /* AlertService+Profile.swift */; };
 		E97A229F2B30E20F0048A2F8 /* AlertService+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A229E2B30E20F0048A2F8 /* AlertService+Login.swift */; };
@@ -162,7 +162,7 @@
 		E93AF33C2AFE97F9003F9ACE /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
 		E93AF3402AFEA1B9003F9ACE /* InputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidator.swift; sourceTree = "<group>"; };
 		E93AF3432AFEA818003F9ACE /* InputValidator+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Login.swift"; sourceTree = "<group>"; };
-		E96F69482B553D5E003BC39B /* ProfileCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCustomCell.swift; sourceTree = "<group>"; };
+		E96F69482B553D5E003BC39B /* ProfileButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonCell.swift; sourceTree = "<group>"; };
 		E96F694B2B555440003BC39B /* SettingsButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonModel.swift; sourceTree = "<group>"; };
 		E96F694D2B557C48003BC39B /* AlertService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Profile.swift"; sourceTree = "<group>"; };
 		E97A229E2B30E20F0048A2F8 /* AlertService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Login.swift"; sourceTree = "<group>"; };
@@ -567,7 +567,7 @@
 		E96F69472B553D12003BC39B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				E96F69482B553D5E003BC39B /* ProfileCustomCell.swift */,
+				E96F69482B553D5E003BC39B /* ProfileButtonCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -755,7 +755,7 @@
 				E96F694C2B555440003BC39B /* SettingsButtonModel.swift in Sources */,
 				E9CDED2E2B096EB10059B11F /* ResetPasswordAssembler.swift in Sources */,
 				E9EE6B3A2B5429910029F4AA /* AuthService+Profile.swift in Sources */,
-				E96F69492B553D5E003BC39B /* ProfileCustomCell.swift in Sources */,
+				E96F69492B553D5E003BC39B /* ProfileButtonCell.swift in Sources */,
 				E9EE6B372B53EBBF0029F4AA /* CustomSettingsButton.swift in Sources */,
 				E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */,
 				E97A229F2B30E20F0048A2F8 /* AlertService+Login.swift in Sources */,

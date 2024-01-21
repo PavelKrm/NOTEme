@@ -8,14 +8,13 @@
 import UIKit
 import SnapKit
 
-class ProfileCustomCell: UITableViewCell {
+class ProfileButtonCell: UITableViewCell {
     
-    static let identifier: String = "ProfileCustomCell"
+    static let identifier: String = "ProfileButtonCell"
     
     private lazy var icon: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
-        image.image = UIImage(systemName: "questionmark")
         return image
     }()
     
