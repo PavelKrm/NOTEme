@@ -15,8 +15,8 @@ final class AuthService {
         return Auth.auth()
     }
     
-    func checkUserEmail(completion: @escaping(String?) -> Void) {
-        completion(firebase.currentUser?.email)
+    func currentUserEmail() -> String? {
+        return firebase.currentUser?.email
     }
     
     // есть вопрос по этой функции, в документации что-то не понятно описано

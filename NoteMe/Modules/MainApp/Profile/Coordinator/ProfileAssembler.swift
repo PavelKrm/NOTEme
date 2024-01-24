@@ -13,11 +13,14 @@ final class ProfileAssembler {
     
     static func make(container: Container) -> UIViewController {
         
-        let authService: AuthService = container.resolve()
-        let alertServiceUseCase = ProfileAlertServiceUseCase(alertService: container.resolve())
+        let authService = ProfileAuthServiceUseCase(
+            authService: container.resolve())
+        let alertServiceUseCase = ProfileAlertServiceUseCase(
+            alertService: container.resolve())
         
         let vm = ProfileVM(authService: authService,
-                           alertService: alertServiceUseCase)
+                           alertService: alertServiceUseCase,
+                           adapter: ProfileAdapter())
         
         return ProfileVC(viewModel: vm)
     }

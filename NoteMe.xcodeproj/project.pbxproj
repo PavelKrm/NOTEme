@@ -18,6 +18,9 @@
 		E90ADAE32AE83DE000F8989A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADAE22AE83DE000F8989A /* LoginVC.swift */; };
 		E925F5D22B58743700DAA1F4 /* AlertService+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925F5D12B58743700DAA1F4 /* AlertService+ResetPassword.swift */; };
 		E925F5D42B58780400DAA1F4 /* AlertService+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925F5D32B58780400DAA1F4 /* AlertService+Register.swift */; };
+		E92AA99C2B601CE200CC9690 /* ProfileSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92AA99B2B601CE200CC9690 /* ProfileSections.swift */; };
+		E92AA99E2B60258E00CC9690 /* ProfileAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92AA99D2B60258E00CC9690 /* ProfileAccountCell.swift */; };
+		E92AA9A22B602CE000CC9690 /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92AA9A12B602CE000CC9690 /* ProfileAdapter.swift */; };
 		E92EB2372B13B89E00C70A35 /* ResetPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB2362B13B89E00C70A35 /* ResetPasswordCoordinator.swift */; };
 		E92EB23C2B164B7400C70A35 /* ParametersHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB23B2B164B7400C70A35 /* ParametersHelper.swift */; };
 		E92EB2412B16547100C70A35 /* OnboardFirstStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92EB2402B16547100C70A35 /* OnboardFirstStepVC.swift */; };
@@ -81,7 +84,6 @@
 		E93AF3412AFEA1B9003F9ACE /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AF3402AFEA1B9003F9ACE /* InputValidator.swift */; };
 		E93AF3442AFEA818003F9ACE /* InputValidator+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93AF3432AFEA818003F9ACE /* InputValidator+Login.swift */; };
 		E96F69492B553D5E003BC39B /* ProfileButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F69482B553D5E003BC39B /* ProfileButtonCell.swift */; };
-		E96F694C2B555440003BC39B /* SettingsButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F694B2B555440003BC39B /* SettingsButtonModel.swift */; };
 		E96F694E2B557C48003BC39B /* AlertService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F694D2B557C48003BC39B /* AlertService+Profile.swift */; };
 		E97A229F2B30E20F0048A2F8 /* AlertService+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A229E2B30E20F0048A2F8 /* AlertService+Login.swift */; };
 		E97A22A12B30E93D0048A2F8 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A22A02B30E93D0048A2F8 /* MainTabBarVC.swift */; };
@@ -114,6 +116,9 @@
 		E90ADAE22AE83DE000F8989A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E925F5D12B58743700DAA1F4 /* AlertService+ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+ResetPassword.swift"; sourceTree = "<group>"; };
 		E925F5D32B58780400DAA1F4 /* AlertService+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Register.swift"; sourceTree = "<group>"; };
+		E92AA99B2B601CE200CC9690 /* ProfileSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSections.swift; sourceTree = "<group>"; };
+		E92AA99D2B60258E00CC9690 /* ProfileAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAccountCell.swift; sourceTree = "<group>"; };
+		E92AA9A12B602CE000CC9690 /* ProfileAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAdapter.swift; sourceTree = "<group>"; };
 		E92EB2362B13B89E00C70A35 /* ResetPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordCoordinator.swift; sourceTree = "<group>"; };
 		E92EB23B2B164B7400C70A35 /* ParametersHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersHelper.swift; sourceTree = "<group>"; };
 		E92EB2402B16547100C70A35 /* OnboardFirstStepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepVC.swift; sourceTree = "<group>"; };
@@ -163,7 +168,6 @@
 		E93AF3402AFEA1B9003F9ACE /* InputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidator.swift; sourceTree = "<group>"; };
 		E93AF3432AFEA818003F9ACE /* InputValidator+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Login.swift"; sourceTree = "<group>"; };
 		E96F69482B553D5E003BC39B /* ProfileButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonCell.swift; sourceTree = "<group>"; };
-		E96F694B2B555440003BC39B /* SettingsButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonModel.swift; sourceTree = "<group>"; };
 		E96F694D2B557C48003BC39B /* AlertService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Profile.swift"; sourceTree = "<group>"; };
 		E97A229E2B30E20F0048A2F8 /* AlertService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Login.swift"; sourceTree = "<group>"; };
 		E97A22A02B30E93D0048A2F8 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
@@ -233,7 +237,6 @@
 				E90ADAD32AE82D0700F8989A /* App */,
 				E9B1C12F2AF16E9B005C5852 /* Custom */,
 				E92EB26F2B1F847F00C70A35 /* GoogleService-Info.plist */,
-				E96F694A2B5553B6003BC39B /* Models */,
 				E90ADADF2AE83D7900F8989A /* Modules */,
 				E90ADAD42AE82DB100F8989A /* Resource */,
 				E93AF33E2AFEA14A003F9ACE /* Services */,
@@ -304,6 +307,41 @@
 				E93AF33A2AFE977F003F9ACE /* LoginVM.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E92AA9992B601CB000CC9690 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				E92AA9A02B602BE100CC9690 /* Headers */,
+				E92AA99F2B602BBC00CC9690 /* Cells */,
+				E92AA99A2B601CC100CC9690 /* Sections */,
+				E92AA9A12B602CE000CC9690 /* ProfileAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		E92AA99A2B601CC100CC9690 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				E92AA99B2B601CE200CC9690 /* ProfileSections.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		E92AA99F2B602BBC00CC9690 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E96F69482B553D5E003BC39B /* ProfileButtonCell.swift */,
+				E92AA99D2B60258E00CC9690 /* ProfileAccountCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E92AA9A02B602BE100CC9690 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		E92EB2352B13B87400C70A35 /* Coordinator */ = {
@@ -393,7 +431,7 @@
 		E92EB2572B17D00A00C70A35 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				E96F69472B553D12003BC39B /* Cell */,
+				E92AA9992B601CB000CC9690 /* Adapter */,
 				E9EE6B382B54296D0029F4AA /* UseCases */,
 				E92EB2592B17D01D00C70A35 /* Coordinator */,
 				E92EB2692B18A72600C70A35 /* ProfileVC.swift */,
@@ -564,22 +602,6 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
-		E96F69472B553D12003BC39B /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				E96F69482B553D5E003BC39B /* ProfileButtonCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		E96F694A2B5553B6003BC39B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E96F694B2B555440003BC39B /* SettingsButtonModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		E98C1A3D2B56E0B900C70715 /* Container */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,6 +765,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90ADADB2AE8382800F8989A /* UIImage+Consts.swift in Sources */,
+				E92AA9A22B602CE000CC9690 /* ProfileAdapter.swift in Sources */,
 				E92EB2412B16547100C70A35 /* OnboardFirstStepVC.swift in Sources */,
 				E925F5D22B58743700DAA1F4 /* AlertService+ResetPassword.swift in Sources */,
 				E96F694E2B557C48003BC39B /* AlertService+Profile.swift in Sources */,
@@ -751,8 +774,8 @@
 				E98C1A442B56EFFA00C70715 /* WindowManager.swift in Sources */,
 				E93729EC2B0D24C0006860AB /* RegisterCoordinator.swift in Sources */,
 				E93AF3442AFEA818003F9ACE /* InputValidator+Login.swift in Sources */,
+				E92AA99C2B601CE200CC9690 /* ProfileSections.swift in Sources */,
 				E92EB25F2B17D21E00C70A35 /* HomeCoordinator.swift in Sources */,
-				E96F694C2B555440003BC39B /* SettingsButtonModel.swift in Sources */,
 				E9CDED2E2B096EB10059B11F /* ResetPasswordAssembler.swift in Sources */,
 				E9EE6B3A2B5429910029F4AA /* AuthService+Profile.swift in Sources */,
 				E96F69492B553D5E003BC39B /* ProfileButtonCell.swift in Sources */,
@@ -809,6 +832,7 @@
 				E92EB26E2B18A83900C70A35 /* ProfileAssembler.swift in Sources */,
 				E92EB3312B27781300C70A35 /* NSAttributedString+Style.swift in Sources */,
 				E92ED40E2AF2835100FEAC39 /* ResetPasswordVC.swift in Sources */,
+				E92AA99E2B60258E00CC9690 /* ProfileAccountCell.swift in Sources */,
 				E925F5D42B58780400DAA1F4 /* AlertService+Register.swift in Sources */,
 				E9CDED2C2B096E7D0059B11F /* InputValidator+ResetPassword.swift in Sources */,
 				E92EB2AC2B1F98D000C70A35 /* AuthSevice+Login.swift in Sources */,

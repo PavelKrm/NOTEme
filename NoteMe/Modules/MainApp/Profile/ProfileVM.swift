@@ -8,10 +8,10 @@
 import UIKit
 protocol ProfileCoordinatorProtocol {}
 
-protocol ProfileAuthServiceUseCase {
+protocol ProfileAuthServiceUseCaseProtocol {
     
     func logout() -> Bool
-    func checkUserEmail(completion: @escaping(String?) -> Void)
+    func getUserEmail() -> String?
 }
 
 protocol ProfileAlertServiceUseCaseProtocol {
@@ -23,40 +23,39 @@ protocol ProfileAlertServiceUseCaseProtocol {
               okHandler: (() -> Void)?)
 }
 
+protocol ProfileAdapterProtocol {
+    
+    func reloadData(with sections: [ProfileSections])
+    func makeTableView() -> UITableView
+}
+
 final class ProfileVM: ProfileViewModelProtocol {
     
-    var catchEmail: ((String?) -> Void)?
-    var catchExportInfo: ((String?) -> Void)?
-    private var userEmail: String?
-    
-    //MARK: - fix me please
-    
-    var buttons: [SettingsButton] = [
-        SettingsButton.init(title: L10n.notifiBtnTitle,
-                            logo: .General.notifiIcon),
-        SettingsButton.init(title: L10n.exportBtnTitle,
-                            logo: .General.exportIcon,
-                            subTitle: "Never"),
-        SettingsButton.init(title: L10n.logoutBtnTitle,
-                            logo: .General.logoutIcon,
-                            titleColor: .appRed)
-    ]
-    
-    private let authService: ProfileAuthServiceUseCase
-    private let alertService: ProfileAlertServiceUseCaseProtocol
-    
-    init(authService: ProfileAuthServiceUseCase,
-         alertService: ProfileAlertServiceUseCaseProtocol) {
-        self.alertService = alertService
-        self.authService = authService
+    func makeTableView() -> UITableView {
+        adapter.makeTableView()
     }
     
-    func getEmail() {
-        authService.checkUserEmail { [weak self] email in
-            self?.catchEmail?(email)
-            self?.userEmail = email
-        }
-
+    var sections: [ProfileSections] {
+        return [
+            .account(authService.getUserEmail()),
+            .settings(ProfileSettingsRows.allCases)
+        ]
+    }
+    
+    private var userEmail: String?
+    
+    private let authService: ProfileAuthServiceUseCaseProtocol
+    private let alertService: ProfileAlertServiceUseCaseProtocol
+    private let adapter: ProfileAdapterProtocol
+    
+    init(authService: ProfileAuthServiceUseCaseProtocol,
+         alertService: ProfileAlertServiceUseCaseProtocol,
+         adapter: ProfileAdapterProtocol) {
+        self.alertService = alertService
+        self.authService = authService
+        self.adapter = adapter
+        
+        commonInit()
     }
 
     func notificationDidTap() {
@@ -86,15 +85,16 @@ final class ProfileVM: ProfileViewModelProtocol {
             }
         }
     }
+    
+    private func commonInit() {
+        adapter.reloadData(with: sections)
+    }
 }
 
 //MARK: - L10n
 
 extension ProfileVM {
     private enum L10n {
-        static let notifiBtnTitle = "ProfileVC_notifiBtn_Title".localized
-        static let exportBtnTitle = "ProfileVC_exportBtn_Title".localized
-        static let logoutBtnTitle = "ProfileVC_logoutBtn_Title".localized
         static let logoutAlertTitle = "ProfileVM_logoutAlert_Title".localized
         static let logoutAlertMsg = "ProfileVM_logoutAlert_Message".localized
         static let logoutAlertOkTitle = "ProfileVM_logoutAlert_OkTitle".localized
