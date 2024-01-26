@@ -25,6 +25,8 @@ protocol ProfileAlertServiceUseCaseProtocol {
 
 protocol ProfileAdapterProtocol {
     
+    var cathRowTap: ((ProfileSettingsRows) -> Void)? { get set }
+    
     func reloadData(with sections: [ProfileSections])
     func makeTableView() -> UITableView
 }
@@ -46,7 +48,7 @@ final class ProfileVM: ProfileViewModelProtocol {
     
     private let authService: ProfileAuthServiceUseCaseProtocol
     private let alertService: ProfileAlertServiceUseCaseProtocol
-    private let adapter: ProfileAdapterProtocol
+    private var adapter: ProfileAdapterProtocol
     
     init(authService: ProfileAuthServiceUseCaseProtocol,
          alertService: ProfileAlertServiceUseCaseProtocol,
@@ -56,17 +58,18 @@ final class ProfileVM: ProfileViewModelProtocol {
         self.adapter = adapter
         
         commonInit()
+        bind()
     }
 
-    func notificationDidTap() {
+    private func notificationDidTap() {
         print(#function)
     }
     
-    func exportDidTap() {
+    private func exportDidTap() {
         print(#function)
     }
     
-    func logoutDidTap() {
+    private func logoutDidTap() {
         
         alertService.show(
             title: L10n.logoutAlertTitle,
@@ -88,6 +91,19 @@ final class ProfileVM: ProfileViewModelProtocol {
     
     private func commonInit() {
         adapter.reloadData(with: sections)
+    }
+    
+    private func bind() {
+        adapter.cathRowTap = { [weak self] row in
+            switch row {
+            case .notifications:
+                self?.notificationDidTap()
+            case .export:
+                self?.exportDidTap()
+            case .logout:
+                self?.logoutDidTap()
+            }
+        }
     }
 }
 

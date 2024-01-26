@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProfileAdapter: NSObject {
+final class ProfileAdapter: NSObject, ProfileAdapterProtocol {
     
     var sections: [ProfileSections] = [] {
         didSet {
@@ -37,6 +37,18 @@ final class ProfileAdapter: NSObject {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    //MARK: - ProfileAdapterProtocol
+    
+    var cathRowTap: ((ProfileSettingsRows) -> Void)?
+    
+    func reloadData(with sections: [ProfileSections]) {
+        self.sections = sections
+    }
+    
+    func makeTableView() -> UITableView {
+        return tableView
+    }
 }
 
 //MARK: - UITableViewDataSource
@@ -55,6 +67,12 @@ extension ProfileAdapter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        var sectionsType = sections[indexPath.section]
+        switch sectionsType {
+        case .settings(let row):
+            cathRowTap?(row[indexPath.row])
+        default: break
+        }
     }
     
     func tableView(_ tableView: UITableView,
@@ -90,21 +108,8 @@ extension ProfileAdapter: UITableViewDelegate {
                    viewForHeaderInSection section: Int) -> UIView? {
         
         let sectionType = sections[section]
-#warning("Fix me")
-        let header = UILabel()
-#warning("I'm right here 👆🏿")
+        let header = ProfileSectionHeader()
         header.text = sectionType.headerText
         return header
-    }
-}
-
-//MARK: extension ProfileAdapterProtocol
-extension ProfileAdapter: ProfileAdapterProtocol {
-    func reloadData(with sections: [ProfileSections]) {
-        self.sections = sections
-    }
-    
-    func makeTableView() -> UITableView {
-        return tableView
     }
 }

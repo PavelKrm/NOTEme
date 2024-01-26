@@ -42,12 +42,12 @@ final class LineTextField: UIView {
     }()
     
     var title: String? {
-        get { titleLabel.text}
+        get { titleLabel.text }
         set { titleLabel.text = newValue }
     }
     
     var errorText: String? {
-        get { errorLabel.text}
+        get { errorLabel.text }
         set { errorLabel.text = newValue }
     }
     
