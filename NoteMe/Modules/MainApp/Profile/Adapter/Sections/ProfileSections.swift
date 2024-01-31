@@ -57,6 +57,8 @@ enum ProfileSettingsRows: CaseIterable {
     }
 }
 
+//MARK: L10n
+
 extension ProfileSections {
     private enum L10n {
         static let account = "ProfileVC_accountLbl_Title".localized

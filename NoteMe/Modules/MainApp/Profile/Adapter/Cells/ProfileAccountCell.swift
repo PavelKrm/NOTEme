@@ -36,6 +36,7 @@ final class ProfileAccountCell: UITableViewCell {
     
     private func setupUI() {
         
+        self.contentView.backgroundColor = .white
         self.contentView.addSubview(title)
         self.contentView.addSubview(emailLbl)
     }

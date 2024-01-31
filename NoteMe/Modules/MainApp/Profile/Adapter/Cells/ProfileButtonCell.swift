@@ -50,6 +50,8 @@ final class ProfileButtonCell: UITableViewCell {
     }
     
     private func setupUI() {
+        
+        self.contentView.backgroundColor = .white
         self.contentView.addSubview(icon)
         self.contentView.addSubview(title)
         self.contentView.addSubview(info)

@@ -30,10 +30,9 @@ final class ProfileAdapter: NSObject, ProfileAdapterProtocol {
     
     private func setupTableView() {
 
-        tableView.register(ProfileButtonCell.self,
-                           forCellReuseIdentifier: "\(ProfileButtonCell.self)")
-        tableView.register(ProfileAccountCell.self,
-                           forCellReuseIdentifier: "\(ProfileAccountCell.self)")
+        tableView.register(ProfileAccountCell.self)
+        tableView.register(ProfileButtonCell.self)
+                           
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -67,7 +66,7 @@ extension ProfileAdapter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        var sectionsType = sections[indexPath.section]
+        let sectionsType = sections[indexPath.section]
         switch sectionsType {
         case .settings(let row):
             cathRowTap?(row[indexPath.row])
@@ -81,19 +80,13 @@ extension ProfileAdapter: UITableViewDataSource {
         let section = sections[indexPath.section]
         switch section {
         case .account(let email):
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "\(ProfileAccountCell.self)",
-                for: indexPath) as? ProfileAccountCell
+            let cell: ProfileAccountCell? = tableView.dequeue(at: indexPath)
             cell?.configure(with: email)
             
             return cell ?? .init()
             
         case .settings(let rows):
-            
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "\(ProfileButtonCell.self)",
-                for: indexPath) as? ProfileButtonCell
-            
+            let cell: ProfileButtonCell? = tableView.dequeue(at: indexPath)
             cell?.configure(with: rows[indexPath.row])
             return cell ?? .init()
         }
