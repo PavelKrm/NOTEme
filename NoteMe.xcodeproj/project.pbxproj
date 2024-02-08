@@ -109,6 +109,13 @@
 		E98C1A3F2B56E0CF00C70715 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C1A3E2B56E0CF00C70715 /* Container.swift */; };
 		E98C1A412B56E54F00C70715 /* ContainerRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C1A402B56E54F00C70715 /* ContainerRegistrator.swift */; };
 		E98C1A442B56EFFA00C70715 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C1A432B56EFFA00C70715 /* WindowManager.swift */; };
+		E9A84F632B73DBCF0025F6E4 /* TimerNotificationMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F5F2B73DBCF0025F6E4 /* TimerNotificationMO+CoreDataClass.swift */; };
+		E9A84F642B73DBCF0025F6E4 /* TimerNotificationMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F602B73DBCF0025F6E4 /* TimerNotificationMO+CoreDataProperties.swift */; };
+		E9A84F652B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F612B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataClass.swift */; };
+		E9A84F662B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F622B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataProperties.swift */; };
+		E9A84F692B73E34B0025F6E4 /* DTODescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F682B73E34B0025F6E4 /* DTODescription.swift */; };
+		E9A84F6B2B73E4140025F6E4 /* NotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F6A2B73E4140025F6E4 /* NotificationStorage.swift */; };
+		E9A84F6E2B73F5F90025F6E4 /* FRCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F6D2B73F5F90025F6E4 /* FRCService.swift */; };
 		E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */; };
 		E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */; };
 		E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C1302AF16EC9005C5852 /* LineTextField.swift */; };
@@ -247,6 +254,13 @@
 		E98C1A3E2B56E0CF00C70715 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		E98C1A402B56E54F00C70715 /* ContainerRegistrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRegistrator.swift; sourceTree = "<group>"; };
 		E98C1A432B56EFFA00C70715 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
+		E9A84F5F2B73DBCF0025F6E4 /* TimerNotificationMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerNotificationMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E9A84F602B73DBCF0025F6E4 /* TimerNotificationMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerNotificationMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E9A84F612B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationNotidicationMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E9A84F622B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationNotidicationMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E9A84F682B73E34B0025F6E4 /* DTODescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTODescription.swift; sourceTree = "<group>"; };
+		E9A84F6A2B73E4140025F6E4 /* NotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStorage.swift; sourceTree = "<group>"; };
+		E9A84F6D2B73F5F90025F6E4 /* FRCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRCService.swift; sourceTree = "<group>"; };
 		E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
 		E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
 		E9B1C1302AF16EC9005C5852 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
@@ -697,6 +711,7 @@
 		E98A9FE12B695ACD00D0B360 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				E9A84F6C2B73F5E70025F6E4 /* FRC */,
 				E98AA0172B696E3F00D0B360 /* Consts */,
 				E98AA0112B69673D00D0B360 /* CoreData */,
 				E98AA0002B695C3800D0B360 /* DataStorage */,
@@ -727,6 +742,7 @@
 		E98AA0042B695E8200D0B360 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E9A84F672B73E3250025F6E4 /* Protocols */,
 				E98AA00E2B69642900D0B360 /* DTOs */,
 				E98AA0052B695E8E00D0B360 /* ManagedObjects */,
 			);
@@ -736,6 +752,10 @@
 		E98AA0052B695E8E00D0B360 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
+				E9A84F5F2B73DBCF0025F6E4 /* TimerNotificationMO+CoreDataClass.swift */,
+				E9A84F602B73DBCF0025F6E4 /* TimerNotificationMO+CoreDataProperties.swift */,
+				E9A84F612B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataClass.swift */,
+				E9A84F622B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataProperties.swift */,
 				E98AA0062B695F0300D0B360 /* BaseNotificationMO+CoreDataClass.swift */,
 				E98AA0072B695F0300D0B360 /* BaseNotificationMO+CoreDataProperties.swift */,
 				E98AA0082B695F0300D0B360 /* DateNotificationMO+CoreDataClass.swift */,
@@ -764,6 +784,7 @@
 			isa = PBXGroup;
 			children = (
 				E98AA0152B6968B600D0B360 /* DateNotificationStorage.swift */,
+				E9A84F6A2B73E4140025F6E4 /* NotificationStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -791,6 +812,22 @@
 				E98C1A432B56EFFA00C70715 /* WindowManager.swift */,
 			);
 			path = WindowManager;
+			sourceTree = "<group>";
+		};
+		E9A84F672B73E3250025F6E4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E9A84F682B73E34B0025F6E4 /* DTODescription.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E9A84F6C2B73F5E70025F6E4 /* FRC */ = {
+			isa = PBXGroup;
+			children = (
+				E9A84F6D2B73F5F90025F6E4 /* FRCService.swift */,
+			);
+			path = FRC;
 			sourceTree = "<group>";
 		};
 		E9B1C1292AF15EC9005C5852 /* Utils */ = {
@@ -1094,16 +1131,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A84F6E2B73F5F90025F6E4 /* FRCService.swift in Sources */,
+				E9A84F6B2B73E4140025F6E4 /* NotificationStorage.swift in Sources */,
 				E98AA00C2B695F0300D0B360 /* DateNotificationMO+CoreDataClass.swift in Sources */,
 				E98A9FE42B695ACD00D0B360 /* Storage.docc in Sources */,
+				E9A84F652B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataClass.swift in Sources */,
 				E98AA0102B69645A00D0B360 /* DateNotificationDTO.swift in Sources */,
 				E98AA0032B695C7E00D0B360 /* NotificationDataBase.xcdatamodeld in Sources */,
 				E98AA0192B696E5500D0B360 /* NSPredicate+Const.swift in Sources */,
+				E9A84F692B73E34B0025F6E4 /* DTODescription.swift in Sources */,
 				E98AA0132B69675C00D0B360 /* CoreDataService.swift in Sources */,
 				E98AA00A2B695F0300D0B360 /* BaseNotificationMO+CoreDataClass.swift in Sources */,
 				E98AA00D2B695F0300D0B360 /* DateNotificationMO+CoreDataProperties.swift in Sources */,
 				E98AA0162B6968B600D0B360 /* DateNotificationStorage.swift in Sources */,
 				E98AA00B2B695F0300D0B360 /* BaseNotificationMO+CoreDataProperties.swift in Sources */,
+				E9A84F642B73DBCF0025F6E4 /* TimerNotificationMO+CoreDataProperties.swift in Sources */,
+				E9A84F632B73DBCF0025F6E4 /* TimerNotificationMO+CoreDataClass.swift in Sources */,
+				E9A84F662B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

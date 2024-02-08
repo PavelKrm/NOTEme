@@ -7,7 +7,9 @@
 
 import Foundation
 
-public struct DateNotificationDTO {
+public struct DateNotificationDTO: DTODescription {
+    typealias DTO = Self
+    typealias MO = DateNotificationMO
     
     public var date: Date
     public var id: String

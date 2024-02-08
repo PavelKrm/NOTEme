@@ -17,10 +17,23 @@ final class CoreDataService {
         return persistentContainer.viewContext
     }
     
+    var backgroundContext: NSManagedObjectContext {
+        let context = persistentContainer.newBackgroundContext()
+        context.parent = mainContext
+        return context
+    }
+    
     // MARK: - Core Data stack
 
     var persistentContainer: NSPersistentContainer = {
        
+        let modelName = "NotificationDataBase"
+        let bundle = Bundle(for: CoreDataService.self)
+        guard
+            let modelURL = bundle.url(forResource: modelName, withExtension: "momd"),
+            let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL)
+        else { fatalError() }
+        
         let container = NSPersistentContainer(name: "NotificationDataBase")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -32,9 +45,14 @@ final class CoreDataService {
     }()
 
     // MARK: - Core Data Saving support
+    
+    func saveMainContext(completion: SuccessHandler? = nil) {
+        saveContext(context: mainContext, completion: completion)
+    }
 
-    func saveContext (completion: SuccessHandler?) {
-        let context = persistentContainer.viewContext
+    func saveContext (context: NSManagedObjectContext,
+                      completion: SuccessHandler?) {
+       
         if context.hasChanges {
             do {
                 try context.save()

@@ -21,3 +21,7 @@ class DateNotificationMO: BaseNotificationMO {
         self.targetDate = dto.targetDate
     }
 }
+
+extension DateNotificationMO: MODescription {
+    typealias MO = DateNotificationMO
+}

@@ -93,7 +93,8 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         
         guard
             checkValidation(email: email, pass: pass, repeat: `repeat`),
-            let email, let pass else { return }
+            let email, let pass
+        else { return }
         authService.signUp(email: email, pass: pass) { [weak self]
             result in
             switch result {
