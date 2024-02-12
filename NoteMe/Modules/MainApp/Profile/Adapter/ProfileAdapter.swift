@@ -54,6 +54,7 @@ final class ProfileAdapter: NSObject, ProfileAdapterProtocol {
 
 extension ProfileAdapter: UITableViewDataSource {
     
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }

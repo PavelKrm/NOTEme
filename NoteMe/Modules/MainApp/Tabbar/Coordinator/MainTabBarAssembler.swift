@@ -11,9 +11,11 @@ final class MainTabBarAssembler {
     
     private init() {}
     
-    static func make() -> UITabBarController {
-        
-        let tabBar = MainTabBarVC()
+    static func make(with views: [UIViewController],
+                     coordinator: MainTabBarCoordinatorProtocol) -> UITabBarController {
+        let vm = MainTabBarVM(coordinator: coordinator)
+        let tabBar = MainTabBarVC(viewModel: vm)
+        tabBar.viewControllers = views
         
         return tabBar
     }

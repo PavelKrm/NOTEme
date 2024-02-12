@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Storage
 
 protocol HomeViewModelProtocol {}
 
@@ -33,7 +34,7 @@ final class HomeVC: UIViewController {
     
     private func setupUI() {
         
-        view.backgroundColor = .appYellow
+        view.backgroundColor = .appGray
     }
     
     private func setupTabBarItem() {

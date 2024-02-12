@@ -26,6 +26,15 @@
 "ProfileVC_exportBtn_Title" = "Экспорт";
 "ProfileVC_logoutBtn_Title" = "Выйти из аккаунта";
 
+// menu
+    // AddNotificationMenuRows
+"AddNotificationMenuVC_calendarRow_title" = "Календарь";
+"AddNotificationMenuVC_locationRow_title" = "Локация";
+"AddNotificationMenuVC_timerRow_title" = "Таймер";
+    // ActionsMunuRows
+"ActionsMenuVC_EditRow_title" = "Редактировать";
+"ActionsMenuVC_DeleteRow_title" = "Удалить";
+
 // title label
     //LoginVC
 "LoginVC_welcome_title_lbl" = "С возвращением!";

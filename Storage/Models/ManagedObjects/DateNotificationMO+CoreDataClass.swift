@@ -10,9 +10,12 @@ import Foundation
 import CoreData
 
 @objc(DateNotificationMO)
-class DateNotificationMO: BaseNotificationMO {
+public class DateNotificationMO: BaseNotificationMO, MODescription {
 
-    func apply(dto: DateNotificationDTO) {
+    public typealias DTO = DateNotificationDTO
+    
+    public func apply(dto: DTO) {
+        
         self.identifier = dto.id
         self.date = dto.date
         self.title = dto.title
@@ -20,8 +23,4 @@ class DateNotificationMO: BaseNotificationMO {
         self.completedDate = dto.completedDate
         self.targetDate = dto.targetDate
     }
-}
-
-extension DateNotificationMO: MODescription {
-    typealias MO = DateNotificationMO
 }

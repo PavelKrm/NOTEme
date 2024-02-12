@@ -7,14 +7,14 @@
 
 import CoreData
 
-public final class DateNotificationStorage {
+public final class DateNotificationStorage: NotificationStorage<DateNotificationDTO> {
     
-    typealias CompletionHandler = (Bool) -> Void
+    public typealias CompletionHandler = (Bool) -> Void
     
-    public init() {}
+    public override init() {}
     
     //Fetch
-    public func fetch(
+    public override func fetch(
         predicate: NSPredicate? = nil,
         sortDescriptors: [NSSortDescriptor] = []
     ) -> [DateNotificationDTO] {
@@ -34,24 +34,25 @@ public final class DateNotificationStorage {
     }
     
     //Create
-    func create(
+    public override func create(
         dto: DateNotificationDTO,
         completion: CompletionHandler? = nil
     ) {
-        let context = CoreDataService.shared.mainContext
-        context.performAndWait {
+        let context = CoreDataService.shared.backgroundContext
+        context.perform {
             let mo = DateNotificationMO(context: context)
             mo.apply(dto: dto)
             
-            CoreDataService.shared.saveContext(completion: completion)
+            CoreDataService.shared.saveContext(context: context,
+                                               completion: completion)
         }
     }
     //Update
-    func update(
+    public func update(
         dto: DateNotificationDTO,
         completion: CompletionHandler? = nil
     ) {
-        let context = CoreDataService.shared.mainContext
+        let context = CoreDataService.shared.backgroundContext
         context.perform { [weak self] in
             guard
                 let mo = self?.fetchMO(
@@ -60,11 +61,12 @@ public final class DateNotificationStorage {
             else { return }
             mo.apply(dto: dto)
             
-            CoreDataService.shared.saveContext(completion: completion)
+            CoreDataService.shared.saveContext(context: context,
+                                               completion: completion)
         }
     }
     //UpdateOrCreate
-    func updateOrCreate(
+    public func updateOrCreate(
         dto: DateNotificationDTO,
         completion: CompletionHandler? = nil
     ) {

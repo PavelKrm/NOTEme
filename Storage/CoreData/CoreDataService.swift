@@ -13,36 +13,40 @@ final class CoreDataService {
     
     typealias SuccessHandler = (Bool) -> Void
     
-    var mainContext: NSManagedObjectContext {
-        return persistentContainer.viewContext
-    }
-    
+    lazy var mainContext: NSManagedObjectContext = {
+            let context = persistentContainer.viewContext
+            context.automaticallyMergesChangesFromParent = true
+            return context
+        }()
+        
     var backgroundContext: NSManagedObjectContext {
-        let context = persistentContainer.newBackgroundContext()
-        context.parent = mainContext
-        return context
-    }
+            return persistentContainer.newBackgroundContext()
+        }
     
     // MARK: - Core Data stack
 
-    var persistentContainer: NSPersistentContainer = {
-       
+    private var persistentContainer: NSPersistentContainer = {
         let modelName = "NotificationDataBase"
         let bundle = Bundle(for: CoreDataService.self)
+            
         guard
-            let modelURL = bundle.url(forResource: modelName, withExtension: "momd"),
+            let modelURL = bundle.url(forResource: modelName,
+                                      withExtension: "momd"),
             let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL)
-        else { fatalError() }
-        
-        let container = NSPersistentContainer(name: "NotificationDataBase")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-               
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
+        else { fatalError("unable to find model in bundle") }
+
+            let container = NSPersistentContainer(
+                name: modelName,
+                managedObjectModel: managedObjectModel
+            )
+            
+            container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+                if let error = error as NSError? {
+                    fatalError("Unresolved error \(error), \(error.userInfo)")
+                }
+            })
+            return container
+        }()
 
     // MARK: - Core Data Saving support
     
@@ -50,7 +54,7 @@ final class CoreDataService {
         saveContext(context: mainContext, completion: completion)
     }
 
-    func saveContext (context: NSManagedObjectContext,
+    func saveContext(context: NSManagedObjectContext,
                       completion: SuccessHandler?) {
        
         if context.hasChanges {

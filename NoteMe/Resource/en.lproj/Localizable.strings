@@ -26,6 +26,15 @@
 "ProfileVC_exportBtn_Title" = "Export";
 "ProfileVC_logoutBtn_Title" = "Logout";
 
+// menu
+    // AddNotificationMenuRows
+"AddNotificationMenuVC_calendarRow_title" = "Calendar";
+"AddNotificationMenuVC_locationRow_title" = "Location";
+"AddNotificationMenuVC_timerRow_title" = "Timer";
+    // ActionsMunuRows
+"ActionsMenuVC_EditRow_title" = "Edit";
+"ActionsMenuVC_DeleteRow_title" = "Delete";
+
 // title label
     //LoginVC
 "LoginVC_welcome_title_lbl" = "Welcome Back!";
@@ -103,4 +112,6 @@
 "HomeVC_tabBarItem_Title" = "Home";
     //ProfileVC
 "ProfileVC_tabBarItem_Title" = "Profile";
+
+
 

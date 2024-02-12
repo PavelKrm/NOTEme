@@ -8,8 +8,9 @@
 import Foundation
 
 public struct DateNotificationDTO: DTODescription {
-    typealias DTO = Self
-    typealias MO = DateNotificationMO
+
+    public typealias DTO = Self
+    public typealias MO = DateNotificationMO
     
     public var date: Date
     public var id: String
@@ -18,22 +19,22 @@ public struct DateNotificationDTO: DTODescription {
     public var completedDate: Date?
     public var targetDate: Date
     
-    init(date: Date,
-         id: String,
-         subtitle: String? = nil,
-         title: String? = nil,
-         completedDate: Date? = nil,
-         targerDate: Date) {
+    public init(date: Date,
+                identifier: String,
+                subtitle: String? = nil,
+                title: String? = nil,
+                completedDate: Date? = nil,
+                targerDate: Date) {
         
         self.date = date
-        self.id = id
+        self.id = identifier
         self.subtitle = subtitle
         self.title = title
         self.completedDate = completedDate
         self.targetDate = targerDate
     }
     
-    init?(mo: DateNotificationMO) {
+    public init?(mo: DateNotificationMO) {
         guard
             let id = mo.identifier,
             let title = mo.title,

@@ -116,6 +116,19 @@
 		E9A84F692B73E34B0025F6E4 /* DTODescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F682B73E34B0025F6E4 /* DTODescription.swift */; };
 		E9A84F6B2B73E4140025F6E4 /* NotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F6A2B73E4140025F6E4 /* NotificationStorage.swift */; };
 		E9A84F6E2B73F5F90025F6E4 /* FRCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F6D2B73F5F90025F6E4 /* FRCService.swift */; };
+		E9A84F702B76B5130025F6E4 /* LocationNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F6F2B76B5130025F6E4 /* LocationNotificationDTO.swift */; };
+		E9A84F722B76B5310025F6E4 /* TimerNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F712B76B5310025F6E4 /* TimerNotificationDTO.swift */; };
+		E9A84F742B76B9EF0025F6E4 /* LocationNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F732B76B9EF0025F6E4 /* LocationNotificationStorage.swift */; };
+		E9A84F762B76BA060025F6E4 /* TimerNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F752B76BA060025F6E4 /* TimerNotificationStorage.swift */; };
+		E9A84F792B796C680025F6E4 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F782B796C680025F6E4 /* MenuVC.swift */; };
+		E9A84F7B2B796D7D0025F6E4 /* MenuVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F7A2B796D7D0025F6E4 /* MenuVM.swift */; };
+		E9A84F802B796E700025F6E4 /* MenuRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F7F2B796E700025F6E4 /* MenuRows.swift */; };
+		E9A84F862B79ED0F0025F6E4 /* MenuAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F852B79ED0F0025F6E4 /* MenuAdapter.swift */; };
+		E9A84F882B79F8F40025F6E4 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F872B79F8F40025F6E4 /* MenuCell.swift */; };
+		E9A84F8F2B7A2A610025F6E4 /* MainTabBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F8E2B7A2A610025F6E4 /* MainTabBarVM.swift */; };
+		E9A84F922B7A60190025F6E4 /* MenuAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F912B7A60190025F6E4 /* MenuAssembler.swift */; };
+		E9A84F942B7A671B0025F6E4 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F932B7A671B0025F6E4 /* MenuCoordinator.swift */; };
+		E9A84F992B7AB7190025F6E4 /* AddNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F982B7AB7190025F6E4 /* AddNotificationVC.swift */; };
 		E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */; };
 		E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */; };
 		E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C1302AF16EC9005C5852 /* LineTextField.swift */; };
@@ -261,6 +274,19 @@
 		E9A84F682B73E34B0025F6E4 /* DTODescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTODescription.swift; sourceTree = "<group>"; };
 		E9A84F6A2B73E4140025F6E4 /* NotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStorage.swift; sourceTree = "<group>"; };
 		E9A84F6D2B73F5F90025F6E4 /* FRCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRCService.swift; sourceTree = "<group>"; };
+		E9A84F6F2B76B5130025F6E4 /* LocationNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationDTO.swift; sourceTree = "<group>"; };
+		E9A84F712B76B5310025F6E4 /* TimerNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationDTO.swift; sourceTree = "<group>"; };
+		E9A84F732B76B9EF0025F6E4 /* LocationNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationStorage.swift; sourceTree = "<group>"; };
+		E9A84F752B76BA060025F6E4 /* TimerNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationStorage.swift; sourceTree = "<group>"; };
+		E9A84F782B796C680025F6E4 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		E9A84F7A2B796D7D0025F6E4 /* MenuVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVM.swift; sourceTree = "<group>"; };
+		E9A84F7F2B796E700025F6E4 /* MenuRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRows.swift; sourceTree = "<group>"; };
+		E9A84F852B79ED0F0025F6E4 /* MenuAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAdapter.swift; sourceTree = "<group>"; };
+		E9A84F872B79F8F40025F6E4 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		E9A84F8E2B7A2A610025F6E4 /* MainTabBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVM.swift; sourceTree = "<group>"; };
+		E9A84F912B7A60190025F6E4 /* MenuAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAssembler.swift; sourceTree = "<group>"; };
+		E9A84F932B7A671B0025F6E4 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
+		E9A84F982B7AB7190025F6E4 /* AddNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationVC.swift; sourceTree = "<group>"; };
 		E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
 		E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
 		E9B1C1302AF16EC9005C5852 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
@@ -517,6 +543,8 @@
 		E92EB2542B17CFA300C70A35 /* MainApp */ = {
 			isa = PBXGroup;
 			children = (
+				E9A84F952B7AB4D80025F6E4 /* AddNotification */,
+				E9A84F772B795E430025F6E4 /* Menu */,
 				E92EB2642B18A00600C70A35 /* Tabbar */,
 				E92EB2572B17D00A00C70A35 /* Profile */,
 				E92EB2562B17CFFC00C70A35 /* Home */,
@@ -569,6 +597,7 @@
 			children = (
 				E92EB3372B28D0A500C70A35 /* Coordinator */,
 				E97A22A02B30E93D0048A2F8 /* MainTabBarVC.swift */,
+				E9A84F8E2B7A2A610025F6E4 /* MainTabBarVM.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -768,6 +797,8 @@
 			isa = PBXGroup;
 			children = (
 				E98AA00F2B69645A00D0B360 /* DateNotificationDTO.swift */,
+				E9A84F6F2B76B5130025F6E4 /* LocationNotificationDTO.swift */,
+				E9A84F712B76B5310025F6E4 /* TimerNotificationDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -785,6 +816,8 @@
 			children = (
 				E98AA0152B6968B600D0B360 /* DateNotificationStorage.swift */,
 				E9A84F6A2B73E4140025F6E4 /* NotificationStorage.swift */,
+				E9A84F732B76B9EF0025F6E4 /* LocationNotificationStorage.swift */,
+				E9A84F752B76BA060025F6E4 /* TimerNotificationStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -828,6 +861,60 @@
 				E9A84F6D2B73F5F90025F6E4 /* FRCService.swift */,
 			);
 			path = FRC;
+			sourceTree = "<group>";
+		};
+		E9A84F772B795E430025F6E4 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				E9A84F902B7A60080025F6E4 /* Coordinator */,
+				E9A84F7C2B796E480025F6E4 /* Adapter */,
+				E9A84F782B796C680025F6E4 /* MenuVC.swift */,
+				E9A84F7A2B796D7D0025F6E4 /* MenuVM.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		E9A84F7C2B796E480025F6E4 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				E9A84F7E2B796E560025F6E4 /* Sections */,
+				E9A84F7D2B796E4F0025F6E4 /* Cells */,
+				E9A84F852B79ED0F0025F6E4 /* MenuAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		E9A84F7D2B796E4F0025F6E4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E9A84F872B79F8F40025F6E4 /* MenuCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E9A84F7E2B796E560025F6E4 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				E9A84F7F2B796E700025F6E4 /* MenuRows.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		E9A84F902B7A60080025F6E4 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E9A84F912B7A60190025F6E4 /* MenuAssembler.swift */,
+				E9A84F932B7A671B0025F6E4 /* MenuCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E9A84F952B7AB4D80025F6E4 /* AddNotification */ = {
+			isa = PBXGroup;
+			children = (
+				E9A84F982B7AB7190025F6E4 /* AddNotificationVC.swift */,
+			);
+			path = AddNotification;
 			sourceTree = "<group>";
 		};
 		E9B1C1292AF15EC9005C5852 /* Utils */ = {
@@ -1071,6 +1158,7 @@
 				E92EB2E92B20A26300C70A35 /* AuthService+ResetPassword.swift in Sources */,
 				E92EB26A2B18A72700C70A35 /* ProfileVC.swift in Sources */,
 				E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */,
+				E9A84F862B79ED0F0025F6E4 /* MenuAdapter.swift in Sources */,
 				E93AF33B2AFE977F003F9ACE /* LoginVM.swift in Sources */,
 				E93AD9462B03E11900187CCC /* RegisterAssembler.swift in Sources */,
 				E92ED4172AF2D5A800FEAC39 /* String+Locale.swift in Sources */,
@@ -1083,9 +1171,11 @@
 				E92EB23C2B164B7400C70A35 /* ParametersHelper.swift in Sources */,
 				E92EB25D2B17D03C00C70A35 /* HomeVM.swift in Sources */,
 				E93729E02B0CD562006860AB /* InputValidator+Register.swift in Sources */,
+				E9A84F922B7A60190025F6E4 /* MenuAssembler.swift in Sources */,
 				E98A9FDA2B69563C00D0B360 /* Collection+Register.swift in Sources */,
 				E93729E92B0D1B72006860AB /* LoginCoordinator.swift in Sources */,
 				E93AF3392AFE942D003F9ACE /* UIButton+Actions.swift in Sources */,
+				E9A84F792B796C680025F6E4 /* MenuVC.swift in Sources */,
 				E93729DD2B0CD3F2006860AB /* KeyboardHelper+Register.swift in Sources */,
 				E92EB25B2B17D02F00C70A35 /* HomeVC.swift in Sources */,
 				E90ADAE32AE83DE000F8989A /* LoginVC.swift in Sources */,
@@ -1093,6 +1183,7 @@
 				E97A22A12B30E93D0048A2F8 /* MainTabBarVC.swift in Sources */,
 				E92EB2AA2B1F95D000C70A35 /* AuthService.swift in Sources */,
 				E92EB2432B16567600C70A35 /* OnboardFirstStepVM.swift in Sources */,
+				E9A84F882B79F8F40025F6E4 /* MenuCell.swift in Sources */,
 				E92EB24F2B165CAB00C70A35 /* OnboardSecondStepAssembler.swift in Sources */,
 				E92ED4062AF2744500FEAC39 /* UILabel+Styles.swift in Sources */,
 				E90ADAC02AE824CA00F8989A /* AppDelegate.swift in Sources */,
@@ -1101,11 +1192,14 @@
 				E93AD9492B03E53A00187CCC /* KeyboardHelper.swift in Sources */,
 				E92EB26C2B18A7EB00C70A35 /* ProfileVM.swift in Sources */,
 				E93AD9442B03DB8600187CCC /* RegisterPresentor.swift in Sources */,
+				E9A84F802B796E700025F6E4 /* MenuRows.swift in Sources */,
+				E9A84F7B2B796D7D0025F6E4 /* MenuVM.swift in Sources */,
 				E9CDED2A2B096E540059B11F /* KeyboardHelper+Login.swift in Sources */,
 				E92EB2682B18A3D200C70A35 /* MainTabBarAssembler.swift in Sources */,
 				E93729E62B0D129D006860AB /* Coordinator.swift in Sources */,
 				E98C1A412B56E54F00C70715 /* ContainerRegistrator.swift in Sources */,
 				E92EB2612B17D25800C70A35 /* HomeAssembler.swift in Sources */,
+				E9A84F992B7AB7190025F6E4 /* AddNotificationVC.swift in Sources */,
 				E92ED4192AF2DB4F00FEAC39 /* UIView+Styles.swift in Sources */,
 				E9CDED272B096AB30059B11F /* ResetPasswordVM.swift in Sources */,
 				E98C1A3F2B56E0CF00C70715 /* Container.swift in Sources */,
@@ -1116,6 +1210,8 @@
 				E92EB2472B1657D500C70A35 /* OnboardFirstStepCoordinator.swift in Sources */,
 				E92EB24D2B165C1800C70A35 /* OnboardSecondStepVM.swift in Sources */,
 				E92EB3362B28C1E200C70A35 /* AlertService.swift in Sources */,
+				E9A84F942B7A671B0025F6E4 /* MenuCoordinator.swift in Sources */,
+				E9A84F8F2B7A2A610025F6E4 /* MainTabBarVM.swift in Sources */,
 				E92EB26E2B18A83900C70A35 /* ProfileAssembler.swift in Sources */,
 				E92EB3312B27781300C70A35 /* NSAttributedString+Style.swift in Sources */,
 				E92ED40E2AF2835100FEAC39 /* ResetPasswordVC.swift in Sources */,
@@ -1138,16 +1234,20 @@
 				E9A84F652B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataClass.swift in Sources */,
 				E98AA0102B69645A00D0B360 /* DateNotificationDTO.swift in Sources */,
 				E98AA0032B695C7E00D0B360 /* NotificationDataBase.xcdatamodeld in Sources */,
+				E9A84F702B76B5130025F6E4 /* LocationNotificationDTO.swift in Sources */,
+				E9A84F722B76B5310025F6E4 /* TimerNotificationDTO.swift in Sources */,
 				E98AA0192B696E5500D0B360 /* NSPredicate+Const.swift in Sources */,
 				E9A84F692B73E34B0025F6E4 /* DTODescription.swift in Sources */,
 				E98AA0132B69675C00D0B360 /* CoreDataService.swift in Sources */,
 				E98AA00A2B695F0300D0B360 /* BaseNotificationMO+CoreDataClass.swift in Sources */,
 				E98AA00D2B695F0300D0B360 /* DateNotificationMO+CoreDataProperties.swift in Sources */,
 				E98AA0162B6968B600D0B360 /* DateNotificationStorage.swift in Sources */,
+				E9A84F762B76BA060025F6E4 /* TimerNotificationStorage.swift in Sources */,
 				E98AA00B2B695F0300D0B360 /* BaseNotificationMO+CoreDataProperties.swift in Sources */,
 				E9A84F642B73DBCF0025F6E4 /* TimerNotificationMO+CoreDataProperties.swift in Sources */,
 				E9A84F632B73DBCF0025F6E4 /* TimerNotificationMO+CoreDataClass.swift in Sources */,
 				E9A84F662B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataProperties.swift in Sources */,
+				E9A84F742B76B9EF0025F6E4 /* LocationNotificationStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1340,7 +1440,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1372,7 +1472,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

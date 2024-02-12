@@ -10,6 +10,20 @@ import Foundation
 import CoreData
 
 @objc(LocationNotidicationMO)
-class LocationNotidicationMO: BaseNotificationMO {
+public class LocationNotidicationMO: BaseNotificationMO, MODescription {
+    
+    public typealias DTO = LocationNotificationDTO
+    
+    public func apply(dto: DTO) {
+        
+        self.date = dto.date
+        self.identifier = dto.id
+        self.subtitle = dto.subtitle
+        self.title = dto.title
+        self.completedDate = dto.completedDate
+        self.longitude = dto.longitude
+        self.latitude = dto.latitude
+        self.imagePath = dto.imagePath
+    }
 
 }

@@ -20,5 +20,14 @@ extension UIImage {
         static let notifiIcon: UIImage = .init(named: "notifiIcon")!
         static let exportIcon: UIImage = .init(named: "exportIcon")!
         static let logoutIcon: UIImage = .init(named: "logoutIcon")!
+        static let plus: UIImage = .init(named: "plus")!
+    }
+    
+    enum MenuIcons {
+        static let calendar: UIImage = .init(named: "calendarIcon")!
+        static let location: UIImage = .init(named: "locationIcon")!
+        static let timer: UIImage = .init(named: "timerIcon")!
+        static let edit: UIImage = .init(named: "editIcon")!
+        static let delete: UIImage = .init(named: "deleteIcon")!
     }
 }

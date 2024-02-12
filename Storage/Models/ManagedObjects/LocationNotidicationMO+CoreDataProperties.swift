@@ -19,5 +19,4 @@ extension LocationNotidicationMO {
     @NSManaged public var imagePath: String?
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
-
 }

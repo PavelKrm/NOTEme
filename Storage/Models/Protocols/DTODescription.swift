@@ -8,9 +8,15 @@
 import Foundation
 import CoreData
 
+public protocol MODescription: NSManagedObject, NSFetchRequestResult {
+    associatedtype DTO: DTODescription
+    
+    func apply(dto: DTO)
+}
+
 public protocol DTODescription {
     associatedtype DTO
-    associatedtype MO: NSManagedObject, NSFetchRequestResult
+    associatedtype MO: MODescription
     
     init?(mo: MO)
 }
