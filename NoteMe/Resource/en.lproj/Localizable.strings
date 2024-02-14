@@ -25,7 +25,9 @@
 "ProfileVC_notifiBtn_Title" = "Notifications";
 "ProfileVC_exportBtn_Title" = "Export";
 "ProfileVC_logoutBtn_Title" = "Logout";
-
+    // AddNotificationVC
+"AddNotificationVC_createBtn_title" = "Create";
+"AddNotificationVC_cancelBtn_title" = "Cancel";
 // menu
     // AddNotificationMenuRows
 "AddNotificationMenuVC_calendarRow_title" = "Calendar";
@@ -51,6 +53,10 @@
 "ProfileVC_accountLbl_Title" = "Account";
 "ProfileVC_settingsLbl_Title" = "Settings";
 "ProfileVC_emailLbl_Title" = "Your email:";
+    //AddNotificationVC
+"AddNotificationVC_Location_title" = "Create Location Notification";
+"AddNotificationVC_Date_title" = "Create Date Notification";
+"AddNotificationVC_Timer_title" = "Create Timer Notification";
 
 //Text label
     //OnboardFirstStepVC
@@ -74,6 +80,11 @@
 "RegisterVC_repeat_password_title_textField" = "Repeat Password";
     //ResetPasswordVC
 "ResetPassVC_reset_password_title_textField" = "Enter your email address and will share a link to create a new password";
+    //AddNotificationVC
+"AddNotificationVC_titleTF_title" = "Title";
+"AddNotificationVC_subtitleTV_title" = "Description";
+"AddNotificationVC_timerTF_title" = "Timer";
+"AddNotificationVC_dateTF_title" = "Date";
 
 //placeholder textField
     //LoginVC
@@ -85,6 +96,11 @@
 "RegisterVC_repeat_password_placeholder_textField" = "Enter Password";
     //ResetPasswordVC
 "ResetPassVC_reset_password_placeholder_textField" = "Enter E-mail";
+    //AddNotificationVC
+"AddNotificationVC_titlePH_placeholder" = "Enter title";
+"AddNotificationVC_subtitlePH_placeholder" = "Enter description if you want";
+"AddNotificationVC_timerPH_placeholder" = "Choose time";
+"AddNotificationVC_datePH_placeholder" = "Choose date";
 
 // Alert
     //ResetPasswordVC

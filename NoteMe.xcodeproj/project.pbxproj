@@ -129,6 +129,8 @@
 		E9A84F922B7A60190025F6E4 /* MenuAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F912B7A60190025F6E4 /* MenuAssembler.swift */; };
 		E9A84F942B7A671B0025F6E4 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F932B7A671B0025F6E4 /* MenuCoordinator.swift */; };
 		E9A84F992B7AB7190025F6E4 /* AddNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F982B7AB7190025F6E4 /* AddNotificationVC.swift */; };
+		E9A84F9B2B7BC3370025F6E4 /* AddNotificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F9A2B7BC3370025F6E4 /* AddNotificationVM.swift */; };
+		E9A84F9D2B7BD4240025F6E4 /* BaseNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A84F9C2B7BD4240025F6E4 /* BaseNotificationDTO.swift */; };
 		E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */; };
 		E9B1C12E2AF1602D005C5852 /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */; };
 		E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C1302AF16EC9005C5852 /* LineTextField.swift */; };
@@ -287,6 +289,8 @@
 		E9A84F912B7A60190025F6E4 /* MenuAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAssembler.swift; sourceTree = "<group>"; };
 		E9A84F932B7A671B0025F6E4 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		E9A84F982B7AB7190025F6E4 /* AddNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationVC.swift; sourceTree = "<group>"; };
+		E9A84F9A2B7BC3370025F6E4 /* AddNotificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationVM.swift; sourceTree = "<group>"; };
+		E9A84F9C2B7BD4240025F6E4 /* BaseNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNotificationDTO.swift; sourceTree = "<group>"; };
 		E9B1C12A2AF15EEA005C5852 /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
 		E9B1C12D2AF1602D005C5852 /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
 		E9B1C1302AF16EC9005C5852 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
@@ -799,6 +803,7 @@
 				E98AA00F2B69645A00D0B360 /* DateNotificationDTO.swift */,
 				E9A84F6F2B76B5130025F6E4 /* LocationNotificationDTO.swift */,
 				E9A84F712B76B5310025F6E4 /* TimerNotificationDTO.swift */,
+				E9A84F9C2B7BD4240025F6E4 /* BaseNotificationDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -913,6 +918,7 @@
 			isa = PBXGroup;
 			children = (
 				E9A84F982B7AB7190025F6E4 /* AddNotificationVC.swift */,
+				E9A84F9A2B7BC3370025F6E4 /* AddNotificationVM.swift */,
 			);
 			path = AddNotification;
 			sourceTree = "<group>";
@@ -1187,6 +1193,7 @@
 				E92EB24F2B165CAB00C70A35 /* OnboardSecondStepAssembler.swift in Sources */,
 				E92ED4062AF2744500FEAC39 /* UILabel+Styles.swift in Sources */,
 				E90ADAC02AE824CA00F8989A /* AppDelegate.swift in Sources */,
+				E9A84F9B2B7BC3370025F6E4 /* AddNotificationVM.swift in Sources */,
 				E93AF3412AFEA1B9003F9ACE /* InputValidator.swift in Sources */,
 				E92EB2372B13B89E00C70A35 /* ResetPasswordCoordinator.swift in Sources */,
 				E93AD9492B03E53A00187CCC /* KeyboardHelper.swift in Sources */,
@@ -1230,6 +1237,7 @@
 				E9A84F6E2B73F5F90025F6E4 /* FRCService.swift in Sources */,
 				E9A84F6B2B73E4140025F6E4 /* NotificationStorage.swift in Sources */,
 				E98AA00C2B695F0300D0B360 /* DateNotificationMO+CoreDataClass.swift in Sources */,
+				E9A84F9D2B7BD4240025F6E4 /* BaseNotificationDTO.swift in Sources */,
 				E98A9FE42B695ACD00D0B360 /* Storage.docc in Sources */,
 				E9A84F652B73DBCF0025F6E4 /* LocationNotidicationMO+CoreDataClass.swift in Sources */,
 				E98AA0102B69645A00D0B360 /* DateNotificationDTO.swift in Sources */,

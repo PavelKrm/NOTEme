@@ -10,13 +10,15 @@ import CoreData
 
 public protocol MODescription: NSManagedObject, NSFetchRequestResult {
     associatedtype DTO: DTODescription
-    
+
     func apply(dto: DTO)
 }
 
 public protocol DTODescription {
     associatedtype DTO
     associatedtype MO: MODescription
+    
+    var id: String { get set }
     
     init?(mo: MO)
 }

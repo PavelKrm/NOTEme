@@ -50,34 +50,34 @@ public class NotificationStorage<DTO: DTODescription> {
     
     //MARK: - Update
     
-//    public func update(
-//        dto: DTO,
-//        completion: CompletionHandler? = nil
-//    ) {
-//        let context = CoreDataService.shared.backgroundContext
-//        context.perform { [weak self] in
-//            guard
-//                let mo = self?.fetchMO(
-//                    predicate: .Notification.notification(byId: dto.id)
-//                ).first
-//            else { return }
-//            mo.apply(dto: dto)
-//            
-//            CoreDataService.shared.saveContext(context: context,
-//                                               completion: completion)
-//        }
-//    }
-//
-//    public func updateOrCreate(
-//        dto: DTO.MO.DTO,
-//        completion: CompletionHandler? = nil
-//    ) {
-//        if fetchMO(predicate: .Notification.notification(byId: dto., with: #keyPath()).isEmpty {
-//            create(dto: dto, completion: completion)
-//        } else {
-//            update(dto: dto, completion: completion)
-//        }
-//    }
+    public func update(
+        dto: DTO.MO.DTO,
+        completion: CompletionHandler? = nil
+    ) {
+        let context = CoreDataService.shared.backgroundContext
+        context.perform { [weak self] in
+            guard
+                let mo = self?.fetchMO(
+                    predicate: .Notification.notification(byId: dto.id)
+                ).first
+            else { return }
+            mo.apply(dto: dto)
+            
+            CoreDataService.shared.saveContext(context: context,
+                                               completion: completion)
+        }
+    }
+
+    public func updateOrCreate(
+        dto: DTO.MO.DTO,
+        completion: CompletionHandler? = nil
+    ) {
+        if fetchMO(predicate: .Notification.notification(byId: dto.id)).isEmpty {
+            create(dto: dto, completion: completion)
+        } else {
+            update(dto: dto, completion: completion)
+        }
+    }
     
 }
 

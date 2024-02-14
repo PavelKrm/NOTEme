@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct TimerNotificationDTO: DTODescription {
+public final class TimerNotificationDTO: DTODescription {
     
-    public typealias DTO = Self
+    public typealias DTO = TimerNotificationDTO
     public typealias MO = TimerNotificationMO
     
     public var date: Date

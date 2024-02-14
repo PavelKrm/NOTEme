@@ -25,6 +25,9 @@
 "ProfileVC_notifiBtn_Title" = "Уведомления";
 "ProfileVC_exportBtn_Title" = "Экспорт";
 "ProfileVC_logoutBtn_Title" = "Выйти из аккаунта";
+    // AddNotificationVC
+"AddNotificationVC_createBtn_title" = "Создать";
+"AddNotificationVC_cancelBtn_title" = "Отмена";
 
 // menu
     // AddNotificationMenuRows
@@ -50,6 +53,10 @@
 "ProfileVC_accountLbl_Title" = "Аккаунт";
 "ProfileVC_settingsLbl_Title" = "Настройки";
 "ProfileVC_emailLbl_Title" = "Ваша почта:";
+    //AddNotificationVC
+"AddNotificationVC_Location_title" = "Создание напоминания по локации";
+"AddNotificationVC_Date_title" = "Создание напоминания по дате";
+"AddNotificationVC_Timer_title" = "Создание напоминания по таймеру";
 
 //Text label
     //OnboardFirstStepVC
@@ -73,6 +80,11 @@
 "RegisterVC_repeat_password_title_textField" = "Повторите пароль";
     //ResetPasswordVC
 "ResetPassVC_reset_password_title_textField" = "Введите адрес электронной почты, что бы мы отправили Вам ссылку для зброса пароля";
+    //AddNotificationVC
+"AddNotificationVC_titleTF_title" = "Заголовок";
+"AddNotificationVC_subtitleTF_title" = "Описание";
+"AddNotificationVC_timerTF_title" = "Таймер";
+"AddNotificationVC_dateTF_title" = "Дата";
 
 //placeholder textField
     //LoginVC
@@ -84,6 +96,11 @@
 "RegisterVC_repeat_password_placeholder_textField" = "Введите пароль";
     //ResetPasswordVC
 "ResetPassVC_reset_password_placeholder_textField" = "Введите E-mail";
+    //AddNotificationVC
+"AddNotificationVC_titlePH_placeholder" = "Введите заголовок";
+"AddNotificationVC_subtitlePH_placeholder" = "Введите описание, если нужно";
+"AddNotificationVC_timerPH_placeholder" = "Выберите интервал таймера";
+"AddNotificationVC_datePH_placeholder" = "Выберите дату";
 
 // Alert
     //ResetPasswordVC
