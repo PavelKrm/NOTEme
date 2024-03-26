@@ -8,6 +8,12 @@
 import UIKit
 import SnapKit
 
+@objc protocol LineTextFieldDelegate {
+    
+    @objc optional func textFieldDidBeginEditing(_ lineTextField: LineTextField)
+    @objc optional func textFieldDidEndEditing(_ lineTextField: LineTextField)
+}
+
 final class LineTextField: UIView {
     
     private lazy var titleLabel: UILabel = {
@@ -24,6 +30,8 @@ final class LineTextField: UIView {
         textField.font = .appFont.withSize(15.0)
         textField.textColor = .appText
         textField.textAlignment = .left
+        textField.tintColor = .appGrayText
+        textField.delegate = self
         return textField
     }()
     
@@ -61,10 +69,7 @@ final class LineTextField: UIView {
         set { textField.text = newValue }
     }
     
-    var delegate: UITextFieldDelegate? {
-        get { textField.delegate }
-        set { textField.delegate = newValue}
-    }
+    weak var delegate: LineTextFieldDelegate?
     
     var keyboardType: UIKeyboardType {
         get {textField.keyboardType}
@@ -74,6 +79,16 @@ final class LineTextField: UIView {
     var returnKeyType: UIReturnKeyType {
         get {textField.returnKeyType}
         set {textField.returnKeyType = newValue}
+    }
+    
+    var picker: UIView? {
+        get { textField.inputView }
+        set { textField.inputView = newValue }
+    }
+    
+    var accessoryView: UIView? {
+        get { textField.inputAccessoryView }
+        set { textField.inputAccessoryView = newValue }
     }
     
     init() {
@@ -120,5 +135,16 @@ final class LineTextField: UIView {
             make.top.equalTo(separator.snp.bottom).inset(-4.0)
         }
         
+    }
+}
+
+extension LineTextField: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        delegate?.textFieldDidBeginEditing?(self)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate?.textFieldDidEndEditing?(self)
     }
 }

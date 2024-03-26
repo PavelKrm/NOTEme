@@ -6,35 +6,33 @@
 //
 
 import Foundation
+import CoreData
 
-public final class DateNotificationDTO: DTODescription {
-
-    public typealias DTO = DateNotificationDTO
+public struct DateNotificationDTO: DTODescription {
     public typealias MO = DateNotificationMO
     
     public var date: Date
     public var id: String
+    public var title: String
     public var subtitle: String?
-    public var title: String?
     public var completedDate: Date?
     public var targetDate: Date
     
     public init(date: Date,
-                identifier: String,
+                id: String = UUID().uuidString,
+                title: String,
                 subtitle: String? = nil,
-                title: String? = nil,
                 completedDate: Date? = nil,
-                targerDate: Date) {
-        
+                targetDate: Date) {
         self.date = date
-        self.id = identifier
-        self.subtitle = subtitle
+        self.id = id
         self.title = title
+        self.subtitle = subtitle
         self.completedDate = completedDate
-        self.targetDate = targerDate
+        self.targetDate = targetDate
     }
     
-    public init?(mo: DateNotificationMO) {
+    public static func fromMO(_ mo: DateNotificationMO) -> DateNotificationDTO? {
         guard
             let id = mo.identifier,
             let title = mo.title,
@@ -42,12 +40,13 @@ public final class DateNotificationDTO: DTODescription {
             let targetDate = mo.targetDate
         else { return nil }
         
-        self.date = date
-        self.id = id
-        self.title = title
-        self.subtitle = mo.subtitle
-        self.completedDate = mo.completedDate
-        self.targetDate = targetDate
-                
+        return DateNotificationDTO(
+            date: date,
+            id: id,
+            title: title,
+            subtitle: mo.subtitle,
+            completedDate: mo.completedDate,
+            targetDate: targetDate
+        )
     }
 }

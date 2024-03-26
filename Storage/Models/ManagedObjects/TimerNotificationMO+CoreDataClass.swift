@@ -10,17 +10,20 @@ import Foundation
 import CoreData
 
 @objc(TimerNotificationMO)
-public class TimerNotificationMO: BaseNotificationMO, MODescription {
+public class TimerNotificationMO: BaseNotificationMO {
     
-    public typealias DTO = TimerNotificationDTO
-
-    public func apply(dto: DTO) {
+    public override func toDTO() -> (any DTODescription)? {
+        return TimerNotificationDTO.fromMO(self)
+    }
+    
+    public override func apply(dto: any DTODescription) {
+        guard let dto = dto as? TimerNotificationDTO
+        else {
+            print("[MODTO]", "\(Self.self) apply failed: dto is type of \(type(of: dto))")
+            return
+        }
+        super.apply(dto: dto)
         
-        self.date = dto.date
-        self.identifier = dto.id
-        self.subtitle = dto.subtitle
-        self.title = dto.title
-        self.completedDate = dto.completedDate
-        self.timeLeft = dto.timeLeft
+        self.timeLeft = Double(dto.timeLeft)
     }
 }

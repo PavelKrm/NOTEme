@@ -8,29 +8,52 @@
 import UIKit
 import Storage
 
+protocol HomeFRCServiceUseCase {
+    
+    var fetchedDTOs: [any DTODescription] { get set }
+    var didChangeContent: (([any DTODescription]) -> Void)? { get set }
+}
+
+protocol HomeStorageUseCase {
+    
+    func delete(dto: any DTODescription)
+}
+
 protocol HomeAdapterProtocol: AnyObject {
     func reloadData(_ dtoList: [any DTODescription])
+    func makeTableView() -> UITableView
 }
 
 protocol HomeViewModelCoordinatorProtocol: AnyObject {}
 
 final class HomeVM: HomeViewModelProtocol {
     
-//    private let frcService: FRCService<DateNotificationDTO>
-//    private let adapter: HomeAdapterProtocol
-//    
-//    init(frcService: FRCService<DateNotificationDTO>,
-//         adapter: HomeAdapterProtocol) {
-//        self.frcService = frcService
-//        self.adapter = adapter
-//        
-//        bind()
-//    }
+    private var frcService: FRCService<BaseNotificationDTO>
+    private let adapter: HomeAdapterProtocol
     
-//    private func bind() {
-//        frcService.didChangeContent = { [weak adapter] dtoList in
-//            adapter?.reloadData(dtoList)
-//        }
-//    }
+    init(frcService: FRCService<BaseNotificationDTO>,
+         adapter: HomeAdapterProtocol) {
+        self.frcService = frcService
+        self.adapter = adapter
+        
+        bind()
+    }
+    
+    private func bind() {
+        frcService.didChangeContent = { [weak adapter] dtoList in
+            adapter?.reloadData(dtoList)
+        }
+    }
+    
+    func viewDidLoad() {
+        
+        frcService.startHandle()
+        let dtos = frcService.fetchedDTOs
+        adapter.reloadData(dtos)
+    }
+    
+    func makeTableView() -> UITableView {
+        adapter.makeTableView()
+    }
     
 }

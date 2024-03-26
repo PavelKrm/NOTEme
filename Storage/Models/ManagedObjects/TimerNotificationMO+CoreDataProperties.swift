@@ -2,7 +2,7 @@
 //  TimerNotificationMO+CoreDataProperties.swift
 //  Storage
 //
-//  Created by PavelKrm on 7.02.24.
+//  Created by PavelKrm on 21.03.24.
 //
 //
 
@@ -16,5 +16,6 @@ extension TimerNotificationMO {
         return NSFetchRequest<TimerNotificationMO>(entityName: "TimerNotificationMO")
     }
 
-    @NSManaged public var timeLeft: Date?
+    @NSManaged public var timeLeft: Double
+
 }

@@ -10,7 +10,7 @@ import CoreData
 
 public final class FRCService<DTO: DTODescription>: NSObject,  NSFetchedResultsControllerDelegate {
     
-    public var didChangeContent: (([DTO]) -> Void)?
+    public var didChangeContent: (([any DTODescription]) -> Void)?
     
     private let request: NSFetchRequest<DTO.MO> = {
         return NSFetchRequest<DTO.MO>(entityName: "\(DTO.MO.self)")
@@ -24,19 +24,24 @@ public final class FRCService<DTO: DTODescription>: NSObject,  NSFetchedResultsC
             cacheName: nil
         )
         frc.delegate = self
-        try? frc.performFetch()
         return frc
     }()
     
-    init(predicate: NSPredicate? = nil,
-         sortDescriptor: [NSSortDescriptor]) {
-        self.request.predicate = predicate
-        self.request.sortDescriptors = sortDescriptor
+    public var fetchedDTOs: [any DTODescription] {
+        let dtos = frc.fetchedObjects?.compactMap { $0.toDTO() }
+        return dtos ?? []
+    }
+    
+    public init(_ requestBuilder: (NSFetchRequest<DTO.MO>) -> Void) {
+        requestBuilder(self.request)
+    }
+    
+    public func startHandle() {
+        try? frc.performFetch()
     }
     
     public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         try? controller.performFetch()
-        let dtos = frc.fetchedObjects?.compactMap{ DTO(mo: $0) }
-        didChangeContent?(dtos ?? [])
+        didChangeContent?(fetchedDTOs)
     }
 }

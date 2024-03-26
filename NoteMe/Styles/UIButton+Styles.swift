@@ -9,6 +9,18 @@ import UIKit
 
 extension UIButton {
     
+    static func mapButton() -> UIButton {
+        let button = UIButton()
+        button.setBackgroundImage(.General.mapImage, for: .normal)
+        return button
+    }
+    
+    static func editButton() -> UIButton {
+        let btn = UIButton()
+        btn.setImage(.General.editIcon, for: .normal)
+        return btn
+    }
+    
     static func yellowRoundedButton(_ title: String?) -> UIButton {
         
         let button = UIButton()

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Storage
 
 final class ContainerRegistrator {
     
@@ -18,6 +19,10 @@ final class ContainerRegistrator {
         container.register({ InputValidator()} )
         container.register({ AuthService() })
         container.register({ AnimateConstraintsChange() })
+        container.register({ DateNotificationStorage() })
+        container.register({ TimerNotificationStorage() })
+        container.register({ LocationNotificationStorage() })
+        container.register({ FileService() })
         
         return container
     }

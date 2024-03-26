@@ -13,6 +13,8 @@ final class CoreDataService {
     
     typealias SuccessHandler = (Bool) -> Void
     
+    private init() {}
+    
     lazy var mainContext: NSManagedObjectContext = {
             let context = persistentContainer.viewContext
             context.automaticallyMergesChangesFromParent = true
@@ -55,15 +57,15 @@ final class CoreDataService {
     }
 
     func saveContext(context: NSManagedObjectContext,
-                      completion: SuccessHandler?) {
+                      completion: SuccessHandler? = nil) {
        
         if context.hasChanges {
             do {
                 try context.save()
                 completion?(true)
             } catch {
-                completion?(false)
                 let nserror = error as NSError
+                completion?(false)
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }

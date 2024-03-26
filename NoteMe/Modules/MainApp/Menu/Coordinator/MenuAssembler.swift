@@ -18,6 +18,17 @@ final class MenuAssembler {
         let vm = MenuVM(adapter: MenuAdapter(),
                         coordinator: coordinator,
                         menu: menu)
-        return MenuVC(viewModel: vm)
+        
+        let vc = MenuVC(viewModel: vm)
+        vc.popoverPresentationController?.backgroundColor = .white
+        vc.modalPresentationStyle = .popover
+        switch menu {
+        case .addNotificationMenu(_):
+            vc.popoverPresentationController?.permittedArrowDirections = .down
+        case .actionsMenu(_):
+            vc.popoverPresentationController?.permittedArrowDirections = .up
+        }
+        
+        return vc
     }
 }

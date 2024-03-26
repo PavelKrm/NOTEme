@@ -28,6 +28,10 @@
     // AddNotificationVC
 "AddNotificationVC_createBtn_title" = "Создать";
 "AddNotificationVC_cancelBtn_title" = "Отмена";
+    //MapVC
+"MapVC_cancelSearchBtn_title" = "Отмена";
+"MapVC_selectBtn_title" = "Выбрать";
+"MapVC_cancelBtn_title" = "Отмена";
 
 // menu
     // AddNotificationMenuRows
@@ -57,6 +61,7 @@
 "AddNotificationVC_Location_title" = "Создание напоминания по локации";
 "AddNotificationVC_Date_title" = "Создание напоминания по дате";
 "AddNotificationVC_Timer_title" = "Создание напоминания по таймеру";
+"AddNotificationVC_preview_title" = "Локация";
 
 //Text label
     //OnboardFirstStepVC
@@ -82,7 +87,7 @@
 "ResetPassVC_reset_password_title_textField" = "Введите адрес электронной почты, что бы мы отправили Вам ссылку для зброса пароля";
     //AddNotificationVC
 "AddNotificationVC_titleTF_title" = "Заголовок";
-"AddNotificationVC_subtitleTF_title" = "Описание";
+"AddNotificationVC_subtitleTV_title" = "Описание";
 "AddNotificationVC_timerTF_title" = "Таймер";
 "AddNotificationVC_dateTF_title" = "Дата";
 
@@ -128,3 +133,7 @@
 "HomeVC_tabBarItem_Title" = "Главная";
     //ProfileVC
 "ProfileVC_tabBarItem_Title" = "Профиль";
+
+//SearchBar
+    //MapVC
+"MapVC_searchPH_placeholder" = "Найти";

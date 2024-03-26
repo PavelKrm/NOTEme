@@ -31,7 +31,6 @@ final class MenuVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        UITableViewContentFocusContainerGuide
         self.tableView.addObserver(self,
                                    forKeyPath: "contentSize",
                                    options: .new,
@@ -66,5 +65,13 @@ final class MenuVC: UIViewController {
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+}
+
+
+extension UIViewController: UIPopoverPresentationControllerDelegate {
+    
+    public func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
 }

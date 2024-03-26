@@ -14,29 +14,20 @@ public class NotificationStorage<DTO: DTODescription> {
     
     public init() {}
 
-    private func fetchMO(
-        predicate: NSPredicate? = nil,
-        sortDescriptors: [NSSortDescriptor] = []
-    ) -> [DTO.MO] {
-        let request = NSFetchRequest<DTO.MO>(entityName: "\(DTO.MO.self)")
-        let context = CoreDataService.shared.mainContext
-        let results = try? context.fetch(request)
-        return results ?? []
-    }
-    //MARK: - Fetch
+//MARK: - Fetch
     
     public func fetch(
         predicate: NSPredicate? = nil,
         sortDescriptors: [NSSortDescriptor] = []
-    ) -> [DTO] {
+    ) -> [any DTODescription] {
         return fetchMO(predicate: predicate,
                      sortDescriptors: sortDescriptors)
-        .compactMap { DTO(mo: $0) }
+        .compactMap { $0.toDTO() }
     }
     
 //    MARK: - Create
     
-    public func create(dto: DTO.MO.DTO,
+    public func create(dto: DTO,
                        completion: CompletionHandler? = nil
     ) {
         let context = CoreDataService.shared.backgroundContext
@@ -48,10 +39,10 @@ public class NotificationStorage<DTO: DTODescription> {
         }
     }
     
-    //MARK: - Update
+//MARK: - Update
     
     public func update(
-        dto: DTO.MO.DTO,
+        dto: DTO,
         completion: CompletionHandler? = nil
     ) {
         let context = CoreDataService.shared.backgroundContext
@@ -69,7 +60,7 @@ public class NotificationStorage<DTO: DTODescription> {
     }
 
     public func updateOrCreate(
-        dto: DTO.MO.DTO,
+        dto: DTO,
         completion: CompletionHandler? = nil
     ) {
         if fetchMO(predicate: .Notification.notification(byId: dto.id)).isEmpty {
@@ -77,6 +68,18 @@ public class NotificationStorage<DTO: DTODescription> {
         } else {
             update(dto: dto, completion: completion)
         }
+    }
+    
+    private func fetchMO(
+        predicate: NSPredicate? = nil,
+        sortDescriptors: [NSSortDescriptor] = []
+    ) -> [DTO.MO] {
+        let request = NSFetchRequest<DTO.MO>(entityName: "\(DTO.MO.self)")
+        request.predicate = predicate
+        request.sortDescriptors = sortDescriptors
+        let context = CoreDataService.shared.mainContext
+        let results = try? context.fetch(request)
+        return results ?? []
     }
     
 }

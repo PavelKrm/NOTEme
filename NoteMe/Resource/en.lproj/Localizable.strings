@@ -36,6 +36,10 @@
     // ActionsMunuRows
 "ActionsMenuVC_EditRow_title" = "Edit";
 "ActionsMenuVC_DeleteRow_title" = "Delete";
+//MapVC
+"MapVC_cancelSearchBtn_title" = "Cancel";
+"MapVC_selectBtn_title" = "Select";
+"MapVC_cancelBtn_title" = "Cancel";
 
 // title label
     //LoginVC
@@ -57,6 +61,7 @@
 "AddNotificationVC_Location_title" = "Create Location Notification";
 "AddNotificationVC_Date_title" = "Create Date Notification";
 "AddNotificationVC_Timer_title" = "Create Timer Notification";
+"AddNotificationVC_preview_title" = "Location";
 
 //Text label
     //OnboardFirstStepVC
@@ -128,6 +133,11 @@
 "HomeVC_tabBarItem_Title" = "Home";
     //ProfileVC
 "ProfileVC_tabBarItem_Title" = "Profile";
+
+//SearchBar
+    //MapVC
+"MapVC_searchPH_placeholder" = "Search";
+
 
 
 

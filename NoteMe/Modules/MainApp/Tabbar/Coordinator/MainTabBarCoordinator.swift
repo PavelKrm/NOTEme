@@ -43,37 +43,68 @@ final class MainTabBarCoordinator: Coordinator {
     }
     
     func openMenu(with view: UIView) {
-        let coordinator = MenuCoordinator(menu: .addNotificationMenu(AddNotification.allCases))
+        let coordinator = MenuCoordinator(
+            menu: .addNotificationMenu(AddNotification.allCases),
+            container: container
+        )
+        
         children.append(coordinator)
         let vc = coordinator.start()
+        
+        coordinator.onAddedNotificationByUser = { [weak self] notification in
+            switch notification {
+            case .addNotificationMenu(let rows):
+                self?.openAddNotifiModule(with: rows[0])
+            default: break
+            }
+        }
+        
         coordinator.onDidFinish = { [weak self] coordinator in
             self?.children.removeAll { coordinator == $0 }
         }
         
         coordinator.onDismissedByUser = { [weak self] coordinator in
             self?.children.removeAll() { coordinator == $0 }
+            vc.dismiss(animated: true)
         }
         
-        vc.modalPresentationStyle = .popover
-        vc.popoverPresentationController?.permittedArrowDirections = .down
-        vc.popoverPresentationController?.sourceRect = CGRect(
-                                                            x: view.bounds.midX,
-                                                            y: view.bounds.midY,
-                                                            width: .zero,
-                                                            height: .zero
-                                                            )
         vc.popoverPresentationController?.sourceView = view
         vc.popoverPresentationController?.delegate = vc
-        vc.popoverPresentationController?.backgroundColor = .white
+        vc.popoverPresentationController?.sourceRect = CGRect(
+                                        x: view.bounds.midX,
+                                        y: view.bounds.midY,
+                                        width: .zero,
+                                        height: .zero
+                                                              )
+
+        rootVC?.present(vc, animated: true)
+    }
+    
+    private func openAddNotifiModule(with type: AddNotification) {
+        
+        var coordinator = Coordinator()
+        
+        switch type {
+        case .calendar:
+            coordinator = AddDateNotificationCoordinator(container: container)
+        case .location:
+            coordinator = AddLocationNotificationCooardinator(container: container)
+        case .timer:
+            coordinator = AddTimerNotificationCoordinator(container: container)
+        }
+        
+        children.append(coordinator)
+        let vc = coordinator.start()
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll { coordinator == $0}
+            vc.dismiss(animated: true)
+        }
+        
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .coverVertical
         rootVC?.present(vc, animated: true)
     }
 }
 
 extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {}
 
-extension UIViewController: UIPopoverPresentationControllerDelegate {
-    
-    public func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
-    }
-}

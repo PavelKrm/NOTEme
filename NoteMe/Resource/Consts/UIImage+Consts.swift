@@ -21,12 +21,17 @@ extension UIImage {
         static let exportIcon: UIImage = .init(named: "exportIcon")!
         static let logoutIcon: UIImage = .init(named: "logoutIcon")!
         static let plus: UIImage = .init(named: "plus")!
+        static let editIcon: UIImage = .init(named: "editButton")!
+        static let locationIcon: UIImage = .init(named: "locationIcon")!
+        static let timerIcon: UIImage = .init(named: "timerIcon")!
+        static let mapImage: UIImage = .init(named: "mapImage")!
+        static let region: UIImage = .init(named: "region")!
     }
     
     enum MenuIcons {
-        static let calendar: UIImage = .init(named: "calendarIcon")!
-        static let location: UIImage = .init(named: "locationIcon")!
-        static let timer: UIImage = .init(named: "timerIcon")!
+        static let calendar: UIImage = .init(named: "calendar")!
+        static let location: UIImage = .init(named: "location")!
+        static let timer: UIImage = .init(named: "timer")!
         static let edit: UIImage = .init(named: "editIcon")!
         static let delete: UIImage = .init(named: "deleteIcon")!
     }

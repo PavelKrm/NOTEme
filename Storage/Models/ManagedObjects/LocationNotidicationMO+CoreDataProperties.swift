@@ -2,7 +2,7 @@
 //  LocationNotidicationMO+CoreDataProperties.swift
 //  Storage
 //
-//  Created by PavelKrm on 7.02.24.
+//  Created by PavelKrm on 25.03.24.
 //
 //
 
@@ -17,6 +17,9 @@ extension LocationNotidicationMO {
     }
 
     @NSManaged public var imagePath: String?
-    @NSManaged public var latitude: Double
-    @NSManaged public var longitude: Double
+    @NSManaged public var latCenter: Double
+    @NSManaged public var longCenter: Double
+    @NSManaged public var longSpan: Double
+    @NSManaged public var latSpan: Double
+
 }

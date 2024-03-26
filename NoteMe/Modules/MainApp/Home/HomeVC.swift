@@ -9,9 +9,15 @@ import UIKit
 import SnapKit
 import Storage
 
-protocol HomeViewModelProtocol {}
+protocol HomeViewModelProtocol {
+    func viewDidLoad()
+    func makeTableView() -> UITableView
+}
 
 final class HomeVC: UIViewController {
+    
+    private lazy var contenView: UIView = .backgroundView()
+    private lazy var tableView: UITableView = viewModel.makeTableView()
     
     private var viewModel: HomeViewModelProtocol
     
@@ -28,13 +34,18 @@ final class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
         
         setupUI()
+        setupConstraints()
     }
     
     private func setupUI() {
         
-        view.backgroundColor = .appGray
+        view.backgroundColor = .appBlack
+        view.addSubview(contenView)
+        
+        contenView.addSubview(tableView)
     }
     
     private func setupTabBarItem() {
@@ -42,6 +53,18 @@ final class HomeVC: UIViewController {
         self.tabBarItem = UITabBarItem(title: L10n.tabBarItemTitle,
                                       image: .General.homeIcon,
                                       tag: .zero)
+    }
+    
+    private func setupConstraints() {
+        
+        contenView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview().inset(15.0)
+            make.top.bottom.equalToSuperview().inset(16.0)
+        }
     }
 }
 

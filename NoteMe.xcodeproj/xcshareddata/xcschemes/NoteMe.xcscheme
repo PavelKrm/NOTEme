@@ -40,6 +40,17 @@
                ReferencedContainer = "container:NoteMe.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E9DFFE5C2BB32B32004BB51C"
+               BuildableName = "NoteMeTests.xctest"
+               BlueprintName = "NoteMeTests"
+               ReferencedContainer = "container:NoteMe.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
