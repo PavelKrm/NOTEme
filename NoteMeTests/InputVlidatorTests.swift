@@ -12,8 +12,8 @@ final class InputValidatorTests: XCTestCase {
     
     func test_validEmail() {
         let sut = InputValidator()
+
         let validEmail = "test@test.com"
-        
         let result = sut.validate(email: validEmail)
         
         XCTAssert(result)

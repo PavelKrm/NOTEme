@@ -37,8 +37,7 @@ public struct TimerNotificationDTO: DTODescription {
             let date = mo.date,
             let id = mo.identifier,
             let subtitle = mo.subtitle,
-            let title = mo.title,
-            let completedDate = mo.completedDate
+            let title = mo.title
         else { return nil }
         
         return TimerNotificationDTO(
@@ -46,7 +45,7 @@ public struct TimerNotificationDTO: DTODescription {
                     id: id,
                     subtitle: subtitle,
                     title: title,
-                    completedDate: completedDate,
+                    completedDate: mo.completedDate,
                     timeLeft: Int(mo.timeLeft)
                 )
 

@@ -33,6 +33,7 @@ final class AddLocationNotificationVC: UIViewController {
         let tf = LineTextField()
         tf.title = L10n.titleTF
         tf.placeholder = L10n.titlePH
+        tf.delegate = self
         return tf
     }()
     

@@ -74,6 +74,7 @@ final class AddLocationNotificationVM:
                 let newDto = LocationNotidicationDTO(
                     date: .now,
                     title: title ?? "",
+                    subtitle: subtitle, 
                     latSpan: 0.0,
                     longSpan: 0.0,
                     latCenter: userLocation.latitude,

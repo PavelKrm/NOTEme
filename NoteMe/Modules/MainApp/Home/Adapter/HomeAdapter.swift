@@ -14,6 +14,7 @@ final class HomeAdapter: NSObject, HomeAdapterProtocol {
         let tv = UITableView()
         tv.separatorStyle = .none
         tv.backgroundColor = .clear
+        tv.showsVerticalScrollIndicator = false
         return tv
     }()
     
@@ -62,9 +63,11 @@ extension HomeAdapter: UITableViewDataSource {
             return cell ?? .init()
         case is TimerNotificationDTO:
             let cell: TimerNotificationCell? = tableView.dequeue(at: indexPath)
+            cell?.configure(dto: dto as! TimerNotificationDTO)
             return cell ?? .init()
         case is LocationNotidicationDTO:
             let cell: LocationNotificationCell? = tableView.dequeue(at: indexPath)
+            cell?.configure(dto: dto as! LocationNotidicationDTO)
             return cell ?? .init()
         default:
             return .init()
