@@ -35,15 +35,18 @@ final class AddLocationNotificationVM:
     private weak var coordinator: AddLocationNotificationCoordinatorProtocol?
     private var storage: LocationNotificationStorage
     private var fileService: FileService
+    private var backupService: FirebaseBackupService
     private var locationManager: CLLocationManager = .init()
     
     init(coordinator: AddLocationNotificationCoordinatorProtocol,
          storage: LocationNotificationStorage,
          fileService: FileService,
+         backupService: FirebaseBackupService,
          dto: LocationNotidicationDTO?) {
         self.coordinator = coordinator
         self.storage = storage
         self.fileService = fileService
+        self.backupService = backupService
         self.dto = dto
         
         title = dto?.title
@@ -62,6 +65,7 @@ final class AddLocationNotificationVM:
         dto.title = title
         dto.subtitle = subtitle
         storage.updateOrCreate(dto: dto, completion: nil)
+        backupService.backup(dto: dto)
         coordinator?.finish()
     }
     

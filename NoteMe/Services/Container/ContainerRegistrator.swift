@@ -23,6 +23,9 @@ final class ContainerRegistrator {
         container.register({ TimerNotificationStorage() })
         container.register({ LocationNotificationStorage() })
         container.register({ FileService() })
+        container.register({ NotificationService() })
+        container.register({ AllNotificationStorage() })
+        container.register({ FirebaseBackupService() })
         
         return container
     }

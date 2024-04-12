@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Storage
 
 final class AppCoordinator: Coordinator {
     
@@ -19,6 +20,8 @@ final class AppCoordinator: Coordinator {
     }
     
     func startApp() {
+        
+        loadBackup()
         
         let authenticated = ParametersHelper.get(.authenticated)
         let onboarded = ParametersHelper.get(.onboarded)
@@ -82,4 +85,14 @@ final class AppCoordinator: Coordinator {
         window.rootViewController = vc
         windowManager.show(type: .main)
     }
+    
+    //MARK: - TEST CODE
+    
+    private func loadBackup() {
+        let database = FirebaseBackupService()
+        database.loadBackup()
+    }
 }
+
+
+

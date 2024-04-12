@@ -20,6 +20,7 @@ protocol HomeStorageUseCase {
 }
 
 protocol HomeAdapterProtocol: AnyObject {
+    
     func reloadData(_ dtoList: [any DTODescription])
     func makeTableView() -> UITableView
 }

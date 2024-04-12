@@ -62,7 +62,7 @@ final class HomeVC: UIViewController {
         }
         
         tableView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(15.0)
+            make.horizontalEdges.equalToSuperview()
             make.top.bottom.equalToSuperview().inset(16.0)
         }
     }

@@ -138,6 +138,13 @@
     //MapVC
 "MapVC_searchPH_placeholder" = "Search";
 
+//CollectionViewCells
+    //FilterView
+"FilterType_all_title" = "All";
+"FilterType_date_title" = "Date";
+"FilterType_timer_title" = "Timer";
+"FilterType_location_title" = "Location";
+
 
 
 

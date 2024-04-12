@@ -15,6 +15,10 @@ final class HomeAdapter: NSObject, HomeAdapterProtocol {
         tv.separatorStyle = .none
         tv.backgroundColor = .clear
         tv.showsVerticalScrollIndicator = false
+        tv.tableHeaderView = NotificationFilterView(frame: .init(x: .zero,
+                                                                 y: .zero,
+                                                                 width: 300.0,
+                                                                 height: 48.0))
         return tv
     }()
     

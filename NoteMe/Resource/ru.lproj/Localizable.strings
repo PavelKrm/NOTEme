@@ -137,3 +137,10 @@
 //SearchBar
     //MapVC
 "MapVC_searchPH_placeholder" = "Найти";
+
+//CollectionViewCells
+    //FilterView
+"FilterType_all_title" = "Все";
+"FilterType_date_title" = "Дата";
+"FilterType_timer_title" = "Таймер";
+"FilterType_location_title" = "Локация";

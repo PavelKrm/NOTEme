@@ -76,7 +76,8 @@ final class TimerNotificationCell: UITableViewCell {
     private func setupConstraints() {
         
         view.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(5.0)
+            make.horizontalEdges.equalToSuperview().inset(20.0)
+            make.top.bottom.equalToSuperview().inset(5.0)
         }
         
         icon.snp.makeConstraints { make in

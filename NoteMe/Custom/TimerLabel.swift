@@ -72,6 +72,7 @@ final class TimerLabel: UIView {
                 self.timeLabel.textColor = .appLightGrayText
                 self.timer.invalidate()
             } else {
+                self.timeLabel.textColor = .label
                 self.timeLabel.text = interval.stingFromSeconds()
             }
         })

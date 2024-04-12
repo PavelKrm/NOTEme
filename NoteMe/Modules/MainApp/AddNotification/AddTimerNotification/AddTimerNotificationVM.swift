@@ -35,12 +35,18 @@ final class AddTimerNotificationVM: AddTimerNotificationViewModelProtocol {
     
     private weak var coordinator: AddTimerNotificationCoordinatorProtocol?
     private let storage: TimerNotificationStorage
+    private let nortification: NotificationService
+    private var backupService: FirebaseBackupService
     
     init(coordinator: AddTimerNotificationCoordinatorProtocol,
          storage: TimerNotificationStorage,
+         notification: NotificationService,
+         backupService: FirebaseBackupService,
          dto: TimerNotificationDTO?) {
         self.coordinator = coordinator
         self.storage = storage
+        self.nortification = notification
+        self.backupService = backupService
         self.dto = dto
     }
     
@@ -50,11 +56,13 @@ final class AddTimerNotificationVM: AddTimerNotificationViewModelProtocol {
             let title, let timeLeft, let subtitle
         else { return }
         
-        if let oldDto = dto {
-            dto?.title = title
-            dto?.subtitle = subtitle
-            dto?.timeLeft = timeLeft
-            storage.updateOrCreate(dto: oldDto)
+        if var dto {
+            dto.title = title
+            dto.subtitle = subtitle
+            dto.timeLeft = timeLeft
+            storage.updateOrCreate(dto: dto)
+            nortification.createNotification(dto: dto)
+            backupService.backup(dto: dto)
             coordinator?.finish()
         } else {
             let NewNotification = TimerNotificationDTO.init(
@@ -66,6 +74,8 @@ final class AddTimerNotificationVM: AddTimerNotificationViewModelProtocol {
                                                             )
         
             storage.updateOrCreate(dto: NewNotification, completion: nil)
+            nortification.createNotification(dto: NewNotification)
+            backupService.backup(dto: NewNotification)
             coordinator?.finish()
         }
     }

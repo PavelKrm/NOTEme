@@ -20,10 +20,12 @@ final class AddLocationNotificationAssembler {
                             
         let storage: LocationNotificationStorage = container.resolve()
         let fileService: FileService = container.resolve()
+        let backup: FirebaseBackupService = container.resolve()
                             
         let vm = AddLocationNotificationVM(coordinator: coordinator,
                                            storage: storage,
                                            fileService: fileService,
+                                           backupService: backup,
                                            dto: dto)
                             
         return AddLocationNotificationVC(viewModel: vm)

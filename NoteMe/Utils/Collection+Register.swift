@@ -21,12 +21,12 @@ extension UITableView {
 
 extension UICollectionView {
     
-    func register<CellType: UITableViewCell>(_ type: CellType.Type) {
+    func register<CellType: UICollectionViewCell>(_ type: CellType.Type) {
         self.register(CellType.self, forCellWithReuseIdentifier: "\(CellType.self)")
     }
     
-    func dequeue<CellType: UICollectionViewCell>(at indexPath: IndexPath) -> CellType?  {
+    func dequeue<CellType: UICollectionViewCell>(at indexPath: IndexPath) -> CellType {
         return self.dequeueReusableCell(withReuseIdentifier: "\(CellType.self)",
-                                        for: indexPath) as? CellType
+                                        for: indexPath) as! CellType
     }
 }

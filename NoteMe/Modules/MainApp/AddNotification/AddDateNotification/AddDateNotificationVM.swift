@@ -15,17 +15,23 @@ protocol AddDateNotificationCoordinatorProtocol: AnyObject {
 
 final class AddDateNotificationVM: AddDateNotificationViewModelProtocol {
     
-    private weak var coordinator: AddDateNotificationCoordinatorProtocol?
-    private let storage: DateNotificationStorage
-    
     var targetDate: Date?
     var dto: DateNotificationDTO?
     
+    private weak var coordinator: AddDateNotificationCoordinatorProtocol?
+    private let storage: DateNotificationStorage
+    private let notification: NotificationService
+    private var backupService: FirebaseBackupService
+    
     init(coordinator: AddDateNotificationCoordinatorProtocol,
          storage: DateNotificationStorage,
+         notification: NotificationService,
+         backupService: FirebaseBackupService,
          dto: DateNotificationDTO?) {
         self.coordinator = coordinator
         self.storage = storage
+        self.notification = notification
+        self.backupService = backupService
         self.dto = dto
     }
     
@@ -36,12 +42,14 @@ final class AddDateNotificationVM: AddDateNotificationViewModelProtocol {
             let title, let targetDate
         else { return print("title or targetDate equal nil") }
         
-        if let oldDto = dto {
-            dto?.targetDate = targetDate
-            dto?.title = title
-            dto?.subtitle = subTitle
+        if var dto {
+            dto.targetDate = targetDate
+            dto.title = title
+            dto.subtitle = subTitle
             
-            storage.updateOrCreate(dto: oldDto)
+            storage.updateOrCreate(dto: dto)
+            notification.createNotification(dto: dto)
+            backupService.backup(dto: dto)
             coordinator?.finish()
         } else {
             let NewNotification = DateNotificationDTO.init(
@@ -53,6 +61,8 @@ final class AddDateNotificationVM: AddDateNotificationViewModelProtocol {
                                                             )
         
             storage.updateOrCreate(dto: NewNotification, completion: nil)
+            notification.createNotification(dto: NewNotification)
+            backupService.backup(dto: NewNotification)
             coordinator?.finish()
         }
     }

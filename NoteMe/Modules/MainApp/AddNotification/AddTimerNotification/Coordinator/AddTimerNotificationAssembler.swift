@@ -17,8 +17,13 @@ final class AddTimerNotificationAssembler {
                      dto: TimerNotificationDTO?) -> UIViewController {
 
         let storage: TimerNotificationStorage = container.resolve()
+        let notificationService: NotificationService = container.resolve()
+        let backup: FirebaseBackupService = container.resolve()
+        
         let vm = AddTimerNotificationVM(coordinator: coordinator,
                                         storage: storage,
+                                        notification: notificationService,
+                                        backupService: backup,
                                         dto: dto)
                             
         return AddTimerNotificationVC(viewModel: vm)

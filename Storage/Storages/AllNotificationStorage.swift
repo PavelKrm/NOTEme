@@ -8,4 +8,4 @@
 import Foundation
 import CoreData
 
-final class AllNotificationStorage: NotificationStorage<BaseNotificationDTO> {}
+public final class AllNotificationStorage: NotificationStorage<BaseNotificationDTO> {}

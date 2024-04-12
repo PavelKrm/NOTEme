@@ -138,6 +138,7 @@ final class AddDateNotificationVC: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE dd MMMM yyyy HH:mm"
         dateTextField.text = dateFormatter.string(from: sender.date)
+
         viewModel.targetDate = sender.date
     }
     
@@ -163,8 +164,6 @@ final class AddDateNotificationVC: UIViewController {
         contentView.addSubview(dateTextField)
         contentView.addSubview(subtitleLbl)
         contentView.addSubview(subtitleTextView)
-
-
     }
     
     private func setupConstraints() {

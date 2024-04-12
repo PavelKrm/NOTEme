@@ -60,6 +60,8 @@ final class LocationNotificationCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {}
+    
     func configure(dto: LocationNotidicationDTO) {
         
         titleLabel.text = dto.title
@@ -82,7 +84,8 @@ final class LocationNotificationCell: UITableViewCell {
     private func setupConstraints() {
         
         view.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(5.0)
+            make.horizontalEdges.equalToSuperview().inset(20.0)
+            make.top.bottom.equalToSuperview().inset(5.0)
         }
         
         icon.snp.makeConstraints { make in
