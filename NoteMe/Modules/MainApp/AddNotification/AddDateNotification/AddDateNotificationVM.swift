@@ -17,6 +17,7 @@ final class AddDateNotificationVM: AddDateNotificationViewModelProtocol {
     
     var targetDate: Date?
     var dto: DateNotificationDTO?
+    var catchEditDto: ((DateNotificationDTO) -> Void)?
     
     private weak var coordinator: AddDateNotificationCoordinatorProtocol?
     private let storage: DateNotificationStorage
@@ -33,6 +34,11 @@ final class AddDateNotificationVM: AddDateNotificationViewModelProtocol {
         self.notification = notification
         self.backupService = backupService
         self.dto = dto
+    }
+    
+    func viewDidLoad() {
+        guard let dto else { return }
+        catchEditDto?(dto)
     }
     
     func createNotification(title: String?,

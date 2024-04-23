@@ -25,13 +25,14 @@ final class AddTimerNotificationVM: AddTimerNotificationViewModelProtocol {
                 let minutes = time / 60 - hour * 60
                 let minutesStr = minutes > 9 ? "\(minutes)" : "0\(minutes)"
                 
-                cachTime?("\(hourStr):\(minutesStr):00")
+                catchTime?("\(hourStr):\(minutesStr):00")
             }
         }
     }
-    var subtitle: String?
-    var cachTime: ((String) -> Void)?
+    
+    var catchTime: ((String) -> Void)?
     var dto: TimerNotificationDTO?
+    var catchEditDto: ((TimerNotificationDTO) -> Void)?
     
     private weak var coordinator: AddTimerNotificationCoordinatorProtocol?
     private let storage: TimerNotificationStorage
@@ -50,10 +51,17 @@ final class AddTimerNotificationVM: AddTimerNotificationViewModelProtocol {
         self.dto = dto
     }
     
-    func createNotification(title: String?) {
+    func viewDidLoad() {
+        
+        guard let dto else { return }
+        timeLeft = dto.timeLeft
+        catchEditDto?(dto)
+    }
+    
+    func createNotification(title: String?, subtitle: String?) {
         
         guard
-            let title, let timeLeft, let subtitle
+            let title, let timeLeft
         else { return }
         
         if var dto {

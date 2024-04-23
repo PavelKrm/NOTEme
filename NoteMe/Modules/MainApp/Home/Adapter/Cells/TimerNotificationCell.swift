@@ -11,6 +11,8 @@ import Storage
 
 final class TimerNotificationCell: UITableViewCell {
     
+    private var dto: TimerNotificationDTO?
+    
     private lazy var view: UIView = .contentView()
     
     private lazy var icon: UIImageView = {
@@ -41,6 +43,8 @@ final class TimerNotificationCell: UITableViewCell {
         .editButton()
         .withAction(self, #selector(editButtondidTap))
     
+    weak var delegate: ActionMenuDelegate?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -52,14 +56,24 @@ final class TimerNotificationCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        delegate = nil
+    }
+    
     func configure(dto: TimerNotificationDTO) {
+        
+        self.dto = dto
+        
         titleLabel.text = dto.title
         subtitleLabel.text = dto.subtitle
         timerLabel.interval = dto.timeLeft
         timerLabel.date = dto.date
     }
     
-    @objc private func editButtondidTap() {}
+    @objc private func editButtondidTap() {
+        guard let dto else { return }
+        delegate?.openActionMenu(for: button, with: dto)
+    }
     
     private func setupUI() {
         

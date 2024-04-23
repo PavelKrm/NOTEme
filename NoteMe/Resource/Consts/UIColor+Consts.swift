@@ -10,9 +10,9 @@ import UIKit
 extension UIColor {
     
     private convenience init(_ r: UInt8,
-                     _ g: UInt8,
-                     _ b: UInt8,
-                     _ a: CGFloat) {
+                             _ g: UInt8,
+                             _ b: UInt8,
+                             _ a: CGFloat) {
         self.init(red: CGFloat(r) / 255.0,
                   green: CGFloat(g) / 255.0,
                   blue: CGFloat(b) / 255.0,
@@ -29,5 +29,5 @@ extension UIColor {
     static var appGrayText: UIColor = .init(170, 170, 170, 1)
     static var appShadow: UIColor = .init(0, 0, 0, 0.05)
     static var appLightGrayText: UIColor = .init(151, 151, 151, 1)
-    static var appSuperLightGrayText: UIColor = .init(137, 138, 141, 1)
+    static var appSuperLightGrayText: UIColor = .init(137, 138, 141, 1)    
 }

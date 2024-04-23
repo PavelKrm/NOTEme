@@ -63,6 +63,5 @@ final class MainTabBarVC: UITabBarController {
     
     @objc private func showMenu() {
         viewModel.openMenu(with: plusButton)
-        print(#function)
     }
 }

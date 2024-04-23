@@ -10,15 +10,23 @@ import Storage
 
 final class HomeAdapter: NSObject, HomeAdapterProtocol {
     
-    private var tableView: UITableView = {
+    var openMenu: ((ActionMenuProperty) -> Void)?
+    var filterDidSelect: ((FilterType) -> Void)?
+    
+    private lazy var headerView: NotificationFilterView = {
+        
+        let frame = CGRect(x: .zero, y: .zero, width: .zero, height: 48.0)
+        let header = NotificationFilterView(frame: frame)
+        header.delegate = self
+        return header
+    }()
+    
+    private lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.separatorStyle = .none
         tv.backgroundColor = .clear
         tv.showsVerticalScrollIndicator = false
-        tv.tableHeaderView = NotificationFilterView(frame: .init(x: .zero,
-                                                                 y: .zero,
-                                                                 width: 300.0,
-                                                                 height: 48.0))
+        tv.tableHeaderView = headerView
         return tv
     }()
     
@@ -47,7 +55,6 @@ final class HomeAdapter: NSObject, HomeAdapterProtocol {
     func makeTableView() -> UITableView {
         return tableView
     }
-    
 }
 
 //MARK: - UITableViewDataSource
@@ -64,14 +71,17 @@ extension HomeAdapter: UITableViewDataSource {
         case is DateNotificationDTO:
             let cell: DateNotificationCell? = tableView.dequeue(at: indexPath)
             cell?.configure(dto: dto as! DateNotificationDTO)
+            cell?.delegate = self
             return cell ?? .init()
         case is TimerNotificationDTO:
             let cell: TimerNotificationCell? = tableView.dequeue(at: indexPath)
             cell?.configure(dto: dto as! TimerNotificationDTO)
+            cell?.delegate = self
             return cell ?? .init()
         case is LocationNotidicationDTO:
             let cell: LocationNotificationCell? = tableView.dequeue(at: indexPath)
             cell?.configure(dto: dto as! LocationNotidicationDTO)
+            cell?.delegate = self
             return cell ?? .init()
         default:
             return .init()
@@ -85,5 +95,22 @@ extension HomeAdapter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+//MARK: - NotificationFilterViewDelegate
+
+extension HomeAdapter: NotificationFilterViewDelegate {
+    
+    func notificationFilterView(_ filterView: NotificationFilterView,
+                                didSelect type: FilterType) {
+        filterDidSelect?(type)
+    }
+}
+
+extension HomeAdapter: ActionMenuDelegate {
+    
+    func openActionMenu(for view: UIView, with dto: any DTODescription) {
+        openMenu?(ActionMenuProperty(view: view, dto: dto))
     }
 }

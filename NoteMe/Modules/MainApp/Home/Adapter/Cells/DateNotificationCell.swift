@@ -9,7 +9,14 @@ import UIKit
 import SnapKit
 import Storage
 
+protocol ActionMenuDelegate: AnyObject {
+    
+    func openActionMenu(for view: UIView, with dto: any DTODescription)
+}
+
 final class DateNotificationCell: UITableViewCell {
+    
+    private var dto: DateNotificationDTO?
     
     private lazy var dateView: DateView = DateView()
     
@@ -33,17 +40,7 @@ final class DateNotificationCell: UITableViewCell {
         .editButton()
         .withAction(self, #selector(editButtondidTap))
     
-    @objc private func editButtondidTap() {
-        print(#function)
-    }
-    
-    func configure(dto: DateNotificationDTO) {
-        titleLabel.text = dto.title
-        subtitleLabel.text = dto.subtitle
-        
-        dateView.day = dto.targetDate.formatted(Date.FormatStyle().day(.twoDigits))
-        dateView.month = dto.targetDate.formatted(Date.FormatStyle().month(.abbreviated))
-    }
+    weak var delegate: ActionMenuDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -54,6 +51,26 @@ final class DateNotificationCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        delegate = nil
+    }
+    
+    func configure(dto: DateNotificationDTO) {
+        
+        self.dto = dto
+        
+        titleLabel.text = dto.title
+        subtitleLabel.text = dto.subtitle
+        
+        dateView.day = dto.targetDate.formatted(Date.FormatStyle().day(.twoDigits))
+        dateView.month = dto.targetDate.formatted(Date.FormatStyle().month(.abbreviated))
+    }
+    
+    @objc private func editButtondidTap() {
+        guard let dto else { return }
+        delegate?.openActionMenu(for: button, with: dto)
     }
     
     private func setupUI() {

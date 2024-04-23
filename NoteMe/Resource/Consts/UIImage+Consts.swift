@@ -26,6 +26,7 @@ extension UIImage {
         static let timerIcon: UIImage = .init(named: "timerIcon")!
         static let mapImage: UIImage = .init(named: "mapImage")!
         static let region: UIImage = .init(named: "region")!
+        static let mapPin: UIImage = .init(named: "mapPin")!
     }
     
     enum MenuIcons {

@@ -13,6 +13,7 @@ import MapKit
     
     var setRegion: ((MKCoordinateRegion) -> Void)? { get set }
     
+    func makeTableView() -> UITableView
     func viewDidLoad()
     @objc func cancel()
     @objc func selectLocation(region: MKCoordinateRegion,
@@ -24,6 +25,7 @@ import MapKit
 final class MapVC: UIViewController {
     
     private lazy var contentView: UIView = .contentView()
+    private lazy var tableView: UITableView = viewModel.makeTableView()
     
     private lazy var searchBar: UISearchBar = {
         let search = UISearchBar()

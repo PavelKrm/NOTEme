@@ -12,10 +12,15 @@ final class HomeAssembler {
     
     private init() {}
     
-    static func make() -> UIViewController {
+    static func make(coordinator: HomeViewModelCoordinatorProtocol,
+                     container: Container) -> UIViewController {
+        
+        let storage: AllNotificationStorage = container.resolve()
         
         let vm = HomeVM(frcService: makeFRC(),
-                        adapter: HomeAdapter())
+                        adapter: HomeAdapter(),
+                        coordinator: coordinator,
+                        storage: storage)
         return HomeVC(viewModel: vm)
     }
     

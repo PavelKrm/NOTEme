@@ -175,6 +175,14 @@
 		E9DBA48E2BC92C390045454E /* NotificationFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBA48D2BC92C390045454E /* NotificationFilterView.swift */; };
 		E9DBA4912BC94AA20045454E /* NotificationFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBA4902BC94AA20045454E /* NotificationFilterCell.swift */; };
 		E9DBA4932BC95A960045454E /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBA4922BC95A960045454E /* String+Size.swift */; };
+		E9DBA4962BCE87940045454E /* PropertyMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBA4952BCE87940045454E /* PropertyMenuModel.swift */; };
+		E9DBA4992BD6582E0045454E /* ApiPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBA4982BD6582E0045454E /* ApiPaths.swift */; };
+		E9DBA49D2BD659350045454E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBA49C2BD659350045454E /* NetworkRequest.swift */; };
+		E9DBA49F2BD659E00045454E /* NetworkSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBA49E2BD659E00045454E /* NetworkSessionProvider.swift */; };
+		E9DBA4A12BD65D650045454E /* NearByRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBA4A02BD65D650045454E /* NearByRequest.swift */; };
+		E9DBA4A42BD6A8EF0045454E /* LocationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBA4A32BD6A8EF0045454E /* LocationNetworkService.swift */; };
+		E9DBA4AA2BD6F3970045454E /* MapViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBA4A92BD6F3970045454E /* MapViewAdapter.swift */; };
+		E9DBA4AE2BD6F7820045454E /* SearchMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBA4AD2BD6F7820045454E /* SearchMapCell.swift */; };
 		E9DFFE4F2BADD27B004BB51C /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DFFE4E2BADD27B004BB51C /* MapVC.swift */; };
 		E9DFFE512BB1707A004BB51C /* MapVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DFFE502BB1707A004BB51C /* MapVM.swift */; };
 		E9DFFE532BB1717F004BB51C /* MapAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DFFE522BB1717F004BB51C /* MapAssembler.swift */; };
@@ -381,6 +389,14 @@
 		E9DBA48D2BC92C390045454E /* NotificationFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFilterView.swift; sourceTree = "<group>"; };
 		E9DBA4902BC94AA20045454E /* NotificationFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFilterCell.swift; sourceTree = "<group>"; };
 		E9DBA4922BC95A960045454E /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
+		E9DBA4952BCE87940045454E /* PropertyMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyMenuModel.swift; sourceTree = "<group>"; };
+		E9DBA4982BD6582E0045454E /* ApiPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPaths.swift; sourceTree = "<group>"; };
+		E9DBA49C2BD659350045454E /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		E9DBA49E2BD659E00045454E /* NetworkSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProvider.swift; sourceTree = "<group>"; };
+		E9DBA4A02BD65D650045454E /* NearByRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByRequest.swift; sourceTree = "<group>"; };
+		E9DBA4A32BD6A8EF0045454E /* LocationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNetworkService.swift; sourceTree = "<group>"; };
+		E9DBA4A92BD6F3970045454E /* MapViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewAdapter.swift; sourceTree = "<group>"; };
+		E9DBA4AD2BD6F7820045454E /* SearchMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapCell.swift; sourceTree = "<group>"; };
 		E9DFFE4E2BADD27B004BB51C /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		E9DFFE502BB1707A004BB51C /* MapVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVM.swift; sourceTree = "<group>"; };
 		E9DFFE522BB1717F004BB51C /* MapAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAssembler.swift; sourceTree = "<group>"; };
@@ -819,6 +835,7 @@
 		E933BF502B8E23F1005A2EF1 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
+				E9DBA4942BCE87480045454E /* Models */,
 				E933BF512B8E2405005A2EF1 /* Cells */,
 				E933BF522B8E242C005A2EF1 /* HomeAdapter.swift */,
 			);
@@ -891,6 +908,7 @@
 		E93AF33E2AFEA14A003F9ACE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E9DBA4972BD658120045454E /* NetworkLayer */,
 				E9DBA4812BC5A2CC0045454E /* Firebase */,
 				E92EB2AD2B1F98D900C70A35 /* AlertService */,
 				E93729E12B0CD686006860AB /* AnimateConstraintsChange */,
@@ -1202,9 +1220,63 @@
 			path = NotificationFilterView;
 			sourceTree = "<group>";
 		};
+		E9DBA4942BCE87480045454E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E9DBA4952BCE87940045454E /* PropertyMenuModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E9DBA4972BD658120045454E /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E9DBA4A22BD6A8CD0045454E /* NetworkServices */,
+				E9DBA49A2BD6590E0045454E /* Requests */,
+				E9DBA4982BD6582E0045454E /* ApiPaths.swift */,
+				E9DBA49E2BD659E00045454E /* NetworkSessionProvider.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		E9DBA49A2BD6590E0045454E /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				E9DBA49C2BD659350045454E /* NetworkRequest.swift */,
+				E9DBA4A02BD65D650045454E /* NearByRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		E9DBA4A22BD6A8CD0045454E /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				E9DBA4A32BD6A8EF0045454E /* LocationNetworkService.swift */,
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
+		E9DBA4A52BD6F3540045454E /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				E9DBA4A62BD6F35E0045454E /* Cell */,
+				E9DBA4A92BD6F3970045454E /* MapViewAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		E9DBA4A62BD6F35E0045454E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E9DBA4AD2BD6F7820045454E /* SearchMapCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		E9DFFE4C2BADD258004BB51C /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				E9DBA4A52BD6F3540045454E /* Adapter */,
 				E9DFFE4D2BADD265004BB51C /* Coordinator */,
 				E9DFFE4E2BADD27B004BB51C /* MapVC.swift */,
 				E9DFFE502BB1707A004BB51C /* MapVM.swift */,
@@ -1481,6 +1553,7 @@
 				E96F694E2B557C48003BC39B /* AlertService+Profile.swift in Sources */,
 				E97A22A52B30ECA90048A2F8 /* ProfileCoordinator.swift in Sources */,
 				E9B1C1312AF16EC9005C5852 /* LineTextField.swift in Sources */,
+				E9DBA4A12BD65D650045454E /* NearByRequest.swift in Sources */,
 				E9DBA4782BBC73550045454E /* NotificationHandler.swift in Sources */,
 				E98C1A442B56EFFA00C70715 /* WindowManager.swift in Sources */,
 				E933BF4D2B8DF8FF005A2EF1 /* AddLocationNotificationAssembler.swift in Sources */,
@@ -1492,6 +1565,7 @@
 				E95578E22B643E710058B31B /* ProfileSectionHeader.swift in Sources */,
 				E933BF552B8E25F1005A2EF1 /* DateNotificationCell.swift in Sources */,
 				E92EB25F2B17D21E00C70A35 /* HomeCoordinator.swift in Sources */,
+				E9DBA4962BCE87940045454E /* PropertyMenuModel.swift in Sources */,
 				E9CDED2E2B096EB10059B11F /* ResetPasswordAssembler.swift in Sources */,
 				E9EE6B3A2B5429910029F4AA /* AuthService+Profile.swift in Sources */,
 				E96F69492B553D5E003BC39B /* ProfileButtonCell.swift in Sources */,
@@ -1502,12 +1576,14 @@
 				E933BF392B8DE674005A2EF1 /* AddDateNotificationVM.swift in Sources */,
 				E92EB26A2B18A72700C70A35 /* ProfileVC.swift in Sources */,
 				E9D283B82BBB38D300B8D082 /* TimerLabel.swift in Sources */,
+				E9DBA49D2BD659350045454E /* NetworkRequest.swift in Sources */,
 				E9B1C12B2AF15EEA005C5852 /* View+Layer.swift in Sources */,
 				E9A84F862B79ED0F0025F6E4 /* MenuAdapter.swift in Sources */,
 				E933BF3D2B8DE751005A2EF1 /* AddDateNotificationCoordinator.swift in Sources */,
 				E93AF33B2AFE977F003F9ACE /* LoginVM.swift in Sources */,
 				E93AD9462B03E11900187CCC /* RegisterAssembler.swift in Sources */,
 				E92ED4172AF2D5A800FEAC39 /* String+Locale.swift in Sources */,
+				E9DBA4AE2BD6F7820045454E /* SearchMapCell.swift in Sources */,
 				E97A22A32B30EA300048A2F8 /* MainTabBarCoordinator.swift in Sources */,
 				E9DBA4722BBBF9BC0045454E /* NotificationService.swift in Sources */,
 				E93AF33D2AFE97F9003F9ACE /* LoginAssembler.swift in Sources */,
@@ -1527,6 +1603,7 @@
 				E93729E92B0D1B72006860AB /* LoginCoordinator.swift in Sources */,
 				E933BF592B8E263A005A2EF1 /* LocationNotificationCell.swift in Sources */,
 				E93AF3392AFE942D003F9ACE /* UIButton+Actions.swift in Sources */,
+				E9DBA4A42BD6A8EF0045454E /* LocationNetworkService.swift in Sources */,
 				E9A84F792B796C680025F6E4 /* MenuVC.swift in Sources */,
 				E93729DD2B0CD3F2006860AB /* KeyboardHelper+Register.swift in Sources */,
 				E92EB25B2B17D02F00C70A35 /* HomeVC.swift in Sources */,
@@ -1552,6 +1629,7 @@
 				E933BF3B2B8DE701005A2EF1 /* AddDateNotificationAssembler.swift in Sources */,
 				E9A84F802B796E700025F6E4 /* MenuRows.swift in Sources */,
 				E9A84F7B2B796D7D0025F6E4 /* MenuVM.swift in Sources */,
+				E9DBA4992BD6582E0045454E /* ApiPaths.swift in Sources */,
 				E9CDED2A2B096E540059B11F /* KeyboardHelper+Login.swift in Sources */,
 				E92EB2682B18A3D200C70A35 /* MainTabBarAssembler.swift in Sources */,
 				E93729E62B0D129D006860AB /* Coordinator.swift in Sources */,
@@ -1565,6 +1643,7 @@
 				E90ADAD72AE82E7000F8989A /* UIColor+Consts.swift in Sources */,
 				E90ADAC22AE824CA00F8989A /* SceneDelegate.swift in Sources */,
 				E9DFFE552BB17235004BB51C /* MapCoordinator.swift in Sources */,
+				E9DBA49F2BD659E00045454E /* NetworkSessionProvider.swift in Sources */,
 				E92EB2E72B20970900C70A35 /* AuthService+Register.swift in Sources */,
 				E9DBA46D2BBB62380045454E /* TimeInterval+String.swift in Sources */,
 				E9DBA4832BC5A2EF0045454E /* FirebaseBackupService.swift in Sources */,
@@ -1584,6 +1663,7 @@
 				E9CDED2C2B096E7D0059B11F /* InputValidator+ResetPassword.swift in Sources */,
 				E933BF5B2B8E2ECA005A2EF1 /* DateView.swift in Sources */,
 				E92EB2AC2B1F98D000C70A35 /* AuthSevice+Login.swift in Sources */,
+				E9DBA4AA2BD6F3970045454E /* MapViewAdapter.swift in Sources */,
 				E9DBA48E2BC92C390045454E /* NotificationFilterView.swift in Sources */,
 				E92EB2512B165D5200C70A35 /* OnboardSecondStepCoordinator.swift in Sources */,
 			);

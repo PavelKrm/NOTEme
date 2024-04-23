@@ -24,13 +24,7 @@ final class AddLocationNotificationVM:
     
     var title: String?
     var subtitle: String?
-    var dto: LocationNotidicationDTO? {
-        didSet {
-            if let dto {
-                updatePreview?(fileService.loadImage(id: dto.id))
-            }
-        }
-    }
+    var dto: LocationNotidicationDTO?
     
     private weak var coordinator: AddLocationNotificationCoordinatorProtocol?
     private var storage: LocationNotificationStorage
@@ -54,6 +48,12 @@ final class AddLocationNotificationVM:
         
         askPermission()
         bind()
+    }
+    
+    func viewDidLoad() {
+        
+        guard let dto else { return }
+        updatePreview?(fileService.loadImage(id: dto.id))
     }
     
     func createNotification() {
@@ -101,6 +101,7 @@ final class AddLocationNotificationVM:
     private func bind() {
         locationDidSelect = { [weak self] dto in
             self?.dto = dto
+            self?.updatePreview?(self?.fileService.loadImage(id: dto.id))
         }
     }
 }

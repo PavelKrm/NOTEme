@@ -18,6 +18,14 @@ protocol MapCoordinatorProtocol: AnyObject {
     func finish()
 }
 
+protocol MapViewAdapterProtocol: AnyObject {
+    
+    var searchDidSelect: ((NearByResponseModel.Result) -> Void)? { get set }
+    
+    func reloadData(with: [NearByResponseModel.Result])
+    func makeTableView() -> UITableView
+}
+
 final class MapVM: MapViewModelProtocol {
     
     var setRegion: ((MKCoordinateRegion) -> Void)?

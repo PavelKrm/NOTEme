@@ -11,6 +11,8 @@ import Storage
 
 final class LocationNotificationCell: UITableViewCell {
     
+    private var dto: LocationNotidicationDTO?
+    
     private lazy var view: UIView = .contentView()
     
     private lazy var icon: UIImageView = {
@@ -37,17 +39,17 @@ final class LocationNotificationCell: UITableViewCell {
     private lazy var screenShot: UIImageView = {
         let imageView = UIImageView()
         imageView.cornerRadius = 5.0
+        imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.image = .General.mapImage
         return imageView
     }()
     
+    weak var delegate: ActionMenuDelegate?
+    
     private lazy var button: UIButton =
         .editButton()
         .withAction(self, #selector(editButtondidTap))
-    
-    @objc private func editButtondidTap() {}
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -60,13 +62,22 @@ final class LocationNotificationCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func prepareForReuse() {}
+    override func prepareForReuse() {
+        delegate = nil
+    }
     
     func configure(dto: LocationNotidicationDTO) {
+        
+        self.dto = dto
         
         titleLabel.text = dto.title
         subtitleLabel.text = dto.subtitle
         screenShot.image = FileService().loadImage(id: dto.id)
+    }
+    
+    @objc private func editButtondidTap() {
+        guard let dto else { return }
+        delegate?.openActionMenu(for: button, with: dto)
     }
     
     private func setupUI() {
@@ -96,7 +107,7 @@ final class LocationNotificationCell: UITableViewCell {
         button.snp.makeConstraints { make in
             make.top.right.equalToSuperview().inset(16.0)
             make.width.equalTo(18.0)
-            make.height.equalTo(4.0)
+            make.height.equalTo(18.0)
         }
         
         titleLabel.snp.makeConstraints { make in

@@ -7,13 +7,15 @@
 
 import UIKit
 import SnapKit
+import Storage
 
 protocol AddDateNotificationViewModelProtocol {
     
     var targetDate: Date? { get set }
+    var catchEditDto: ((DateNotificationDTO) -> Void)? { get set }
     
-    func createNotification(title: String?,
-                            subTitle: String)
+    func viewDidLoad()
+    func createNotification(title: String?, subTitle: String)
     func cancelDidTap()
 }
 
@@ -107,6 +109,8 @@ final class AddDateNotificationVC: UIViewController {
     init(viewModel: AddDateNotificationViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        
+        bind()
     }
     
     required init?(coder: NSCoder) {
@@ -116,6 +120,7 @@ final class AddDateNotificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.viewDidLoad()
         setupUI()
         setupConstraints()
     }
@@ -123,6 +128,21 @@ final class AddDateNotificationVC: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
+    }
+    
+    private func bind() {
+        viewModel.catchEditDto = { [weak self] dto in
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEE dd MMMM yyyy HH:mm"
+            
+            self?.titleTextField.text = dto.title
+            if let subtitle = dto.subtitle {
+                self?.subtitleTextView.text = dto.subtitle
+                self?.subtitleTextView.textColor = .appText
+            }
+            self?.dateTextField.text = dateFormatter.string(from: dto.targetDate)
+        }
     }
     
     @objc private func createDidTap() {
@@ -236,13 +256,6 @@ extension AddDateNotificationVC: UITextViewDelegate {
         }
     }
 }
-
-//extension AddNotificationVC: LineTextFieldDelegate {
-//
-//    func textFieldDidBeginEditing(_ lineTextField: LineTextField) {
-//        <#code#>
-//    }
-//}
 
 //MARK: - L10n
 

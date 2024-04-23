@@ -106,20 +106,33 @@ public class NotificationStorage<DTO: DTODescription> {
     public func delete(dto: any DTODescription,
                        completion: CompletionHandler? = nil) {
         
+        let context = CoreDataService.shared.backgroundContext
+        context.perform { [weak self] in
+            guard let mo = self?.fetchMO(
+                context: context,
+                predicate: .Notification.notification(byId: dto.id)
+            ).first
+            else { return }
+            context.delete(mo)
+            CoreDataService.shared.saveContext(context: context,
+                                               completion: completion)
+        }
     }
+    
+//MARK: - private methods
     
     private func fetchMO(
         context: NSManagedObjectContext,
         predicate: NSPredicate? = nil,
         sortDescriptors: [NSSortDescriptor] = []
     ) -> [DTO.MO] {
+        
         let request = NSFetchRequest<DTO.MO>(entityName: "\(DTO.MO.self)")
         request.predicate = predicate
         request.sortDescriptors = sortDescriptors
         let results = try? context.fetch(request)
         return results ?? []
     }
-    
 }
 
 

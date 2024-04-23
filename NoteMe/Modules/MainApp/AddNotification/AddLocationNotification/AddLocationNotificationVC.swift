@@ -15,6 +15,7 @@ protocol AddLocationNotificationViewModelProtocol {
     var title: String? { get set }
     var subtitle: String? { get set }
     
+    func viewDidLoad()
     func openMapView()
     func createNotification()
     func cancelDidTap()
@@ -82,6 +83,8 @@ final class AddLocationNotificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.viewDidLoad()
+        
         setupUI()
         setupConstraints()
         configure()
@@ -95,13 +98,18 @@ final class AddLocationNotificationVC: UIViewController {
     private func bind() {
         
         viewModel.updatePreview = { [weak self] image in
-            self?.mapButton.setBackgroundImage(image, for: .normal)
+//            self?.mapButton.setBackgroundImage(image, for: .normal)
+            self?.mapButton.contentMode = .scaleAspectFit
+            self?.mapButton.setImage(image, for: .normal)
         }
     }
     
     private func configure() {
         titleTextField.text = viewModel.title
-        subtitleTextView.text = viewModel.subtitle
+        if (viewModel.subtitle) != nil {
+            subtitleTextView.text = viewModel.subtitle
+            subtitleTextView.textColor = .appText
+        }
     }
     
     @objc private func mapButtonDidTap() {

@@ -11,6 +11,10 @@ extension UIButton {
     
     static func mapButton() -> UIButton {
         let button = UIButton()
+        button.setBorder(width: 1.0, color: .systemBlue)
+        button.cornerRadius = 5.0
+//        button.clipsToBounds = true
+        button.contentMode = .scaleAspectFill
         button.setBackgroundImage(.General.mapImage, for: .normal)
         return button
     }

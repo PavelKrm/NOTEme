@@ -7,14 +7,16 @@
 
 import UIKit
 import SnapKit
+import Storage
 
 protocol AddTimerNotificationViewModelProtocol {
     
     var timeLeft: Int? { get set }
-    var cachTime: ((String) -> Void)? { get set }
-    var subtitle: String? { get set }
+    var catchTime: ((String) -> Void)? { get set }
+    var catchEditDto: ((TimerNotificationDTO) -> Void)? { get set }
     
-    func createNotification(title: String?)
+    func viewDidLoad()
+    func createNotification(title: String?, subtitle: String?)
     func cancelDidTap()
 }
 
@@ -119,6 +121,8 @@ final class AddTimerNotificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.viewDidLoad()
+        
         setupUI()
         setupConstraints()
     }
@@ -130,15 +134,23 @@ final class AddTimerNotificationVC: UIViewController {
     
     private func bind() {
         
-        viewModel.cachTime = { [weak self] text in
+        viewModel.catchTime = { [weak self] text in
             self?.timerTextField.text = text
         }
         
+        viewModel.catchEditDto = { [weak self] dto in
+            self?.titleTextField.text = dto.title
+            if let subtitle = dto.subtitle {
+                self?.subtitleTextView.text = dto.subtitle
+                self?.subtitleTextView.textColor = .appText
+            }
+        }
     }
     
     @objc private func createDidTap() {
         
-        viewModel.createNotification(title: titleTextField.text)
+        viewModel.createNotification(title: titleTextField.text,
+                                     subtitle: subtitleTextView.text)
     }
     
     @objc func cancelDidTap() {
@@ -243,8 +255,6 @@ extension AddTimerNotificationVC: UITextViewDelegate {
         if textView.text.isEmpty {
             textView.text = L10n.subtitlePH
             textView.textColor = .appGrayText
-        } else {
-            viewModel.subtitle = textView.text
         }
     }
 }

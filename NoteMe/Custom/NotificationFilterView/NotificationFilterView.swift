@@ -26,6 +26,12 @@ enum FilterType: CaseIterable {
     }
 }
 
+protocol NotificationFilterViewDelegate: AnyObject {
+    
+    func notificationFilterView(_ filterView: NotificationFilterView,
+                                didSelect type: FilterType)
+}
+
 final class NotificationFilterView: UIView {
     
     private enum Const {
@@ -57,6 +63,8 @@ final class NotificationFilterView: UIView {
         
         return collection
     }()
+    
+    weak var delegate: NotificationFilterViewDelegate?
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -113,7 +121,10 @@ extension NotificationFilterView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        print(FilterType.allCases[indexPath.row])
+        delegate?.notificationFilterView(
+            self,
+            didSelect: FilterType.allCases[indexPath.row]
+        )
     }
 }
 

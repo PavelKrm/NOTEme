@@ -63,7 +63,10 @@ final class MenuVC: UIViewController {
     private func setupConstraints() {
         
         tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.horizontalEdges.equalToSuperview()
+            make.verticalEdges.equalTo(
+                self.view.safeAreaLayoutGuide.snp.verticalEdges
+            )
         }
     }
 }

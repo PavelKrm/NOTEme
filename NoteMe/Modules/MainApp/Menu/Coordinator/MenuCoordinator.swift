@@ -12,6 +12,7 @@ final class MenuCoordinator: Coordinator {
     private var rootVC: UIViewController?
     var onDismissedByUser: ((Coordinator) -> Void)?
     var onAddedNotificationByUser: ((MenuRows) -> Void)?
+    var actionMenuNotification: ((ActionsMunuRows) -> Void)?
     private let container: Container
     private var menu: MenuRows
     
@@ -35,9 +36,15 @@ extension MenuCoordinator: MenuCoordinatorProtocol {
         onAddedNotificationByUser?(.addNotificationMenu([type]))
     }
     
-    func editRowDidTap() {}
+    func editRowDidTap() {
+        onDismissedByUser?(self)
+        actionMenuNotification?(.edit)
+    }
     
-    func deleteRowDidTap() {}
+    func deleteRowDidTap() {
+        onDismissedByUser?(self)
+        actionMenuNotification?(.delete)
+    }
     
     func dismissedByUser() {
         onDismissedByUser?(self)
